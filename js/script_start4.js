@@ -1,15 +1,17 @@
-var floors = [];//массив элементов по этажам
-var yStep = 60; //шаг отрисовки по x
-var xStep = 60; //шаг отрисовки по y
-var y = 100;        //начальное положение первого элемента по x
-var x = 100;        //начальное положение первого элемента по н
-var populationArr =[] // матрица отслеживания расположения элементов
-var widthEl = 25; //ширина элемента
-var heightEl = 25; //высота элемента
-var minWidth = x; 
-var minHeight = y;
-var maxWidth = 1300;
-var maxHeight = 3000;
+var floors = [];        //массив элементов по этажам
+var yStep = 60;         //шаг отрисовки по x
+var xStep = 60;         //шаг отрисовки по y
+var y = 100;            //начальное положение первого элемента по x
+var x = 100;            //начальное положение первого элемента по н
+var populationArr =[]   // матрица отслеживания расположения элементов
+var widthEl = 25;       //ширина элемента
+var heightEl = 25;      //высота элемента
+var paperWidth = 1300;  //ширина холста
+var paperHeight = 3000; //высота холста
+var minX = x;           //граница отрисовки
+var minY = y;           //граница отрисовки
+var maxX = paperWidth;  //граница отрисовки
+var maxY = paperHeight; //граница отрисовки
 
 var markupArray = [];
 markupArray['fireAlarm'] =  $('#fireAlarm').html().replace(/(\r\n|\n|\r|\t)/gm,"");
@@ -19,34 +21,34 @@ markupArray['fireSiren'] =  $('#fireSiren').html().replace(/(\r\n|\n|\r|\t)/gm,"
 
 var graph = new joint.dia.Graph;
 var paper = new joint.dia.Paper({
-    el: $('#paper'),
-    width: maxWidth,
-    height: maxHeight,
-    model: graph,
-    gridSize: 1
+  el: $('#paper'),
+  width: paperWidth,
+  height: paperHeight,
+  model: graph,
+  gridSize: 1
 });
 
 
 joint.shapes.defs = {}; 
 joint.shapes.defs.NewEl = joint.dia.Element.extend({
-      markup: '',
-      defaults:{
-          type:'defs.NewEl',
-          position:{ x: 10 , y: 10 },
-          atrrs:{}
-      }
+  markup: '',
+  defaults:{
+      type:'defs.NewEl',
+      position:{ x: 10 , y: 10 },
+      atrrs:{}
+  }
  });
      
 var NewEl = function(x, y, width, height, markup, text, text_location, text_color, rect_color) {
   
   var rect = {};
   if(!markup){
-        var rect = {
-                fill: '#ffffff',
-                stroke: '#000000',
-                width: width,
-                height: height
-             }
+    var rect = {
+            fill: '#ffffff',
+            stroke: '#000000',
+            width: width,
+            height: height
+         }
   }
   var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
   var text_color = text_color || "#000";
@@ -88,18 +90,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
                   y: 0,
                   x: 0
                 },
-//        label: {
-//            position: {
-//                name: 'top',
-//                args: {
-//                  y: 30,
-//                  x: 30
-//                }
-//            },
-//            markup: '<text class="label-text" fill="blue"/>'
-//        },
         attrs: { 
-//          text: { text: 'port1' },
             rect:{
             width: widthEl,
             height: heightEl,
@@ -196,10 +187,7 @@ function drawDevice(cableLog, source_id, target_id, x, y, index){
         graph.addCell([FD]);
         
       }
-      
-//      x = x + Math.abs(xStep);
-      
-       
+
       //прорисовываем таргет прибора
       if ( typeof graph.getCell(target_id) == 'undefined'){
         
@@ -217,81 +205,75 @@ function drawDevice(cableLog, source_id, target_id, x, y, index){
         FD.set('id', target_id);
         graph.addCell([FD]);
         graph.addCell([getLink(source_id, target_id)]); 
-//        x = x + xStep;
       }
       
       drawElement2(cableLog, source_id, target_id, x, y, index);
-      
-//      if(cableLog[index].start_sysname == 'fireEndDevice'){ return;}      
-      
-  
 }
+
 //Отрисовка элементов
 function drawElement2(cableLog, source_id, target_id, x, y, index){
-      var cableLog = cableLog;
-      var xStart = x;
-      var yStart = y;
-      var index = index;
-      var source_id = source_id;
-      var target_id = target_id;
+  var cableLog = cableLog;
+  var xStart = x;
+  var yStart = y;
+  var index = index;
+  var source_id = source_id;
+  var target_id = target_id;
 
-//    xStart = xStart + xStep;
-    //проход по каталогу cableLog
-    for(var i in cableLog){
-        var x = xStart;
-        var y = yStart;
-        //исключаем  индекс элемента 
-      if( i != index){
-        var start_id = null;
-        var finish_id = null;
-        start_id = cableLog[i].start_id;
-        finish_id = cableLog[i].finish_id;
+  //проход по каталогу cableLog
+  for(var i in cableLog){
+    var x = xStart;
+    var y = yStart;
+      //исключаем  индекс элемента 
+    if( i != index){
+      var start_id = null;
+      var finish_id = null;
+      start_id = cableLog[i].start_id;
+      finish_id = cableLog[i].finish_id;
 //       
-        if(finish_id == target_id || start_id == target_id ){
-          
-          var text_location = (name == 'fireDevice') ? 'left' : 'top';
+      if(finish_id == target_id || start_id == target_id ){
 
-          if(finish_id == target_id){
-            var new_target_id = cableLog[i].start_id;
-            var new_elem_sysname = cableLog[i].start_sysname;
-            var new_marking = cableLog[i].start_marking[0];
-            
-            var elem_sysname = cableLog[i].finish_sysname;
-            var marking = cableLog[i].finish_marking[0];
-            
-          } else if(start_id == target_id){
-            var new_target_id = cableLog[i].finish_id;
-            var new_elem_sysname = cableLog[i].finish_sysname;
-            var new_marking = cableLog[i].finish_marking[0];
+        var text_location = (name == 'fireDevice') ? 'left' : 'top';
 
-            var elem_sysname = cableLog[i].start_sysname;
-            var marking = cableLog[i].start_marking[0];
-          } 
+        if(finish_id == target_id){
+          var new_target_id = cableLog[i].start_id;
+          var new_elem_sysname = cableLog[i].start_sysname;
+          var new_marking = cableLog[i].start_marking[0];
 
-          if ( typeof graph.getCell(new_target_id) == 'undefined'){
+          var elem_sysname = cableLog[i].finish_sysname;
+          var marking = cableLog[i].finish_marking[0];
 
-            var point = getNewCoord(x,y);
-            y = point.y; //вычисление свободной y-ячейки
-            x = point.x;
+        } else if(start_id == target_id){
+          var new_target_id = cableLog[i].finish_id;
+          var new_elem_sysname = cableLog[i].finish_sysname;
+          var new_marking = cableLog[i].finish_marking[0];
+
+          var elem_sysname = cableLog[i].start_sysname;
+          var marking = cableLog[i].start_marking[0];
+        } 
+
+        if ( typeof graph.getCell(new_target_id) == 'undefined'){
+
+          var point = getNewCoord(x,y);
+          y = point.y; //вычисление свободной y-ячейки
+          x = point.x;
 //            var coor = "x:"+x+" y:"+y;  
 //          добавление элемента
-            var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_marking ? new_marking : new_elem_sysname,'top', null, 'green')
-            IZ.set('id', new_target_id);
-            graph.addCell([IZ]);
-//            x = x + xStep;
+          var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_marking ? new_marking : new_elem_sysname,'top', null, 'green')
+          IZ.set('id', new_target_id);
+          graph.addCell([IZ]);
 //          добавление элемента
 
-            source_id = target_id
+          source_id = target_id
 //          добавление линки между элементами
-            graph.addCell([getLink(source_id, new_target_id)]); 
+          graph.addCell([getLink(source_id, new_target_id)]); 
 //           добавление линки между элементами
-          }  
+        }  
 
-          drawElement2(cableLog, source_id,new_target_id, x,y,i);
+        drawElement2(cableLog, source_id,new_target_id, x,y,i);
 
-        }    
-      }
-    }              
+      }    
+    }
+  }              
 }
 
 function getFirstFireDeviceIndex(cableLog){
@@ -322,37 +304,32 @@ function getNextFireDeviceIndex(cableLog, number){
   return false;
 }
 function getMaxY(floor){
-//  var floor = floor || 1;
-    var max = y ;
-    if(populationArr.length){
-       populationArr.forEach(function(item, i, arr) {
-          max = max > arr[i].length ? max : arr[i].length-1;
-        });
+  var max = y ;
+  if(populationArr.length){
+     populationArr.forEach(function(item, i, arr) {
+        max = max > arr[i].length ? max : arr[i].length-1;
+      });
 
-    } 
-//    max = floor > 0 ? max = max + Math.abs(yStep) : max;
-    max = max + Math.abs(yStep);
-    return max;
+  } 
+  max = max + Math.abs(yStep);
+  return max;
 }
 function getNewCoord(x,y,start){
   var x = x;
   var y = y;
   var start = start;
-//  xStep = start ? Math.abs(xStep) : xStep;
-//          вычисление свободной y-ячейки
 
   if(!start){
 
     x = x + xStep;
-    if (x + xStep > maxWidth){
+    if (x + xStep > maxX){
       xStep = -1 * xStep;
       x = x + xStep;
     };
-    if (x + xStep < minWidth){
+    if (x + xStep < minX){
       xStep = -1 * xStep;
       x = x + xStep;
     };
-
 
     if(x in populationArr){
         while (populationArr[x][y]) { 
@@ -386,14 +363,14 @@ function getLink(source_id, target_id){
   link.set('router', {
             name: 'manhattan',
 //                name: 'oneSide',
-      args: {
-        side: 'bottom',
-          startDirections: ['right','left','top','bottom'],
-          endDirections: ['left','right','top','bottom'],
-//          excludeTypes : ['defs.NewEl'],
-          step: 2,
-//                    padding: 5
-      }
+            args: {
+              side: 'bottom',
+                startDirections: ['right','left','top','bottom'],
+                endDirections: ['left','right','top','bottom'],
+      //          excludeTypes : ['defs.NewEl'],
+                step: 2,
+      //                    padding: 5
+            }
   });
   link.set('connector', { name: 'normal' }); 
   

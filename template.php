@@ -1,4 +1,4 @@
-<svg version="1.1" id="pullStation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg style="display:none;" version="1.1" id="pullStation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 <g><text class="text"></text></g>  
 <g><text class="marking"></text></g>  
@@ -21,7 +21,7 @@
 
 
 
-<svg version="1.1" id="fireEndDevice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg style="display:none;" version="1.1" id="fireEndDevice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 widh="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 <g><text></text></g>  
 <g class="scalable">
@@ -34,7 +34,7 @@
 
 
 
-<svg version="1.1" id="fireAlarm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg style="display:none;" version="1.1" id="fireAlarm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 <g><text></text></g>  
 <g class="scalable"> 
@@ -56,7 +56,7 @@
 </svg>
 
 
-<svg version="1.1" id="fireSiren" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg style="display:none;" version="1.1" id="fireSiren" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="110px" height="110px" viewBox="0 0 110 110" enable-background="new 0 0 110 110" xml:space="preserve">
 <g><text></text></g>  
 <g class="scalable">
