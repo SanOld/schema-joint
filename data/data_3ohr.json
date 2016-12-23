@@ -1,0 +1,1838 @@
+{
+  "floors": [
+    {
+      "floorData": {
+        "name": "Страница 1",
+        "project": "6810ad47-31ee-4798-98bf-8b2653f40409",
+        "index": 1,
+        "id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+        "floor": 0.1,
+        "ground": 2.8,
+        "ceiling": 2.8,
+        "routes": 2.6,
+        "netOutlet": 0.7,
+        "elOutlet": 0.7,
+        "outletPer": 1.2,
+        "elSwitch": 0.7,
+        "other": 0.7,
+        "measureUnits": 1,
+        "slab_height": 0.5,
+        "outlet_reserve": 1,
+        "rack_reserve": 1,
+        "cable_reserve": 5,
+        "wallWidth": 0.12,
+        "channelOccupancy": 0.5,
+        "marking": 1,
+        "active": true
+      },
+      "scaling": 43,
+      "floorIdx": 1,
+      "floorHeight": 0,
+      "cableLog": [
+        {
+          "id": "8b7193e5-f6c7-7d67-7c70-33c148b677ea",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "8b7193e5-f6c7-7d67-7c70-33c148b677ea",
+            "start": {
+              "cell": "e1e94c63-79c5-3b76-40f9-5ee936ec0747",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "b456cec6-3672-4de0-a4c7-a0b0cf285e7d",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "c53a81b1-c647-49ce-ade7-96e99c18f05c",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "418387c1-171a-67d8-44fa-2cf9b7f94c65",
+              "39ad93ca-1c16-9719-7f9f-b2955e1fe06f",
+              "2756fe9f-6a18-4448-5a1e-3f6cf935d793",
+              "1bb0674b-2e98-6806-d4aa-a13060e83e77",
+              "3271c8f9-d363-f07f-200c-8d4bec178a81"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 6.3,
+          "lengthWithOutReserv": 6,
+          "start": "Контрольная панель",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Контрольная панель",
+          "start_sysname": "controlPanel",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "e1e94c63-79c5-3b76-40f9-5ee936ec0747",
+          "finish_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "e1e94c63-79c5-3b76-40f9-5ee936ec0747",
+              "elem_sysname": "controlPanel",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "c46367a7-0f39-eefc-0e7a-165a1ebe64b4",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.3
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "418387c1-171a-67d8-44fa-2cf9b7f94c65",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "503d00e0-e49f-51c9-5364-83df995503f9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "39ad93ca-1c16-9719-7f9f-b2955e1fe06f",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "1ab695e8-47f2-21bc-e284-c69397ec15ba",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.37
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "2756fe9f-6a18-4448-5a1e-3f6cf935d793",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "702df1db-ce26-3fb4-ecdd-ab19f9d4c3cc",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.41
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "1bb0674b-2e98-6806-d4aa-a13060e83e77",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9cc65f1b-fee4-9ff0-6dad-1d05ec7455f1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3271c8f9-d363-f07f-200c-8d4bec178a81",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "d5fd5698-b570-2944-4ceb-c90d95c643b3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "4348345d-4677-8d5f-7658-9cf610594ca6",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "4348345d-4677-8d5f-7658-9cf610594ca6",
+            "start": {
+              "cell": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "761ee44e-0e1f-4c0d-87a7-8aa80d7251dd",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "231082c6-8cf8-48e4-8b16-f8265c5bfb92",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "3271c8f9-d363-f07f-200c-8d4bec178a81"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 1.74,
+          "lengthWithOutReserv": 1.66,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+          "finish_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "d5fd5698-b570-2944-4ceb-c90d95c643b3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3271c8f9-d363-f07f-200c-8d4bec178a81",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "d5fd5698-b570-2944-4ceb-c90d95c643b3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "b99bc26f-9b09-9d35-542a-4b0cc3f85a36",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "b99bc26f-9b09-9d35-542a-4b0cc3f85a36",
+            "start": {
+              "cell": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "cd2c1db4-09e5-f8f2-91c6-30dfa068147b",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "9210672c-657e-4c69-a63b-b9dca3501232",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "1dc28217-f310-4a8c-b71b-5692f3a1927f",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "3271c8f9-d363-f07f-200c-8d4bec178a81"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 3.59,
+          "lengthWithOutReserv": 3.42,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Извещатель  оптико-электронный пассивный объемный",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Извещатель  оптико-электронный пассивный объемный",
+          "finish_sysname": "electroDetectorSpatial",
+          "start_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+          "finish_id": "cd2c1db4-09e5-f8f2-91c6-30dfa068147b",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ad8d6ede-ba64-87ae-eb4d-2b2af8730da7",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "d5fd5698-b570-2944-4ceb-c90d95c643b3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3271c8f9-d363-f07f-200c-8d4bec178a81",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "7f392e84-cafd-d5d3-eb1c-191fedf25a60",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.59
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "cd2c1db4-09e5-f8f2-91c6-30dfa068147b",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "6a465ba3-2796-a54e-83d5-415b33bc2869",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "6a465ba3-2796-a54e-83d5-415b33bc2869",
+            "start": {
+              "cell": "cd2c1db4-09e5-f8f2-91c6-30dfa068147b",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "4daf5047-a551-4177-89d6-c8e083a4c295",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "1ce7add7-c47c-4ac2-99c8-57784cc4c7da",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "3271c8f9-d363-f07f-200c-8d4bec178a81",
+              "1bb0674b-2e98-6806-d4aa-a13060e83e77",
+              "07dca753-039c-99cf-be98-6282f4c22903",
+              "3f0a6da6-bcaf-1e22-42e8-f16e0a4064f1",
+              "b94bf213-7a97-5931-1950-8c9c23102d1e",
+              "857c71dc-d6fb-6d27-0d6a-55b85318da8d",
+              "08a84794-e0fc-65f7-643d-dae96709eb84",
+              "99196e28-ea3a-27a3-c6dd-7532ee9a3f40",
+              "2d2f0c1e-60b1-1b20-ffdd-6bd9c1e2a8ff",
+              "85890a73-64d2-e814-c238-502ef526d0a7",
+              "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+              "0861d65a-f76f-b312-588b-024bf9ad2fea",
+              "2d4d19dd-3c94-8f51-6b4b-b01f4ea2b0c6",
+              "daff8144-5abd-8a8d-52e4-1c641fefff93"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 15.9,
+          "lengthWithOutReserv": 15.14,
+          "start": "Извещатель  оптико-электронный пассивный объемный",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Извещатель  оптико-электронный пассивный объемный",
+          "start_sysname": "electroDetectorSpatial",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "cd2c1db4-09e5-f8f2-91c6-30dfa068147b",
+          "finish_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "cd2c1db4-09e5-f8f2-91c6-30dfa068147b",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "7f392e84-cafd-d5d3-eb1c-191fedf25a60",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.59
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3271c8f9-d363-f07f-200c-8d4bec178a81",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9cc65f1b-fee4-9ff0-6dad-1d05ec7455f1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "1bb0674b-2e98-6806-d4aa-a13060e83e77",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3a476db2-163e-2f5c-596b-e6cc1455e0cc",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "07dca753-039c-99cf-be98-6282f4c22903",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "8d8d3223-1bd3-750b-c014-003810a81ee0",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3f0a6da6-bcaf-1e22-42e8-f16e0a4064f1",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "20f58a4e-6f55-b178-112b-87fe7fafcda6",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.82
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "b94bf213-7a97-5931-1950-8c9c23102d1e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ff503180-8865-31cb-2d49-70958915d2f4",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.27
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "857c71dc-d6fb-6d27-0d6a-55b85318da8d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "25b22868-c309-9902-645b-f134bcf223c9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "08a84794-e0fc-65f7-643d-dae96709eb84",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "dea097a1-46ab-d6ed-2a3a-781507def970",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "99196e28-ea3a-27a3-c6dd-7532ee9a3f40",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ff95b937-890c-329f-d8a5-0eb4070861f2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "2d2f0c1e-60b1-1b20-ffdd-6bd9c1e2a8ff",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "075276ca-12c5-2426-c07f-1f812f1acf08",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.27
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "85890a73-64d2-e814-c238-502ef526d0a7",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "af850f11-e2b3-7784-bf44-a06bed38ba84",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.23
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "60a1c9c9-9051-a7fb-c6a4-5416f29f1783",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.76
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0861d65a-f76f-b312-588b-024bf9ad2fea",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "7ecad216-26e9-022e-4cb1-8df46d54e830",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "2d4d19dd-3c94-8f51-6b4b-b01f4ea2b0c6",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "fb7135cd-6515-4a58-d27f-1292afe91c7c",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "daff8144-5abd-8a8d-52e4-1c641fefff93",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "4ad88e57-de2c-3b0d-7d96-025e600ccc11",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "7597180a-709e-ff66-4df1-093638e2cf24",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "7597180a-709e-ff66-4df1-093638e2cf24",
+            "start": {
+              "cell": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "97ec9510-487d-4e98-9589-ae56e01f8ee7",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "ba8176a3-65be-4a34-abe5-08a62c4bb996",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "daff8144-5abd-8a8d-52e4-1c641fefff93"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 1.74,
+          "lengthWithOutReserv": 1.66,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+          "finish_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "4ad88e57-de2c-3b0d-7d96-025e600ccc11",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "daff8144-5abd-8a8d-52e4-1c641fefff93",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "4ad88e57-de2c-3b0d-7d96-025e600ccc11",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "fc5e407d-2ce9-08ae-d552-a37acc90926c",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "fc5e407d-2ce9-08ae-d552-a37acc90926c",
+            "start": {
+              "cell": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "53101019-26a5-cddb-3805-f396a4ef2aad",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "dca9f806-1793-4c95-89d2-4f91a4255000",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "9f836e1d-539a-440c-b21d-1f9e8ebd781b",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "daff8144-5abd-8a8d-52e4-1c641fefff93"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 4.49,
+          "lengthWithOutReserv": 4.28,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Извещатель  оптико-электронный пассивный объемный",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Извещатель  оптико-электронный пассивный объемный",
+          "finish_sysname": "electroDetectorSpatial",
+          "start_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+          "finish_id": "53101019-26a5-cddb-3805-f396a4ef2aad",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "538366c0-5873-a212-70cb-a01a74cdbb17",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "4ad88e57-de2c-3b0d-7d96-025e600ccc11",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "daff8144-5abd-8a8d-52e4-1c641fefff93",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "7ea0ea58-78d5-f97e-93e2-03733ba0f47f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.45
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "53101019-26a5-cddb-3805-f396a4ef2aad",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "4448a793-ef23-93a7-be1a-3e5043aadd4e",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "4448a793-ef23-93a7-be1a-3e5043aadd4e",
+            "start": {
+              "cell": "53101019-26a5-cddb-3805-f396a4ef2aad",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "e564e2f4-291c-4d9c-8d99-0db85a5dc181",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "5b7c7212-eee1-4da4-809c-8337f912c9fb",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "daff8144-5abd-8a8d-52e4-1c641fefff93",
+              "476bebb0-a5cd-a385-d84b-a02c478fb70b",
+              "0861d65a-f76f-b312-588b-024bf9ad2fea"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 6.45,
+          "lengthWithOutReserv": 6.14,
+          "start": "Извещатель  оптико-электронный пассивный объемный",
+          "finish": "Извещатель  оптико-электронный пассивный объемный",
+          "finishLabel": "",
+          "start_title": "Извещатель  оптико-электронный пассивный объемный",
+          "start_sysname": "electroDetectorSpatial",
+          "finish_title": "Извещатель  оптико-электронный пассивный объемный",
+          "finish_sysname": "electroDetectorSpatial",
+          "start_id": "53101019-26a5-cddb-3805-f396a4ef2aad",
+          "finish_id": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "53101019-26a5-cddb-3805-f396a4ef2aad",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "7ea0ea58-78d5-f97e-93e2-03733ba0f47f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.45
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "daff8144-5abd-8a8d-52e4-1c641fefff93",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "c4fc94bf-f02d-bc68-a0fb-13b08014db7e",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "476bebb0-a5cd-a385-d84b-a02c478fb70b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "fc1a8450-506e-fd42-1bb9-2175e34360ee",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0861d65a-f76f-b312-588b-024bf9ad2fea",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "60a1c9c9-9051-a7fb-c6a4-5416f29f1783",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.76
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "02510f8e-8b09-491b-87a3-2320cbbf977d",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "02510f8e-8b09-491b-87a3-2320cbbf977d",
+            "start": {
+              "cell": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "8429f3ec-a25f-f873-c63f-8c587a5a2031",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "6b4459a9-24b9-4c2e-b9bd-514a10589d16",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "18058772-f5f6-400e-b160-be23ca8b8208",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "85890a73-64d2-e814-c238-502ef526d0a7",
+              "2d2f0c1e-60b1-1b20-ffdd-6bd9c1e2a8ff",
+              "99196e28-ea3a-27a3-c6dd-7532ee9a3f40"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 3.28,
+          "lengthWithOutReserv": 3.12,
+          "start": "Извещатель  оптико-электронный пассивный объемный",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Извещатель  оптико-электронный пассивный объемный",
+          "start_sysname": "electroDetectorSpatial",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+          "finish_id": "8429f3ec-a25f-f873-c63f-8c587a5a2031",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "df7a9d7d-0cfa-13a5-e54b-064ea5bdc847",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "af850f11-e2b3-7784-bf44-a06bed38ba84",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.23
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "85890a73-64d2-e814-c238-502ef526d0a7",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "075276ca-12c5-2426-c07f-1f812f1acf08",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.27
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "2d2f0c1e-60b1-1b20-ffdd-6bd9c1e2a8ff",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ff95b937-890c-329f-d8a5-0eb4070861f2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "99196e28-ea3a-27a3-c6dd-7532ee9a3f40",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ce454db4-cba5-7a91-ab5c-f471f36a1bf3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "8429f3ec-a25f-f873-c63f-8c587a5a2031",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "7db1cca8-923c-7b5f-8b93-0c62000a3dcc",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "7db1cca8-923c-7b5f-8b93-0c62000a3dcc",
+            "start": {
+              "cell": "8429f3ec-a25f-f873-c63f-8c587a5a2031",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "61682948-2c83-b2ce-1369-c157e477750e",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "4264bfbd-19d8-4b08-a4cb-74dba27d8300",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "a40d8a72-5d09-45c0-9dd6-942fa3821406",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "99196e28-ea3a-27a3-c6dd-7532ee9a3f40"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 0.87,
+          "lengthWithOutReserv": 0.83,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Извещатель  оптико-электронный пассивный объемный",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Извещатель  оптико-электронный пассивный объемный",
+          "finish_sysname": "electroDetectorSpatial",
+          "start_id": "8429f3ec-a25f-f873-c63f-8c587a5a2031",
+          "finish_id": "61682948-2c83-b2ce-1369-c157e477750e",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "8429f3ec-a25f-f873-c63f-8c587a5a2031",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ce454db4-cba5-7a91-ab5c-f471f36a1bf3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "99196e28-ea3a-27a3-c6dd-7532ee9a3f40",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "dc59a519-fbc7-1a53-ffa8-b25019d7e571",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "61682948-2c83-b2ce-1369-c157e477750e",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "55499fcb-f111-653e-ebd8-fc82fc700993",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "55499fcb-f111-653e-ebd8-fc82fc700993",
+            "start": {
+              "cell": "61682948-2c83-b2ce-1369-c157e477750e",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "d1320aee-69c7-458d-bd7a-5a941bfab5e5",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "16601be6-55f3-4da7-9033-1dad5f2993fb",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "99196e28-ea3a-27a3-c6dd-7532ee9a3f40",
+              "2d2f0c1e-60b1-1b20-ffdd-6bd9c1e2a8ff",
+              "857c71dc-d6fb-6d27-0d6a-55b85318da8d",
+              "08a84794-e0fc-65f7-643d-dae96709eb84",
+              "9660c4d9-69e2-80fa-d556-1c562100c5bf",
+              "494c1052-67de-4a90-146a-4aca77b6f64e",
+              "62fdf736-c67f-fc14-2872-64b02679ede4",
+              "0a1e7e84-25ef-924a-222e-b418158b4f1d"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 10.3,
+          "lengthWithOutReserv": 9.81,
+          "start": "Извещатель  оптико-электронный пассивный объемный",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Извещатель  оптико-электронный пассивный объемный",
+          "start_sysname": "electroDetectorSpatial",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "61682948-2c83-b2ce-1369-c157e477750e",
+          "finish_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "61682948-2c83-b2ce-1369-c157e477750e",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "dc59a519-fbc7-1a53-ffa8-b25019d7e571",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "99196e28-ea3a-27a3-c6dd-7532ee9a3f40",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "ff95b937-890c-329f-d8a5-0eb4070861f2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "2d2f0c1e-60b1-1b20-ffdd-6bd9c1e2a8ff",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "687723a9-1293-9c42-68a5-5afae3042177",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "857c71dc-d6fb-6d27-0d6a-55b85318da8d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "25b22868-c309-9902-645b-f134bcf223c9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "08a84794-e0fc-65f7-643d-dae96709eb84",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0d8a2749-ac6a-2141-99ef-1f4e36829ad2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.23
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9660c4d9-69e2-80fa-d556-1c562100c5bf",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "2f56611c-4412-9e8b-1137-160a4fd32bfb",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 6.06
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "494c1052-67de-4a90-146a-4aca77b6f64e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "18b0bdca-27b2-6b8d-70c3-aad537b8c3a3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.23
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "62fdf736-c67f-fc14-2872-64b02679ede4",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0c1cf4ff-3ce9-fac2-6993-49c29edf03f9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.74
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0a1e7e84-25ef-924a-222e-b418158b4f1d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9f0264ad-075b-2aa0-4541-0192e8e5548f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "f1aafd17-fe06-677d-dae8-da6914d4b7f9",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "f1aafd17-fe06-677d-dae8-da6914d4b7f9",
+            "start": {
+              "cell": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "0e76d0ae-d201-4acf-957e-8bb6f3ffa5bd",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "fe0744ff-dbba-4ecc-8ff7-64721033a67f",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "0a1e7e84-25ef-924a-222e-b418158b4f1d"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 1.74,
+          "lengthWithOutReserv": 1.66,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Магнитоконтактный извещатель ",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Магнитоконтактный извещатель ",
+          "finish_sysname": "magneticDetector",
+          "start_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+          "finish_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9f0264ad-075b-2aa0-4541-0192e8e5548f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0a1e7e84-25ef-924a-222e-b418158b4f1d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9f0264ad-075b-2aa0-4541-0192e8e5548f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "d000da48-a931-652b-56b2-c8dd8648484f",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "cableline_data": {
+            "id": "d000da48-a931-652b-56b2-c8dd8648484f",
+            "start": {
+              "cell": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "62fdf736-c67f-fc14-2872-64b02679ede4",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "d36743cb-dc39-4b6f-bb20-4e48e9b99f8d",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "fcb615e0-e52a-47f1-bea8-073d532a6e1e",
+                  "name": "4x0.22 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "0a1e7e84-25ef-924a-222e-b418158b4f1d"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 1.65,
+          "lengthWithOutReserv": 1.57,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Извещатель  оптико-электронный пассивный объемный",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Извещатель  оптико-электронный пассивный объемный",
+          "finish_sysname": "electroDetectorSpatial",
+          "start_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+          "finish_id": "62fdf736-c67f-fc14-2872-64b02679ede4",
+          "start_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "finish_page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "3d221d64-ac1d-a685-3364-1e1cfd908ed3",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "9f0264ad-075b-2aa0-4541-0192e8e5548f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0a1e7e84-25ef-924a-222e-b418158b4f1d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "0c1cf4ff-3ce9-fac2-6993-49c29edf03f9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.74
+            },
+            {
+              "page_id": "e1f7b323-aa0c-4608-8dac-95c12c2c14b0",
+              "elem_id": "62fdf736-c67f-fc14-2872-64b02679ede4",
+              "elem_sysname": "electroDetectorSpatial",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1139 @@
+{
+  "floors": [
+    {
+      "floorData": {
+        "name": "Страница 1",
+        "index": 1,
+        "id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+        "floor": 0.1,
+        "ground": 2.8,
+        "ceiling": 2.8,
+        "routes": 2.6,
+        "netOutlet": 0.7,
+        "elOutlet": 0.7,
+        "outletPer": 1.2,
+        "elSwitch": 0.7,
+        "other": 0.7,
+        "measureUnits": 1,
+        "slab_height": 0.5,
+        "outlet_reserve": 1,
+        "rack_reserve": 1,
+        "cable_reserve": 5,
+        "wallWidth": 0.12,
+        "channelOccupancy": 0.5,
+        "marking": 1,
+        "project": "877afde5-24f1-48db-a231-ae71dcc83899",
+        "active": true
+      },
+      "scaling": 43,
+      "floorIdx": 1,
+      "floorHeight": 0,
+      "cableLog": [
+        {
+          "id": "c939dba2-6f47-dd8d-7b49-fdb853674c57",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "c939dba2-6f47-dd8d-7b49-fdb853674c57",
+            "start": {
+              "cell": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+              "port": 1,
+              "resource": "7dc42434-fa81-426b-9e43-032f6ccf0a58"
+            },
+            "finish": {
+              "cell": "e2242885-7118-b441-d76e-5744347cba75",
+              "port": 1,
+              "resource": "775ebfe1-3d11-46d6-bf3c-42d1865dd195"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": []
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 3.9,
+          "lengthWithOutReserv": 1.81,
+          "start": "Извещатель пожарный дымовой  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный дымовой",
+          "start_sysname": "fireAlarm",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+          "finish_id": "e2242885-7118-b441-d76e-5744347cba75",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            "1.1 BTMA"
+          ],
+          "finish_marking": [
+            "1.2 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "bdf7a6b1-ca3f-0441-064b-c1a928ad9a7d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.81
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "e2242885-7118-b441-d76e-5744347cba75",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "5a84e01a-b2aa-536d-26e5-30e3632bd59d",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "5a84e01a-b2aa-536d-26e5-30e3632bd59d",
+            "start": {
+              "cell": "e2242885-7118-b441-d76e-5744347cba75",
+              "port": 1,
+              "resource": "775ebfe1-3d11-46d6-bf3c-42d1865dd195"
+            },
+            "finish": {
+              "cell": "df9bfc01-084b-4104-b7b9-8352bee1bf54",
+              "port": 1,
+              "resource": "f0e2bf67-6c23-49f4-9e8f-1aa5c1fcf3d4"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": []
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 5.26,
+          "lengthWithOutReserv": 3.1,
+          "start": "Извещатель пожарный дымовой  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный дымовой",
+          "start_sysname": "fireAlarm",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "e2242885-7118-b441-d76e-5744347cba75",
+          "finish_id": "df9bfc01-084b-4104-b7b9-8352bee1bf54",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            "1.2 BTMA"
+          ],
+          "finish_marking": [
+            "1.3 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "e2242885-7118-b441-d76e-5744347cba75",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "619aac89-8bae-93ca-8763-f305228409bc",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.1
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "df9bfc01-084b-4104-b7b9-8352bee1bf54",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "e968518a-7f36-db9c-c6cb-6df7220a55dd",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "e968518a-7f36-db9c-c6cb-6df7220a55dd",
+            "start": {
+              "cell": "df9bfc01-084b-4104-b7b9-8352bee1bf54",
+              "port": 1,
+              "resource": "f0e2bf67-6c23-49f4-9e8f-1aa5c1fcf3d4"
+            },
+            "finish": {
+              "cell": "c2f3d195-37b4-cfe7-62c2-03ffa75f1782",
+              "port": 1,
+              "resource": "8e7998f3-5e7c-475e-903c-67e957631f0f"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": []
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 3.22,
+          "lengthWithOutReserv": 1.16,
+          "start": "Извещатель пожарный дымовой  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный дымовой",
+          "start_sysname": "fireAlarm",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "df9bfc01-084b-4104-b7b9-8352bee1bf54",
+          "finish_id": "c2f3d195-37b4-cfe7-62c2-03ffa75f1782",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            "1.3 BTMA"
+          ],
+          "finish_marking": [
+            "1.4 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "df9bfc01-084b-4104-b7b9-8352bee1bf54",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "a3c71851-f752-c428-a306-9462d3e76d20",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.16
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "c2f3d195-37b4-cfe7-62c2-03ffa75f1782",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "24409145-c411-0250-9874-e0a203ffee75",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "24409145-c411-0250-9874-e0a203ffee75",
+            "start": {
+              "cell": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+              "port": 1,
+              "resource": "7dc42434-fa81-426b-9e43-032f6ccf0a58"
+            },
+            "finish": {
+              "cell": "57f48564-cf15-0cb2-80db-235721f00b63",
+              "port": 1,
+              "resource": "76befec2-66d8-44f4-ab41-0733e85d1f4a"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "60805006-2cff-a031-a997-6f81d3f90724",
+              "41c6cc0d-18b1-39f4-4723-e5cc817b7321",
+              "2c34aea7-0f13-ddad-1b24-376c8dde3428",
+              "028f9ecb-7428-339a-e39b-c1476f01477e"
+            ]
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 8.52,
+          "lengthWithOutReserv": 6.21,
+          "start": "Извещатель пожарный дымовой  Port 1",
+          "finish": "Прибор приемно-контрольный (ППКП)",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный дымовой",
+          "start_sysname": "fireAlarm",
+          "finish_title": "Прибор приемно-контрольный (ППКП)",
+          "finish_sysname": "fireDevice",
+          "start_id": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+          "finish_id": "57f48564-cf15-0cb2-80db-235721f00b63",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            "1.1 BTMA"
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "82f15f4a-3fc5-95c9-bf07-d70ab29b4ade",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.23
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "60805006-2cff-a031-a997-6f81d3f90724",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "44952d18-1b6a-ab5d-cf04-433c469558dc",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "41c6cc0d-18b1-39f4-4723-e5cc817b7321",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "c195488f-e571-140a-a2b4-58ad16145fa5",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.15
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "2c34aea7-0f13-ddad-1b24-376c8dde3428",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "be4992a0-03e0-b4d8-cb54-be7dbae94bbd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.39
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "028f9ecb-7428-339a-e39b-c1476f01477e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "214b13ee-4556-09a9-656f-56c3370166d6",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "57f48564-cf15-0cb2-80db-235721f00b63",
+              "elem_sysname": "fireDevice",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "34be78cc-619b-1675-0495-8ea052329305",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "34be78cc-619b-1675-0495-8ea052329305",
+            "start": {
+              "cell": "97426432-b30d-2c2a-046f-d1a2cc96d829",
+              "port": 1,
+              "resource": "71f2c4af-53f0-406d-8548-b67c5c82a90a"
+            },
+            "finish": {
+              "cell": "1bc4c47d-cd17-076a-c007-53355fd5289a",
+              "port": 1,
+              "resource": "9fa70f74-76dd-4cbd-9048-f944bc388c83"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": []
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 5.16,
+          "lengthWithOutReserv": 3.01,
+          "start": "Извещатель пожарный дымовой  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный дымовой",
+          "start_sysname": "fireAlarm",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "97426432-b30d-2c2a-046f-d1a2cc96d829",
+          "finish_id": "1bc4c47d-cd17-076a-c007-53355fd5289a",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            "2.1 BTMA"
+          ],
+          "finish_marking": [
+            "2.2 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "97426432-b30d-2c2a-046f-d1a2cc96d829",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "2e60f08e-454e-0ff2-eb18-0a20f5266ec5",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.01
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "1bc4c47d-cd17-076a-c007-53355fd5289a",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "1eb76f31-57b4-ded7-eb93-fe514119af37",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "1eb76f31-57b4-ded7-eb93-fe514119af37",
+            "start": {
+              "cell": "97426432-b30d-2c2a-046f-d1a2cc96d829",
+              "port": 1,
+              "resource": "71f2c4af-53f0-406d-8548-b67c5c82a90a"
+            },
+            "finish": {
+              "cell": "57f48564-cf15-0cb2-80db-235721f00b63",
+              "port": 1,
+              "resource": "76befec2-66d8-44f4-ab41-0733e85d1f4a"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "588d5c2d-4fea-a5a0-4fcf-7f53a886c986",
+              "2c34aea7-0f13-ddad-1b24-376c8dde3428",
+              "028f9ecb-7428-339a-e39b-c1476f01477e"
+            ]
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 7.06,
+          "lengthWithOutReserv": 4.82,
+          "start": "Извещатель пожарный дымовой  Port 1",
+          "finish": "Прибор приемно-контрольный (ППКП)",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный дымовой",
+          "start_sysname": "fireAlarm",
+          "finish_title": "Прибор приемно-контрольный (ППКП)",
+          "finish_sysname": "fireDevice",
+          "start_id": "97426432-b30d-2c2a-046f-d1a2cc96d829",
+          "finish_id": "57f48564-cf15-0cb2-80db-235721f00b63",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            "2.1 BTMA"
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "97426432-b30d-2c2a-046f-d1a2cc96d829",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "ed8c0344-9ad6-6f8f-ba4e-6cae05fe4405",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.95
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "588d5c2d-4fea-a5a0-4fcf-7f53a886c986",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "445b60c3-a3a1-2dfe-7d1e-894e9b06399b",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.18
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "2c34aea7-0f13-ddad-1b24-376c8dde3428",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "be4992a0-03e0-b4d8-cb54-be7dbae94bbd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.39
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "028f9ecb-7428-339a-e39b-c1476f01477e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "214b13ee-4556-09a9-656f-56c3370166d6",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "57f48564-cf15-0cb2-80db-235721f00b63",
+              "elem_sysname": "fireDevice",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "98cab331-b30e-2c53-522c-773441042cc6",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "98cab331-b30e-2c53-522c-773441042cc6",
+            "start": {
+              "cell": "98a0a75c-3791-a6d4-25d4-300be5ff4d4c",
+              "port": 1,
+              "resource": "552364e1-7c81-4e07-9b4b-9321ac19855c"
+            },
+            "finish": {
+              "cell": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+              "port": 1,
+              "resource": "7dc42434-fa81-426b-9e43-032f6ccf0a58"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "ff40cded-d275-4b61-f3ff-45edaa3f1c8c",
+              "59a3383d-c918-2784-201b-9e151b9da35c",
+              "e71ba078-db82-f018-020c-7e9f07b0a435",
+              "074f9456-d66d-03f5-d6c1-da70c41f2373",
+              "f1bf3242-d9e0-01da-c333-6920603bda97",
+              "b0b5d671-7191-f5d2-b84f-c716c16589d2",
+              "60805006-2cff-a031-a997-6f81d3f90724"
+            ]
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 10.37,
+          "lengthWithOutReserv": 7.97,
+          "start": "Извещатель пожарный ручной  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Извещатель пожарный ручной",
+          "start_sysname": "pullStation",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "98a0a75c-3791-a6d4-25d4-300be5ff4d4c",
+          "finish_id": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            "1.1 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "98a0a75c-3791-a6d4-25d4-300be5ff4d4c",
+              "elem_sysname": "pullStation",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "676a5ca2-7208-1f16-32a1-6a0d809b0d2b",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "ff40cded-d275-4b61-f3ff-45edaa3f1c8c",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "f73de1cb-2c78-210c-552c-a73e522df9a9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "59a3383d-c918-2784-201b-9e151b9da35c",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "bc0da435-ac0a-bbd4-95b1-56f023242a70",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.73
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "e71ba078-db82-f018-020c-7e9f07b0a435",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "e63a34af-0a35-641d-bb75-35c64b75710d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "074f9456-d66d-03f5-d6c1-da70c41f2373",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "b2fef2f1-53b3-104e-a4da-c6d9671befa2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "f1bf3242-d9e0-01da-c333-6920603bda97",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "ad154a19-ea34-1497-6f1d-c35f41a955cc",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "b0b5d671-7191-f5d2-b84f-c716c16589d2",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "71e0ba04-a103-13a9-f473-1868c4995f7d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.9
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "60805006-2cff-a031-a997-6f81d3f90724",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "82f15f4a-3fc5-95c9-bf07-d70ab29b4ade",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.23
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "c46b602a-97e3-dfe3-4d61-ef17c403b09f",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "fac2d6ce-4056-a6ed-3910-eeca0629fb8b",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "fac2d6ce-4056-a6ed-3910-eeca0629fb8b",
+            "start": {
+              "cell": "43e9f2cb-5d4b-db59-a0f0-da697147db1d",
+              "port": 1,
+              "resource": "d1a51a30-fafe-4403-a6ff-7e397df1be4f"
+            },
+            "finish": {
+              "cell": "57f48564-cf15-0cb2-80db-235721f00b63",
+              "port": 1,
+              "resource": "76befec2-66d8-44f4-ab41-0733e85d1f4a"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "74a010fb-b492-22a8-0457-ec4bfe5aa444",
+              "05b15c2f-8cf4-96bc-752b-1ad860306d75",
+              "8f717a57-e5ef-3481-80f5-11d009b8f8aa",
+              "028f9ecb-7428-339a-e39b-c1476f01477e"
+            ]
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 6.06,
+          "lengthWithOutReserv": 3.87,
+          "start": "Сирена   Port 1",
+          "finish": "Прибор приемно-контрольный (ППКП)",
+          "finishLabel": "",
+          "start_title": "Сирена ",
+          "start_sysname": "fireSiren",
+          "finish_title": "Прибор приемно-контрольный (ППКП)",
+          "finish_sysname": "fireDevice",
+          "start_id": "43e9f2cb-5d4b-db59-a0f0-da697147db1d",
+          "finish_id": "57f48564-cf15-0cb2-80db-235721f00b63",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "43e9f2cb-5d4b-db59-a0f0-da697147db1d",
+              "elem_sysname": "fireSiren",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "eb93726d-f7c6-fac1-0a0e-b1c445d557d6",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "74a010fb-b492-22a8-0457-ec4bfe5aa444",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "8f438e03-4594-91b5-3647-0dc5cac999ff",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.06
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "05b15c2f-8cf4-96bc-752b-1ad860306d75",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "7d6c7fbf-6ed6-2288-f13c-497428784260",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.42
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "8f717a57-e5ef-3481-80f5-11d009b8f8aa",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "e76685aa-bce8-da0a-4933-409cb91f0717",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.3
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "028f9ecb-7428-339a-e39b-c1476f01477e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "214b13ee-4556-09a9-656f-56c3370166d6",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "57f48564-cf15-0cb2-80db-235721f00b63",
+              "elem_sysname": "fireDevice",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "5acead97-350c-029a-ebad-fdddd6f52dfd",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "5acead97-350c-029a-ebad-fdddd6f52dfd",
+            "start": {
+              "cell": "5c270d43-982f-851d-c9d1-1f0d03c29224",
+              "port": 1,
+              "resource": "c480d23b-12cd-4bc8-8c6b-ac65be1ebd0d"
+            },
+            "finish": {
+              "cell": "c2f3d195-37b4-cfe7-62c2-03ffa75f1782",
+              "port": 1,
+              "resource": "8e7998f3-5e7c-475e-903c-67e957631f0f"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": []
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.54,
+          "lengthWithOutReserv": 0.51,
+          "start": "Конечный елемент / Конечный элемент  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Конечный елемент",
+          "start_sysname": "fireEndDevice",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "5c270d43-982f-851d-c9d1-1f0d03c29224",
+          "finish_id": "c2f3d195-37b4-cfe7-62c2-03ffa75f1782",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            "1.4 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "5c270d43-982f-851d-c9d1-1f0d03c29224",
+              "elem_sysname": "fireEndDevice",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "a019dae0-0a43-5387-2cfc-4ecce657f588",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "c2f3d195-37b4-cfe7-62c2-03ffa75f1782",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "db9349b4-e4e4-8a40-9323-deaa30d3f8ec",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "cableline_data": {
+            "id": "db9349b4-e4e4-8a40-9323-deaa30d3f8ec",
+            "start": {
+              "cell": "8e85aba8-7d95-6db2-f076-16b68052c790",
+              "port": 1,
+              "resource": "7c191d96-1df6-40bd-a088-e208e35d3284"
+            },
+            "finish": {
+              "cell": "1bc4c47d-cd17-076a-c007-53355fd5289a",
+              "port": 1,
+              "resource": "9fa70f74-76dd-4cbd-9048-f944bc388c83"
+            },
+            "cable": {
+              "id": "CA012",
+              "name": "Кабель 3x1.5",
+              "section": 7.8,
+              "section_name": "3x1.5",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 3,
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": []
+          },
+          "cableID": "CA012",
+          "cableType": "Кабель 3x1.5",
+          "cableSection": 7.8,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.54,
+          "lengthWithOutReserv": 0.51,
+          "start": "Конечный елемент / Конечный элемент  Port 1",
+          "finish": "Извещатель пожарный дымовой",
+          "finishLabel": "",
+          "start_title": "Конечный елемент",
+          "start_sysname": "fireEndDevice",
+          "finish_title": "Извещатель пожарный дымовой",
+          "finish_sysname": "fireAlarm",
+          "start_id": "8e85aba8-7d95-6db2-f076-16b68052c790",
+          "finish_id": "1bc4c47d-cd17-076a-c007-53355fd5289a",
+          "start_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "finish_page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            "2.2 BTMA"
+          ],
+          "full_path": [
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "8e85aba8-7d95-6db2-f076-16b68052c790",
+              "elem_sysname": "fireEndDevice",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "336bac40-ed34-b2f6-b06d-de97e3b10105",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "556b3ae8-942d-48f6-87e2-6b408016c1e6",
+              "elem_id": "1bc4c47d-cd17-076a-c007-53355fd5289a",
+              "elem_sysname": "fireAlarm",
+              "elem_type": "firealarm.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        }
+      ]
+    }
+  ]
+}
