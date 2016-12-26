@@ -1,6 +1,6 @@
 var floors = [];        //массив элементов по этажам
-var yStep = 60;         //шаг отрисовки по x
-var xStep = 60;         //шаг отрисовки по y
+var yStep = 100;         //шаг отрисовки по x
+var xStep = 100;         //шаг отрисовки по y
 var y = 100;            //начальное положение первого элемента по x
 var x = 100;            //начальное положение первого элемента по н
 var populationArr =[]   // матрица отслеживания расположения элементов
@@ -17,14 +17,16 @@ var elem_types = {
   ,'security.Element' : 'controlPanel'
 }
 var device_riser = {
-  'security.Element':['riser_up', 'riser_down']
+   'security.Element':['riser_up', 'riser_down']
+  ,'firealarm.Element':['riser_up', 'riser_down']
 }
 
 var markupArray = [];
 markupArray['fireAlarm'] =  $('#fireAlarm').html().replace(/(\r\n|\n|\r|\t)/gm,"");
-markupArray['pullStation'] =  $('#pullStation').html().replace(/(\r\n|\n|\r|\t)/gm,"");; 
-markupArray['fireEndDevice'] =  $('#fireEndDevice').html().replace(/(\r\n|\n|\r|\t)/gm,"");; 
-markupArray['fireSiren'] =  $('#fireSiren').html().replace(/(\r\n|\n|\r|\t)/gm,"");;
+markupArray['pullStation'] =  $('#pullStation').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+markupArray['fireEndDevice'] =  $('#fireEndDevice').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+markupArray['fireSiren'] =  $('#fireSiren').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+markupArray['floorRect'] =  $('#floorRect').html().replace(/(\r\n|\n|\r|\t)/gm,"");
 
 var graph = new joint.dia.Graph;
 var paper = new joint.dia.Paper({
@@ -39,14 +41,15 @@ var paper = new joint.dia.Paper({
 joint.shapes.defs = {}; 
 joint.shapes.defs.NewEl = joint.dia.Element.extend({
   markup: '',
+  size: { width: 150, height: 60 },
   defaults:{
-      type:'defs.NewEl',
+      type:'',
       position:{ x: 10 , y: 10 },
       atrrs:{}
   }
  });
      
-var NewEl = function(x, y, width, height, markup, text, text_location, text_color, rect_color) {
+var NewEl = function(x, y, width, height, markup, text, text_location, text_color, rect_color, zIndex) {
   
   var rect = {};
   if(!markup){
@@ -57,11 +60,14 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
             height: height
          }
   }
+  
+  
   var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
   var text_color = text_color || "#000";
   var rect_color = rect_color || "#000";
   var text = text || '';
   var text_location = text_location || 'top';
+  var zIndex = zIndex;
   
   //положение текста по умолчанию соответствует значению text_location = 'top'
   var text_x, text_y, text_transform;
@@ -111,6 +117,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
     var cell = new joint.shapes.defs.NewEl({
         markup: markup,
         type:'defs.NewEl',
+        z:zIndex,
          position:{ x: x , y: y },
          attrs:{
            'text':{
@@ -122,7 +129,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
              fill: text_color,
              'font-size': '10px'
            },
-           rect: rect //ghb отсуствии markup формируется в начале
+           rect: rect, //ghb отсуствии markup формируется в начале
           },
           ports: {
             groups: {},
@@ -135,7 +142,142 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
     return cell;
 };
 
-function getMaxY(floor){
+var NewFloorRect = function(x, y, width, height, markup, text, text_location, text_color, rect_color, zIndex) {
+  var x = x;
+  var y = y;
+  var width = width;
+  var height = height;
+  var rect = {};
+  if(!markup){
+    var rect = {
+            fill: '#ffffff',
+            stroke: '#000000',
+            width: width,
+            height: height
+         }
+  }
+  
+  
+  var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
+  var text_color = text_color || "#000";
+  var rect_color = rect_color || "#000";
+  var text = text || '';
+  var text_location = text_location || 'top';
+  var zIndex = zIndex;
+  
+  //положение текста по умолчанию соответствует значению text_location = 'top'
+  var text_x, text_y, text_transform;
+  var text_r_x, text_r_y, text_r_transform;
+
+  text_r_x = width-15;
+  text_r_y = (yStep/2);
+  text_r_transform = "rotate(270 "+(width-15)+","+(yStep/2)+")" 
+//  text_r_transform="";
+  
+  text_x = 15;
+  text_y = (yStep/2);
+  text_transform = "rotate(270 "+(19)+","+(yStep/2)+")" 
+    
+  var cell = new joint.shapes.defs.NewEl({
+        markup: markup,
+        type:'defs.NewFloorRect',
+//        size:{'width':width,'height':height},
+        z:zIndex,
+         position:{ x: x , y: y },
+         attrs:{
+           
+           text:{
+             'z-index':1000,
+             text: text,
+             transform: text_transform,
+             x: text_x,
+             y: text_y,
+             'text-anchor': 'middle',
+             fill: text_color,
+             'font-size': '10px'
+           },
+          '.textr':{
+             'z-index':1000,
+             text: text,
+             transform: text_r_transform,
+             x: text_r_x,
+             y: text_r_y,
+             'text-anchor': 'middle',
+             fill: text_color,
+             'font-size': '10px'
+           },           
+           '.center':{
+            fill: '#ffffff',
+            stroke: '#000000',
+            width: width,
+            height: height
+            },
+           '.left':{
+             fill: '#ffffff',
+             stroke: '#000000',
+             height: height,
+             width: 30,
+           },
+           '.rigth':{
+             x: width-30,
+             fill: '#ffffff',
+             stroke: '#000000',
+             height: height,
+             width: 30,
+           }
+          },
+
+     });
+
+  cell.resize(width,height,['top-right']);
+//    graph.addCell(cell);
+    return cell;
+};
+     
+var NewLine = function(x1, y1, x2, y2, markup, text, text_location, text_color, line_color, line_width) {
+
+  var x1 = x1;
+  var y1 = y1;
+  var x2 = x2;
+  var y2 = y2;
+  var markup = markup || '<g class="rotatable"><line x1="0" y1="0" x2="100" y2="100" stroke="#765373" stroke-width="8"/></g>';
+  var text = text || '';
+  var text_location = text_location || 'top';
+  var text_color = text_color || "#000";
+  var line_color = line_color || "#000";
+  var line_width = line_width || 2;
+   
+    var cell = new joint.shapes.defs.NewEl({
+        markup: markup,
+        size: { },
+        type:'defs.NewEl',
+         position:{ x: x1 , y: y1 },
+         attrs:{
+           'text':{
+             text: text,
+//             transform: text_transform,
+             x: x1+50,
+             y: -10,
+             'text-anchor': 'middle',
+             fill: text_color,
+             'font-size': '10px'
+           },
+           'line':{
+             x1:x1,
+             y1:0,
+             x2:x2,
+             y2:0
+           }
+          }
+     });
+
+//  cell.resize(width,height,['top-right']);
+//    graph.addCell(cell);
+    return cell;
+};
+
+function getMaxY(t){
+
   var max = y ;
   if(populationArr.length){
      populationArr.forEach(function(item, i, arr) {
@@ -144,6 +286,12 @@ function getMaxY(floor){
 
   } 
   max = max + Math.abs(yStep);
+  
+    if(t){
+    window.console.log(populationArr);
+    window.console.log(max);
+  }
+  
   return max;
 }
 function getNewCoord(x,y,xFix){
@@ -198,9 +346,9 @@ function getLink(source_id, target_id){
 //                name: 'oneSide',
             args: {
               side: 'bottom',
-                startDirections: ['right','left','top','bottom'],
-                endDirections: ['left','right','top','bottom'],
-      //          excludeTypes : ['defs.NewEl'],
+                startDirections: ['right','left'],
+                endDirections: ['left','right'],
+                excludeTypes : ['defs.NewEl'],
                 step: 2,
       //                    padding: 5
             }
@@ -209,7 +357,37 @@ function getLink(source_id, target_id){
   
   return link;
 }
-
+function getLinkFirst(source_id, target_id){
+  var source_id = source_id;
+  var target_id = target_id;
+  
+  var link = new joint.dia.Link({
+     source: { id: source_id, port: 'abc'  },
+     target: { id: target_id, port: 'abc' },
+     attrs:{
+       manhattan:true //ортогональное расположение
+     }
+  });
+  link.set('router', {
+            name: 'manhattan',
+//                name: 'oneSide',
+            args: {
+//              side: 'bottom',
+                startDirections: ['right'],
+                endDirections: ['left'],
+//                excludeTypes : ['defs.NewEl'],
+                step: 1,
+      //                    padding: 5
+            }
+  });
+//  link.set('connector', { name: 'normal' }); 
+  
+  return link;
+}
+function sortByFloor(a, b) {
+  if (a.floor_number > b.floor_number) return -1;
+  if (a.floor_number < b.floor_number) return 1;
+}
 
 
 function draw(elem_type){
@@ -226,10 +404,10 @@ function draw(elem_type){
     devices = getDevices(cableLog, elem_type);
     device_risers = getDeviceRisers(cableLog, elem_type);
     //массив объектов source - target
-    source_target = getSourceTarget(cableLog,devices);
+    source_target = getSourceTarget(cableLog,elem_type, devices, j);
     
     //отрисовка девайсов и зависимых элементов
-    drawSorceTaeget(cableLog, source_target, j);
+    drawSorceTaeget( source_target, j);
  
   }
 }
@@ -284,65 +462,87 @@ function getDeviceRisers(cableLog, elem_type){
   return devices;
 }
 //получаем объекты source - target по ид девайсов
-function getSourceTarget(cableLog,devices){
+function getSourceTarget(cableLog, elem_type, devices, floorNumber){
   var result = [];
   var cableLog = cableLog;
+  var elem_type = elem_type;
+  var floorNumber = floorNumber;
   var device = false;
+  
   var another_devices = false;
+  var anotherFloor_devices = false;
   
       for(var device_id in devices){
-        device = getNextLine(cableLog, 0, device_id);//последовательное получение линий элементов (согласно маркировке)
+        device = getNextLine(floorNumber, 0, device_id);//последовательное получение линий элементов (согласно маркировке)
         while(device){
-          result.push(device);
-          device = getNextLine(cableLog, +device.number, device_id);//последовательное получение линий элементов (согласно маркировке)
+            result.push(device);
+          device = getNextLine(floorNumber, +device.number, device_id);//последовательное получение линий элементов (согласно маркировке)
         }
-        another_devices = getAnotherLine(cableLog, device_id);//получение линий элементов с пустой маркировкой
+        another_devices = getAnotherLine(floorNumber, device_id);//получение линий элементов с пустой маркировкой
         result = result.concat(another_devices);
+      }
+      
+      //замена riser на device
+      for(var el in result){
+        if(device_riser[elem_type].indexOf(result[el].target.name) != -1 ){
+            anotherFloor_devices = getAnotherFloorLine( result[el], floorNumber);//получение линий элементов с пустой маркировкой
+            delete result[el];
+            result = result.concat(anotherFloor_devices);
+        }
       }
   return result;
 }
 
 //последовательное получение линий элементов (согласно маркировке)
-function getNextLine(cableLog, number, device_id ){
-  var cableLog = cableLog;
+function getNextLine(floorNumber, number, device_id ){
+  
+  var floorNumber = floorNumber;
   var device_id = device_id;
+  var cableLog;
   var device;
   var cableLog = cableLog;
   var number = number;
+  
+  cableLog = floors[floorNumber].cableLog;
   
   for(var i in cableLog){
     device = {};
     device.source = {};
     device.target = {};
 
-      
+    device.floor_number = floorNumber;
+    device.index = i;
+    
     if(cableLog[i].finish_id == device_id){
       device.source.id = cableLog[i].finish_id;
       device.source.name = cableLog[i].finish_sysname;
       device.source.marking = cableLog[i].finish_marking[0];
-      device.index = i;
+
       device.target.id = cableLog[i].start_id;
       device.target.name = cableLog[i].start_sysname;
       device.target.marking = cableLog[i].start_marking[0];
       device.target.location = 'start';
-      
-        device.number = device.target.marking !='' ? device.target.marking.split('.')[0] : '' ;
+      try{
+        device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
         if( device.number == (number+1)){
           return device;
         }
+      } catch(err){
+        window.console.log(device.target);
+      }
     }
     
     if(cableLog[i].start_id == device_id){
       device.source.id = cableLog[i].start_id;
       device.source.name = cableLog[i].start_sysname;
       device.source.marking = cableLog[i].start_marking[0];
-      device.index = i;
+
       device.target.id = cableLog[i].finish_id;
       device.target.name = cableLog[i].finish_sysname;
       device.target.marking = cableLog[i].finish_marking[0];
       device.target.location = 'finish';
       
-      device.number = device.target.marking !='' ? device.target.marking.split('.')[0] : '' ;
+      device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
 
       if( device.number == (number+1)){
           return device;
@@ -352,29 +552,36 @@ function getNextLine(cableLog, number, device_id ){
   return false;
 }
 //получение линий элементов с пустой маркировкой
-function getAnotherLine(cableLog, device_id){      
-  var cableLog = cableLog;
+function getAnotherLine(floorNumber, device_id){      
+  
+  var floorNumber = floorNumber;
   var device_id = device_id;
+  var cableLog ;
   var device ;
   var result = [];
+  
+  cableLog = floors[floorNumber].cableLog;
   
   for(var i in cableLog){
     device = new Object();
     device.source = {};
     device.target = {};
 
+    device.floor_number = floorNumber;
+    device.index = i;
+    
     if(cableLog[i].finish_id == device_id){
       
       device.source.id = cableLog[i].finish_id;
       device.source.name = cableLog[i].finish_sysname;
       device.source.marking = cableLog[i].finish_marking[0];
-      device.index = i;
+
       device.target.id = cableLog[i].start_id;
       device.target.name = cableLog[i].start_sysname;
       device.target.marking = cableLog[i].start_marking[0];
       device.target.location = 'start';
       
-        device.number = device.target.marking !='' ? device.target.marking.split('.')[0] : '' ;
+        device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
         if(device.number == ""){
           result.push(device);
         }
@@ -384,7 +591,7 @@ function getAnotherLine(cableLog, device_id){
       device.source.id = cableLog[i].start_id;
       device.source.name = cableLog[i].start_sysname;
       device.source.marking = cableLog[i].start_marking[0];
-      device.index = i;
+
       device.target.id = cableLog[i].finish_id;
       device.target.name = cableLog[i].finish_sysname;
       device.target.marking = cableLog[i].finish_marking[0];
@@ -399,18 +606,77 @@ function getAnotherLine(cableLog, device_id){
   } 
   return result;
 }
+//получение линий элементов после riser из другого этажа
+function getAnotherFloorLine( outside_device, floorNumber){ 
+  var cableLog;
+  var outside_device = outside_device;
+  var floorNumber = floorNumber;
+  var device ;
+  var result = [];
+  
+  for(var j in floors){
+    if(j != floorNumber){
+      cableLog = floors[j].cableLog;
+      for(var i in cableLog){
+        device = new Object();
+        device.source = {};
+        device.target = {};
+
+        device.index = i;
+        device.floor_number = j;
+        
+        if(cableLog[i].finish_id == outside_device.target.id){
+
+          device.source.id = outside_device.source.id;//подмена id 
+          device.source.name = outside_device.source.name;//подмена name 
+          device.source.marking = cableLog[i].finish_marking[0];
+          
+          device.target.id = cableLog[i].start_id;
+          device.target.name = cableLog[i].start_sysname;
+          device.target.marking = cableLog[i].start_marking[0];
+          device.target.location = 'start';
+
+            device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
+              result.push(device);
+        }
+
+        if(cableLog[i].start_id == outside_device.target.id ){
+          device.source.id = outside_device.source.id;//подмена id 
+          device.source.name = outside_device.source.name;//подмена name 
+          device.source.marking = cableLog[i].start_marking[0];
+
+          device.target.id = cableLog[i].finish_id;
+          device.target.name = cableLog[i].finish_sysname;
+          device.target.marking = cableLog[i].finish_marking[0];
+          device.target.location = 'finish';
+
+          device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
+
+            result.push(device);
+         
+        }    
+      } 
+    }
+  }
+  return result;
+}
 //обход элементов source-target для отрисовки согласно массиву 
-function drawSorceTaeget(cableLog, source_target, floorNumber){
+function drawSorceTaeget( source_target, floorNumber){
+  
   var source_target = source_target;
+  var floorNumber = floorNumber;
   var startX = x;
   var startY = y;
+  var cableLog;
+
+  source_target.sort(sortByFloor);//сортировка по этажам
   
   for(var i in source_target ){
 
     if(+floorNumber > 0) {
       startY = getMaxY();
     } 
-      
+    cableLog = floors[source_target[i].floor_number].cableLog;  
     drawDevice2(cableLog, source_target[i], startX, startY, i);
   }
 }
@@ -422,14 +688,39 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
       var index = index;
       var device = device;
       var point = {};
+      var floorRect;
+      var rect_y; //y координата начала прямоугольника этажа
+      var rect_height;//высота прямоугольника этажа
+
+      //============Элемент этажа
+      floorRect = graph.getCell('Этаж '+device.floor_number);
+         
+      if ( typeof floorRect == 'undefined'){
+
+        if(+device.floor_number == floors.length-1){
+          rect_y = minY - 30;
+          rect_height = 1;
+        } else {
+          rect_y = getMaxY() - yStep/2;
+          rect_height = 1;
+        }
+        
+          
+//        var NL = NewLine( 0, rect_y, paperWidth, rect_y, markupArray['floorLine'], 'Этаж '+(+device.floor_number+1), 'top', 'green', 'green', 8)
+        var NR = NewFloorRect( 5, rect_y, paperWidth-10, rect_height, markupArray['floorRect'], 'Этаж '+(+device.floor_number+1), 'top', null, 'green',0)
+        NR.set('id', 'Этаж '+device.floor_number);
+        graph.addCell([NR]); 
+        xStep = Math.abs(xStep);//ifu в положительное значение
+      } 
+      //============Элемент этажа
       
-      //прорисовываем прибор
-//      
+      
+      //прорисовываем прибор 
       point = getNewCoord(x,y,true);
       if ( typeof graph.getCell(device.source.id) == 'undefined'){
         //вычисление свободной y-ячейки
         //добавление элемента
-        var FD = NewEl(x, y,widthEl, heightEl, markupArray[device.source.name], device.source.marking ? device.source.marking : device.source.name, 'left', null, 'green')
+        var FD = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.marking ? device.source.marking : device.source.name, 'left', null, 'green')
         FD.set('id', device.source.id);
         graph.addCell([FD]);
         
@@ -448,14 +739,21 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
         x = point.x;
         y = point.y;
         //добавление элемента
-        var FD = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking ? device.target.marking : device.target.name, 'left', null, 'green')
+        var FD = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking ? device.target.marking : device.target.name, 'top', null, 'green')
         FD.set('id', device.target.id);
         graph.addCell([FD]);
-        graph.addCell([getLink(device.source.id, device.target.id)]); 
+        graph.addCell([getLinkFirst(device.source.id, device.target.id)]);
+        
       }
       
 //      if(device.number != '')
         drawElement2(cableLog, device.source.id, device.target.id, x, y, device.index, device.number, device.target.location);
+        
+        if ( typeof floorRect != 'undefined'){
+          window.console.log(floorRect.attributes.position.x);
+          floorRect.resize(paperWidth-10,getMaxY() - yStep/2 - floorRect.attributes.position.y,['top-right']);
+        }
+        
 
 }
 //Отрисовка элемента по target_id
@@ -521,7 +819,7 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
             y = point.y;
   //            var coor = "x:"+x+" y:"+y;  
   //          добавление элемента
-            var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_marking ? new_marking : new_elem_sysname,'left', null, 'green')
+            var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_marking ? new_marking : new_elem_sysname,'top', null, 'green')
             IZ.set('id', new_target_id);
             graph.addCell([IZ]);
   //          добавление элемента
@@ -547,12 +845,12 @@ $(document).ready(function(e)
   $.ajax({
     type: 'POST',
     dataType:'json',
-    url: '../data/data_spusk.json',
+    url: '../data/data_pozh2.json',
     success: function(response){
       var data = response;
       floors = data.floors;
-//      draw('fireDevice.Element');
-      draw('security.Element');
+      draw('firealarm.Element');
+//      draw('security.Element');
     }
 	});
 });

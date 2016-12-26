@@ -67,3 +67,25 @@
 </g>
 </g>
 </svg>
+
+<svg style="display:none;" version="1.1" id="floorLine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="110px" height="110px" viewBox="0 0 110 110" enable-background="new 0 0 110 110" xml:space="preserve">
+<g><text></text></g>  
+<g>
+  <line x1="5" y1="5" x2="100" y2="200" stroke="#765373" stroke-width="8"/> 
+</g>
+</svg>
+
+
+<svg style="display:none;" version="1.1" id="floorRect" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="110px" height="110px" viewBox="0 0 110 110" enable-background="new 0 0 110 110" xml:space="preserve">
+<g class="rotatable">  
+  <g class="scalable">
+    <rect class="center"/>
+    <rect class="left"/>
+    <rect class="rigth"/>
+  </g>
+   <g ><text></text></g> 
+   <g ><text class="textr"></text></g> 
+</g>
+</svg>
