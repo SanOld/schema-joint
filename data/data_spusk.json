@@ -1,0 +1,3431 @@
+{
+  "floors": [
+    {
+      "floorData": {
+        "name": "Страница 1",
+        "project": "4ef16169-4739-4f43-8cb5-3e9163c839c6",
+        "index": 1,
+        "id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+        "floor": 0.1,
+        "ground": 2.8,
+        "ceiling": 2.8,
+        "routes": 2.6,
+        "netOutlet": 0.7,
+        "elOutlet": 0.7,
+        "outletPer": 1.2,
+        "elSwitch": 0.7,
+        "other": 0.7,
+        "measureUnits": 1,
+        "slab_height": 0.5,
+        "outlet_reserve": 1,
+        "rack_reserve": 1,
+        "cable_reserve": 5,
+        "wallWidth": 0.12,
+        "channelOccupancy": 0.5,
+        "marking": 1,
+        "active": false
+      },
+      "scaling": 43,
+      "floorIdx": 1,
+      "floorHeight": 0,
+      "cableLog": [
+        {
+          "id": "4a967bde-d6bb-3013-c99d-ba93e0a11fff",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "4a967bde-d6bb-3013-c99d-ba93e0a11fff",
+            "start": {
+              "cell": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "bc702af8-6a15-4cca-910c-2600460fd460",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "36deb1f1-b4b3-42a5-aa72-dd328e8e468e",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "b23b822e-b206-40b5-bb9a-ae763d4c697f",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "13f01270-7ca8-be64-61e7-0d57cf083941",
+              "fe460c99-0741-589c-9307-65c71682d4be",
+              "56f41977-483e-c07b-aeaf-aee16cfcd68a",
+              "1348a5d0-2c66-b11e-877b-7545a16249df",
+              "a1c1dbfb-2755-3e92-4ca9-9b22130f813f",
+              "998d0d53-55c7-562d-d3ec-146cd5770f66",
+              "d782fa43-cb7d-8ba9-127d-f3df08711568",
+              "5a636db8-565b-e256-aded-4528173c2315",
+              "2ab7f582-d546-cff8-1c71-5ed3356e61b1",
+              "fbce9b63-3c53-0f55-5115-3109b07092ce",
+              "0f13bba1-720b-9eed-d02a-bcd167f49c9f"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 13.89,
+          "lengthWithOutReserv": 13.23,
+          "start": "Контрольная панель",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Контрольная панель",
+          "start_sysname": "controlPanel",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+          "finish_id": "bc702af8-6a15-4cca-910c-2600460fd460",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+              "elem_sysname": "controlPanel",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "385ec2b4-456f-21bb-8361-3a906c7ed6e3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "13f01270-7ca8-be64-61e7-0d57cf083941",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "645c4945-fdb4-7740-891f-3326b4b2a8dd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fe460c99-0741-589c-9307-65c71682d4be",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "06567b6c-7456-f960-4bbd-3f49a23b8169",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.42
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "56f41977-483e-c07b-aeaf-aee16cfcd68a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "2a3b60c2-8ea1-590d-1793-ad6e947ceee9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.82
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "1348a5d0-2c66-b11e-877b-7545a16249df",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e7c99f79-2e37-ac8b-ea16-395a47e57b54",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a1c1dbfb-2755-3e92-4ca9-9b22130f813f",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "5977421d-2c9e-4557-45c8-f50d95336e69",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "998d0d53-55c7-562d-d3ec-146cd5770f66",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "859350a4-4fa6-6e27-eae1-1a2cd080dc49",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "d782fa43-cb7d-8ba9-127d-f3df08711568",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "0ea59ed3-e69d-13c1-c8f3-dde674779e04",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.82
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "5a636db8-565b-e256-aded-4528173c2315",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e4c0c835-0b33-7c50-bcbe-6fa085c9e385",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.31
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "2ab7f582-d546-cff8-1c71-5ed3356e61b1",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "16db524a-573b-5e0c-e083-c62fc8e8f490",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.46
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fbce9b63-3c53-0f55-5115-3109b07092ce",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "7126e5d6-77eb-2277-4e51-6e395b544e15",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "0f13bba1-720b-9eed-d02a-bcd167f49c9f",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "ecd9222b-e8a8-e637-6eb7-8970a65bbc2d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "bc702af8-6a15-4cca-910c-2600460fd460",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "171b3119-e401-45e3-5986-cdb288b49a65",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "171b3119-e401-45e3-5986-cdb288b49a65",
+            "start": {
+              "cell": "52365f5a-ed0d-49cc-a60c-8d2042bd144b",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "fdcd46af-ffe0-42f3-85a0-c7cf58e30315",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "a008a4aa-afe6-4ac4-bdca-18d2f07e67bd",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "12657d27-d691-4e44-84c8-f3c8ddd835b5",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "c7c1926a-5213-8235-2108-ac4d335308a4",
+              "976efb6a-acf6-4cbf-ae4f-1a27d95ac2ec",
+              "e098010e-1080-f331-13ad-05974a0e40b9",
+              "7f1e5a32-36ff-50d0-9119-0d5b57051e05",
+              "91fa0bac-189a-afec-53fd-bca857d0f36d",
+              "e8be8f7c-5ddd-0a65-405d-858a9cc3522d"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 12.9,
+          "lengthWithOutReserv": 12.29,
+          "start": "Магнитоконтактный извещатель ",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Магнитоконтактный извещатель ",
+          "start_sysname": "magneticDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "52365f5a-ed0d-49cc-a60c-8d2042bd144b",
+          "finish_id": "fdcd46af-ffe0-42f3-85a0-c7cf58e30315",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "52365f5a-ed0d-49cc-a60c-8d2042bd144b",
+              "elem_sysname": "magneticDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "1308255f-afb7-6836-7489-b8d69d52efa7",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "c7c1926a-5213-8235-2108-ac4d335308a4",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "c7a244e2-ae55-0ca9-ceb1-d9d55afc079e",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.83
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "976efb6a-acf6-4cbf-ae4f-1a27d95ac2ec",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "34251d14-321b-ba65-f82d-d8747a953866",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 5.63
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e098010e-1080-f331-13ad-05974a0e40b9",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "95f2b379-21d2-572c-bb55-04dfda749d3a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.31
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "7f1e5a32-36ff-50d0-9119-0d5b57051e05",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "baf63c82-e08c-094f-b31c-1b0d02ce653a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.04
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "91fa0bac-189a-afec-53fd-bca857d0f36d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "43d7bdb7-29a0-4b7d-ad05-944f3951f5ce",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e8be8f7c-5ddd-0a65-405d-858a9cc3522d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "3e6b030d-9d09-ba2c-60c2-68a6bdbb7e0f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fdcd46af-ffe0-42f3-85a0-c7cf58e30315",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "371625b4-d0e8-42a2-065e-31da46071d50",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "371625b4-d0e8-42a2-065e-31da46071d50",
+            "start": {
+              "cell": "fdcd46af-ffe0-42f3-85a0-c7cf58e30315",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "f36b7ea1-5ee2-4da4-b700-aa05f5d115b9",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "e162372b-7cc2-448f-8403-a9794fecf13f",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "fdd3feaf-8e90-4393-b500-8cc25aad39e8",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "a3559558-c75d-4126-15d3-c03f8e9173bb",
+              "91fa0bac-189a-afec-53fd-bca857d0f36d",
+              "c8d22ce9-fe6a-2caf-155a-e56114f86dbd",
+              "fd51e27d-4c33-5590-1654-5664c09832c6"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.75,
+          "lengthWithOutReserv": 2.62,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "fdcd46af-ffe0-42f3-85a0-c7cf58e30315",
+          "finish_id": "f36b7ea1-5ee2-4da4-b700-aa05f5d115b9",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fdcd46af-ffe0-42f3-85a0-c7cf58e30315",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "29c88aea-1414-131a-5a45-8a3b706d366c",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a3559558-c75d-4126-15d3-c03f8e9173bb",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "38d0ef0d-00e3-22d3-4331-a989df855dff",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "91fa0bac-189a-afec-53fd-bca857d0f36d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "073ff246-8e72-5ba9-6c61-7c692a1eda62",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.04
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "c8d22ce9-fe6a-2caf-155a-e56114f86dbd",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a2abf88a-d78d-ef56-de23-eb1c94c194a8",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fd51e27d-4c33-5590-1654-5664c09832c6",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "c7c688ae-ebc6-1717-21f4-3fe623dbc3f9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "f36b7ea1-5ee2-4da4-b700-aa05f5d115b9",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "84039443-019c-9b9a-46ec-f610819af1e9",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "84039443-019c-9b9a-46ec-f610819af1e9",
+            "start": {
+              "cell": "f36b7ea1-5ee2-4da4-b700-aa05f5d115b9",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "eb2e39c8-6689-449e-8666-21c9b08d18dd",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "c7679334-73dc-4a21-977e-9e0c1abbc390",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "12f25e91-e9b0-42c5-8cac-593568d4a420",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "8a169a07-e228-0fdb-97e1-2e84ab01edde",
+              "c8d22ce9-fe6a-2caf-155a-e56114f86dbd",
+              "5df5499f-b7ab-6b21-2a50-2b840bd89a52",
+              "a2c12a47-a83f-869a-6ec0-32b7fc5e770e"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 4.06,
+          "lengthWithOutReserv": 3.87,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "f36b7ea1-5ee2-4da4-b700-aa05f5d115b9",
+          "finish_id": "eb2e39c8-6689-449e-8666-21c9b08d18dd",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "f36b7ea1-5ee2-4da4-b700-aa05f5d115b9",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "2b27edfd-f999-bebd-00b1-2e226b93d72d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "8a169a07-e228-0fdb-97e1-2e84ab01edde",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "daa0ada5-7457-a5ca-4a47-894cbe42d962",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "c8d22ce9-fe6a-2caf-155a-e56114f86dbd",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "4533e9ff-c3b2-e837-359c-ac517931b5c5",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.29
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "5df5499f-b7ab-6b21-2a50-2b840bd89a52",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "f4b85655-1cd8-44d0-ea17-20bb33a9e759",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a2c12a47-a83f-869a-6ec0-32b7fc5e770e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "3b876809-0bb4-f1e8-3c2b-a1a897b940a0",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "eb2e39c8-6689-449e-8666-21c9b08d18dd",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "09916549-c0ff-0e13-edc3-bbc53d84af84",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "09916549-c0ff-0e13-edc3-bbc53d84af84",
+            "start": {
+              "cell": "eb2e39c8-6689-449e-8666-21c9b08d18dd",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "bc702af8-6a15-4cca-910c-2600460fd460",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "89e73b52-cc1a-404e-af64-52377fd2ff4b",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "4ffda56f-f472-4cd1-8018-eff4c0eed0b8",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "baa70928-c9cb-b87f-9efc-3170f70063a4",
+              "5df5499f-b7ab-6b21-2a50-2b840bd89a52",
+              "fbce9b63-3c53-0f55-5115-3109b07092ce",
+              "0f13bba1-720b-9eed-d02a-bcd167f49c9f"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.85,
+          "lengthWithOutReserv": 2.71,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "eb2e39c8-6689-449e-8666-21c9b08d18dd",
+          "finish_id": "bc702af8-6a15-4cca-910c-2600460fd460",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "eb2e39c8-6689-449e-8666-21c9b08d18dd",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "ded3feaa-3b61-c713-b81a-e49cea1cf422",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "baa70928-c9cb-b87f-9efc-3170f70063a4",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "b3319f04-b5d9-3aa4-34b5-c4ade0227c41",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "5df5499f-b7ab-6b21-2a50-2b840bd89a52",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "1ed51e22-858a-a5f5-e16c-93ecfbf1858c",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.13
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fbce9b63-3c53-0f55-5115-3109b07092ce",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "7126e5d6-77eb-2277-4e51-6e395b544e15",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.19
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "0f13bba1-720b-9eed-d02a-bcd167f49c9f",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "ecd9222b-e8a8-e637-6eb7-8970a65bbc2d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "bc702af8-6a15-4cca-910c-2600460fd460",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "18a874c7-696e-f719-e4c9-50a2af9b13ba",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "18a874c7-696e-f719-e4c9-50a2af9b13ba",
+            "start": {
+              "cell": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "32e99b7a-6fe6-4536-9f20-dbbb4f1a1961",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "ca802c9d-fb8e-4ee4-beaa-fa477732bd5d",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "5f9956dc-2a43-44a1-ad74-851c724ff07b",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "13f01270-7ca8-be64-61e7-0d57cf083941",
+              "fe460c99-0741-589c-9307-65c71682d4be",
+              "7c2e99fe-c1d9-49cc-95fc-6c90c26510d5",
+              "bba38e55-9ee8-5fef-af94-18c4c61ae5bd",
+              "a3e698e7-a8e5-6be0-f016-b5d061afe889",
+              "289f382a-496e-d547-db95-4217748ff764",
+              "ccab07c8-873c-a638-2ba5-27b288dbb314"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 6.77,
+          "lengthWithOutReserv": 6.45,
+          "start": "Контрольная панель",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Контрольная панель",
+          "start_sysname": "controlPanel",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+          "finish_id": "32e99b7a-6fe6-4536-9f20-dbbb4f1a1961",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+              "elem_sysname": "controlPanel",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "385ec2b4-456f-21bb-8361-3a906c7ed6e3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "13f01270-7ca8-be64-61e7-0d57cf083941",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "645c4945-fdb4-7740-891f-3326b4b2a8dd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "fe460c99-0741-589c-9307-65c71682d4be",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "d9bc058a-9dc0-87c8-f6c1-a85ccd427547",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "7c2e99fe-c1d9-49cc-95fc-6c90c26510d5",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e596a2b3-70f8-df20-8c2d-3ef42b28275e",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "bba38e55-9ee8-5fef-af94-18c4c61ae5bd",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "60e87817-b841-bd45-fc15-e2d139db648f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.88
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a3e698e7-a8e5-6be0-f016-b5d061afe889",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "75b0687d-ba8a-600d-578c-b777637b8ade",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.97
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "289f382a-496e-d547-db95-4217748ff764",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e3ffa9eb-a1dd-78cf-dc60-1ea40e6e68b4",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "ccab07c8-873c-a638-2ba5-27b288dbb314",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "7dc6c0a3-c27d-58c3-3cde-fdaa9acb23c3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "32e99b7a-6fe6-4536-9f20-dbbb4f1a1961",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "89386a77-335f-6c2d-b9d4-1581f2ff4549",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "89386a77-335f-6c2d-b9d4-1581f2ff4549",
+            "start": {
+              "cell": "32e99b7a-6fe6-4536-9f20-dbbb4f1a1961",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "3a37755a-aab5-486f-a1e5-9b05e187d973",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "642878c0-f2b1-4665-8172-02534c899cb4",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "205ef494-d56a-4816-b491-c3d39282124b",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "1d67cb1a-a781-9af2-bf62-aa5c1e1739bc",
+              "289f382a-496e-d547-db95-4217748ff764",
+              "16372ce4-52c7-d795-eeee-79c719153252",
+              "b2f06910-9ae9-c8ec-747a-b4c64dd64084"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 6.26,
+          "lengthWithOutReserv": 5.96,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "32e99b7a-6fe6-4536-9f20-dbbb4f1a1961",
+          "finish_id": "3a37755a-aab5-486f-a1e5-9b05e187d973",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "32e99b7a-6fe6-4536-9f20-dbbb4f1a1961",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "f5e5d868-9a8f-223f-2e4a-91539ce822a1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "1d67cb1a-a781-9af2-bf62-aa5c1e1739bc",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "640275f3-58d3-855d-32ab-64aa5044e6a1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "289f382a-496e-d547-db95-4217748ff764",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "909fad72-da64-8d73-3fe4-4422704350f3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 5.35
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "16372ce4-52c7-d795-eeee-79c719153252",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a687f048-0134-3f62-bfaf-5f60a219617d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "b2f06910-9ae9-c8ec-747a-b4c64dd64084",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "f2d85d73-914d-7ee4-e62b-4945fca29548",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "3a37755a-aab5-486f-a1e5-9b05e187d973",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "0adeb3df-42bf-5aa5-4336-ad6b8abf5073",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "0adeb3df-42bf-5aa5-4336-ad6b8abf5073",
+            "start": {
+              "cell": "3a37755a-aab5-486f-a1e5-9b05e187d973",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "3e9d514c-29ab-46b6-a8ae-9bb4d0d18a6a",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "2e301110-5bb1-49b8-ae4f-9fab5f52c3c1",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "412b9394-269b-4829-8463-e08c0dd62a89",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "3f225b68-28c9-24e9-8d67-364acf719e49",
+              "16372ce4-52c7-d795-eeee-79c719153252",
+              "7b38526c-2fd9-30f0-8868-5960a5c61dba",
+              "a97e0cbe-21b3-4ab2-9abd-a095ab5d7c9a"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.47,
+          "lengthWithOutReserv": 2.35,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "3a37755a-aab5-486f-a1e5-9b05e187d973",
+          "finish_id": "3e9d514c-29ab-46b6-a8ae-9bb4d0d18a6a",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "3a37755a-aab5-486f-a1e5-9b05e187d973",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "49f446b0-86fe-8a09-04e6-ed32b8067c24",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "3f225b68-28c9-24e9-8d67-364acf719e49",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "e871e493-3103-abf2-335d-75a6e6ed3371",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "16372ce4-52c7-d795-eeee-79c719153252",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "37c29717-e4be-dede-df2b-25a67530d5f9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.74
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "7b38526c-2fd9-30f0-8868-5960a5c61dba",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a94cb41e-fcb7-62ac-3c87-7c5ec15150b8",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a97e0cbe-21b3-4ab2-9abd-a095ab5d7c9a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "9366bbea-8c7c-b25d-2c71-30a399f51b7d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "3e9d514c-29ab-46b6-a8ae-9bb4d0d18a6a",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "18b88b91-bb08-3531-3079-5d1f0a861678",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "cableline_data": {
+            "id": "18b88b91-bb08-3531-3079-5d1f0a861678",
+            "start": {
+              "cell": "9df65260-be70-745f-5729-42d154feff4c",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "4d6be20d-0ee9-4f1e-bf96-97d0c6fb44b0",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "355777f3-62cc-49c9-b959-2165e2c37945",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "f2a3f383-d5be-aca2-4ff8-168ebfc2d08c",
+              "99a7c6bb-61dc-3895-8f98-c6a503a0c4e1"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2,
+          "lengthWithOutReserv": 1.9,
+          "start": "Подъем",
+          "finish": "Контрольная панель",
+          "finishLabel": "",
+          "start_title": "Подъем",
+          "start_sysname": "riser_up",
+          "finish_title": "Контрольная панель",
+          "finish_sysname": "controlPanel",
+          "start_id": "9df65260-be70-745f-5729-42d154feff4c",
+          "finish_id": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+          "start_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "finish_page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            "",
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "9df65260-be70-745f-5729-42d154feff4c",
+              "elem_sysname": "riser_up",
+              "elem_type": "plan.Element",
+              "elem_len": 0.5
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "d1a7dc16-8e06-c665-6fec-b9aef581a87f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.05
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "f2a3f383-d5be-aca2-4ff8-168ebfc2d08c",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "73952846-3263-bc13-9560-deccdbf7101a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.05
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "99a7c6bb-61dc-3895-8f98-c6a503a0c4e1",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "a65adaf5-7985-d777-8bb6-e9e6796f0e44",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 1.3
+            },
+            {
+              "page_id": "c7c0f976-a78d-4b85-9de9-69b039aad235",
+              "elem_id": "59b9c6b8-5a78-450c-9e0b-b676bbc981ca",
+              "elem_sysname": "controlPanel",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        }
+
+      ]
+    },
+    {
+      "floorData": {
+        "name": "Страница 2",
+        "project": "4ef16169-4739-4f43-8cb5-3e9163c839c6",
+        "index": 2,
+        "id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+        "floor": 0.1,
+        "ground": 2.8,
+        "ceiling": 2.8,
+        "routes": 2.6,
+        "netOutlet": 0.7,
+        "elOutlet": 0.7,
+        "outletPer": 1.2,
+        "elSwitch": 0.7,
+        "other": 0.7,
+        "measureUnits": 1,
+        "slab_height": 0.5,
+        "outlet_reserve": 1,
+        "rack_reserve": 1,
+        "cable_reserve": 5,
+        "wallWidth": 0.12,
+        "channelOccupancy": 0.5,
+        "marking": 1,
+        "active": true
+      },
+      "scaling": 43,
+      "floorIdx": 2,
+      "floorHeight": 141.9,
+      "cableLog": [
+        {
+          "id": "18b88b91-bb08-3531-3079-5d1f0a861678",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "18b88b91-bb08-3531-3079-5d1f0a861678",
+            "start": {
+              "cell": "9df65260-be70-745f-5729-42d154feff4c",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "830c8e19-6d0e-41fb-b6a3-60b8498e063a",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "4e1b9f63-8841-4fed-97c0-946e2d1b9f7c",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "78d94356-5db7-416b-99d7-53b08a9017f7",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "f37624bb-593a-dde9-5179-5f2d3bc2ccd9",
+              "2ce19076-b580-13d1-ba84-5f4ca77d4a78",
+              "309a112d-12c0-2fa1-f88c-26766850c399",
+              "239c8905-76e5-8af1-9bb9-87f3ea0a5818",
+              "69aa311d-4b36-14ab-633e-40d5bc79cece",
+              "13bd0d46-9ce1-c75a-8251-f4c7b7b9b360",
+              "0fed6e72-be8e-7e8d-6eb2-9c54709c6f33",
+              "054ad7aa-d1a5-8a69-6573-55434c9b5d8b",
+              "cdeab9be-6598-fde3-595d-f462a03b77f2",
+              "443fee6b-4875-2a37-142e-8a7cc8365c7b",
+              "96324da5-7c7e-94de-23d1-782c0f3d114a"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 13.84,
+          "lengthWithOutReserv": 13.18,
+          "start": "Спуск",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Спуск",
+          "start_sysname": "riser_down",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "9df65260-be70-745f-5729-42d154feff4c",
+          "finish_id": "830c8e19-6d0e-41fb-b6a3-60b8498e063a",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "9df65260-be70-745f-5729-42d154feff4c",
+              "elem_sysname": "riser_down",
+              "elem_type": "plan.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a8c23743-024a-9de1-65ce-437d6d90a495",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.37
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "f37624bb-593a-dde9-5179-5f2d3bc2ccd9",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "3c585ba6-a992-5460-6676-ac2049643a75",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 2.8
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "2ce19076-b580-13d1-ba84-5f4ca77d4a78",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "cce7c76b-ed37-7d81-1504-f7933acac68f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.46
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "309a112d-12c0-2fa1-f88c-26766850c399",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "b7b05364-c191-ebcd-9f95-ee88b4d3ba86",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.64
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "239c8905-76e5-8af1-9bb9-87f3ea0a5818",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "d19b9de6-3d57-cded-7715-d19e2f6572be",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "69aa311d-4b36-14ab-633e-40d5bc79cece",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ca8ba270-7bc6-4f08-9469-a47e1c89dcc0",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.14
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "13bd0d46-9ce1-c75a-8251-f4c7b7b9b360",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "6e526370-1217-24dd-8bda-ebe61784f412",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.79
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "0fed6e72-be8e-7e8d-6eb2-9c54709c6f33",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "63174288-f8a6-3535-7755-bbc8c7e3d6c6",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.64
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "054ad7aa-d1a5-8a69-6573-55434c9b5d8b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "68b58d7f-e524-e672-91f1-fa8bf3816623",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.31
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "cdeab9be-6598-fde3-595d-f462a03b77f2",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "4f588b86-78a9-47a9-795b-b9bd7df249c1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.63
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "443fee6b-4875-2a37-142e-8a7cc8365c7b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "269ff841-612a-2cad-e2ce-74b039b5d0a8",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "96324da5-7c7e-94de-23d1-782c0f3d114a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ff070610-af2d-62eb-f4c3-746aa5a917ae",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "830c8e19-6d0e-41fb-b6a3-60b8498e063a",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "7ac91dfb-ed35-9a4f-4579-d56bceb1cc18",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "7ac91dfb-ed35-9a4f-4579-d56bceb1cc18",
+            "start": {
+              "cell": "a04ee37b-9c26-41ee-91af-7ebed348b0a6",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "e2beacca-97a3-4931-ab7b-9ddc42a05a4f",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "4ea04e25-616c-40fd-aca4-6fef53434ec9",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "9f48f9a3-00c1-4ade-9c98-e0c924608aa0",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "790f6dc1-e25b-7e72-19d5-d561a63422d2",
+              "a89ac067-ad04-ae09-e2c2-22f1bda7f95d",
+              "5bd49ac0-8186-3622-a9ce-a3539f6d73c8",
+              "8e30bd91-bdba-fd2e-ceac-1fd7449d147b",
+              "a029b098-4d2d-8c9c-3e3b-9ee662789a74"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 4.75,
+          "lengthWithOutReserv": 4.52,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "a04ee37b-9c26-41ee-91af-7ebed348b0a6",
+          "finish_id": "e2beacca-97a3-4931-ab7b-9ddc42a05a4f",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a04ee37b-9c26-41ee-91af-7ebed348b0a6",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5aa0e5dc-9d2b-35f0-09a5-d8a6ae2f140e",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.25
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "790f6dc1-e25b-7e72-19d5-d561a63422d2",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "e115a57d-be6f-f8c5-e9bb-e916d8149746",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a89ac067-ad04-ae09-e2c2-22f1bda7f95d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "68ce7c03-3849-8029-d8ea-1f4acaf3ceb2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.75
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5bd49ac0-8186-3622-a9ce-a3539f6d73c8",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ecf7eaa1-f3e1-bc2a-7be0-6f689f0b72fd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.81
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "8e30bd91-bdba-fd2e-ceac-1fd7449d147b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ff3fec0e-22cd-af6e-fac2-02c1f561d2a3",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a029b098-4d2d-8c9c-3e3b-9ee662789a74",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "97342f5e-a077-8ccd-cb74-1b91e4ad369a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "e2beacca-97a3-4931-ab7b-9ddc42a05a4f",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "0fb35161-13ae-22c3-e91e-6102953a9418",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "0fb35161-13ae-22c3-e91e-6102953a9418",
+            "start": {
+              "cell": "e2beacca-97a3-4931-ab7b-9ddc42a05a4f",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "9e36a999-1bfa-4e0a-a025-b47c74e9bd12",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "cc97ee9f-6753-4b25-a3c7-3f781dc2f3ce",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "d848b057-82a9-4e07-819d-3db46c8cdf6c",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "9ee3673f-8080-1fba-0058-ceead5c4a423",
+              "8e30bd91-bdba-fd2e-ceac-1fd7449d147b",
+              "28a0735c-8ed8-f34f-1807-38cc8037a55a",
+              "e076e372-e297-4f62-667f-64b74eb95e23"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 4.37,
+          "lengthWithOutReserv": 4.16,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "e2beacca-97a3-4931-ab7b-9ddc42a05a4f",
+          "finish_id": "9e36a999-1bfa-4e0a-a025-b47c74e9bd12",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "e2beacca-97a3-4931-ab7b-9ddc42a05a4f",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "042a1b86-285b-6d87-747f-e8a865438464",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.28
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "9ee3673f-8080-1fba-0058-ceead5c4a423",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ac884a41-bd98-5945-e168-b700a190e879",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "8e30bd91-bdba-fd2e-ceac-1fd7449d147b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "411e6593-57f3-8cb7-05f7-f9ebfd7328c1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 3.17
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "28a0735c-8ed8-f34f-1807-38cc8037a55a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "b6ed3ab5-9130-c38e-e91b-8265d099af01",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "e076e372-e297-4f62-667f-64b74eb95e23",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "6f00b1b6-4320-ea42-79bc-2d27e5336f7a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "9e36a999-1bfa-4e0a-a025-b47c74e9bd12",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "02f9fe8e-7c6a-a3c4-6ce8-3153f409af95",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "02f9fe8e-7c6a-a3c4-6ce8-3153f409af95",
+            "start": {
+              "cell": "9e36a999-1bfa-4e0a-a025-b47c74e9bd12",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "89b67669-f9a7-492d-8395-a1e9c770ca6f",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "f1e20ac2-149c-431d-87a0-64594978de60",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "65bd8899-a3d7-4b43-acb0-6dcf63157183",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "4557771b-506a-1692-947b-b0fa9f70820b",
+              "28a0735c-8ed8-f34f-1807-38cc8037a55a",
+              "bb93ac37-ecc3-64b6-e67b-ecd0b3f86b90",
+              "281c4d82-552c-9f5f-f057-fba9a5398655"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 3.98,
+          "lengthWithOutReserv": 3.79,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "9e36a999-1bfa-4e0a-a025-b47c74e9bd12",
+          "finish_id": "89b67669-f9a7-492d-8395-a1e9c770ca6f",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "9e36a999-1bfa-4e0a-a025-b47c74e9bd12",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ac9221bd-fc61-d85a-ca6b-afcfcba2d629",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.28
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "4557771b-506a-1692-947b-b0fa9f70820b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ab86934b-5c66-9ea7-e599-2b93b412b1fa",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "28a0735c-8ed8-f34f-1807-38cc8037a55a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "4b12fada-81ab-31e6-4155-00a210f890d2",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.8
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "bb93ac37-ecc3-64b6-e67b-ecd0b3f86b90",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "f01bd7e8-d27e-62a9-364e-a2dc0c2f4020",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "281c4d82-552c-9f5f-f057-fba9a5398655",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a4a5436a-df61-eac7-40ba-b4050ea2564f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "89b67669-f9a7-492d-8395-a1e9c770ca6f",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "73ca6f95-fbcd-12cc-5853-8ea39bc07454",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "73ca6f95-fbcd-12cc-5853-8ea39bc07454",
+            "start": {
+              "cell": "89b67669-f9a7-492d-8395-a1e9c770ca6f",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "1f402a80-3b31-4a02-89d6-362bc37a2d51",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "064d755b-1e03-4248-bbf1-69cf10175170",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "815ab9b4-6689-43d7-a504-c4a7b875e0f3",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "37181098-de43-4aa7-39a3-515901f98008",
+              "bb93ac37-ecc3-64b6-e67b-ecd0b3f86b90",
+              "e6994737-d458-fe44-46b3-10c79acb6e74",
+              "efefdfc7-186d-c93f-938e-368a9b90049e"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.5,
+          "lengthWithOutReserv": 2.38,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "89b67669-f9a7-492d-8395-a1e9c770ca6f",
+          "finish_id": "1f402a80-3b31-4a02-89d6-362bc37a2d51",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "89b67669-f9a7-492d-8395-a1e9c770ca6f",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "755a8031-31b8-ab56-254a-9d896980ddab",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.28
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "37181098-de43-4aa7-39a3-515901f98008",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "1ecacc20-5ad0-621f-04cb-428a0afd0c44",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "bb93ac37-ecc3-64b6-e67b-ecd0b3f86b90",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "f9eed879-48bf-a75a-a244-f750f8731b76",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.39
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "e6994737-d458-fe44-46b3-10c79acb6e74",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "408d6656-bfa5-90e1-9ecf-7b16e76d4eda",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "efefdfc7-186d-c93f-938e-368a9b90049e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "7949a217-7e5c-c787-236d-d41e788175a9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "1f402a80-3b31-4a02-89d6-362bc37a2d51",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "7bcc48f0-1657-c081-76db-093736f29983",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "7bcc48f0-1657-c081-76db-093736f29983",
+            "start": {
+              "cell": "1f402a80-3b31-4a02-89d6-362bc37a2d51",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "830c8e19-6d0e-41fb-b6a3-60b8498e063a",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "da9b6462-07c8-4613-b2ae-e8a7b881e0d1",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "295d8404-fecb-4e0a-8e33-2ec2b23874b6",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "da51311b-7edc-3a66-4cbb-ff9785d9fb1d",
+              "e6994737-d458-fe44-46b3-10c79acb6e74",
+              "443fee6b-4875-2a37-142e-8a7cc8365c7b",
+              "96324da5-7c7e-94de-23d1-782c0f3d114a"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.26,
+          "lengthWithOutReserv": 2.15,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "1f402a80-3b31-4a02-89d6-362bc37a2d51",
+          "finish_id": "830c8e19-6d0e-41fb-b6a3-60b8498e063a",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "1f402a80-3b31-4a02-89d6-362bc37a2d51",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "faae7155-cc16-9212-f1a7-fde7f41ee1b4",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.28
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "da51311b-7edc-3a66-4cbb-ff9785d9fb1d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ea3ffdc1-03af-523b-4b5c-d97721450bf5",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "e6994737-d458-fe44-46b3-10c79acb6e74",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "3401e701-88f3-ba35-746c-a007281a06fa",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.16
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "443fee6b-4875-2a37-142e-8a7cc8365c7b",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "269ff841-612a-2cad-e2ce-74b039b5d0a8",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.51
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "96324da5-7c7e-94de-23d1-782c0f3d114a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "ff070610-af2d-62eb-f4c3-746aa5a917ae",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "830c8e19-6d0e-41fb-b6a3-60b8498e063a",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "e89dee56-05ac-9659-7af0-c93eefde5e29",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "e89dee56-05ac-9659-7af0-c93eefde5e29",
+            "start": {
+              "cell": "9df65260-be70-745f-5729-42d154feff4c",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "11ba8420-4782-45ea-8c22-648fa3464873",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "4b1d7e5c-576d-46d5-9a53-254232b6b8a1",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "6ea20d64-7b35-4120-b7ac-165f46d5e192",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "f37624bb-593a-dde9-5179-5f2d3bc2ccd9",
+              "2ce19076-b580-13d1-ba84-5f4ca77d4a78",
+              "3ca9b3fe-a501-b46c-7d03-fd89542dbcf5",
+              "2f654385-3442-d95b-ef90-98dd8e59d8c9",
+              "5ba7f820-c266-ec0a-c5b7-60601796273d"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 7.36,
+          "lengthWithOutReserv": 7.01,
+          "start": "Спуск",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Спуск",
+          "start_sysname": "riser_down",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "9df65260-be70-745f-5729-42d154feff4c",
+          "finish_id": "11ba8420-4782-45ea-8c22-648fa3464873",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "9df65260-be70-745f-5729-42d154feff4c",
+              "elem_sysname": "riser_down",
+              "elem_type": "plan.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a8c23743-024a-9de1-65ce-437d6d90a495",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.37
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "f37624bb-593a-dde9-5179-5f2d3bc2ccd9",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "3c585ba6-a992-5460-6676-ac2049643a75",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 2.8
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "2ce19076-b580-13d1-ba84-5f4ca77d4a78",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "4d45ccd7-d83f-5006-a7ac-399b058d93bc",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.66
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "3ca9b3fe-a501-b46c-7d03-fd89542dbcf5",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "b0d24b6c-2c7e-86fb-4691-6541fd1dd479",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.76
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "2f654385-3442-d95b-ef90-98dd8e59d8c9",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "fa210de5-7e2e-9c73-2373-25aab365b495",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5ba7f820-c266-ec0a-c5b7-60601796273d",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "8e40bdef-7a54-6693-4cdf-52a79885c406",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "11ba8420-4782-45ea-8c22-648fa3464873",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "9921ac65-4166-e882-bbb3-4206be594fc1",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "9921ac65-4166-e882-bbb3-4206be594fc1",
+            "start": {
+              "cell": "11ba8420-4782-45ea-8c22-648fa3464873",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "904a7a7e-bb9d-49bd-bfd4-fb2e96da5547",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "660c0f38-7e31-49b1-8bc0-461e3e6ca822",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "eea0e3a3-a720-42bf-8455-68d4b09cc075",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "8b54c62b-0dd7-08c6-ac12-49b52c4397f6",
+              "2f654385-3442-d95b-ef90-98dd8e59d8c9",
+              "c21dd06b-ee05-ce43-dde9-2aeb0764f171",
+              "899138c3-bd89-e10c-19e5-8c349f1f38b7"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 2.78,
+          "lengthWithOutReserv": 2.65,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "11ba8420-4782-45ea-8c22-648fa3464873",
+          "finish_id": "904a7a7e-bb9d-49bd-bfd4-fb2e96da5547",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "11ba8420-4782-45ea-8c22-648fa3464873",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "741e59de-c459-aceb-9c99-626ccbadd844",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "8b54c62b-0dd7-08c6-ac12-49b52c4397f6",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "86ab4bf1-a0ba-db5f-be24-8e6505a5a129",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "2f654385-3442-d95b-ef90-98dd8e59d8c9",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "a5ca457a-f25f-6de5-c1b2-649167aa52ac",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.04
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "c21dd06b-ee05-ce43-dde9-2aeb0764f171",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "795b5eb1-4037-d058-bbe2-8278361bb4dd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "899138c3-bd89-e10c-19e5-8c349f1f38b7",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5c0e70cb-cd7a-e599-fa0d-b6d741d4d5b7",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "904a7a7e-bb9d-49bd-bfd4-fb2e96da5547",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "b96542d8-f620-86df-258e-10b71eaedabc",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "b96542d8-f620-86df-258e-10b71eaedabc",
+            "start": {
+              "cell": "904a7a7e-bb9d-49bd-bfd4-fb2e96da5547",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "b70a5102-946b-4f01-880e-34549787cb33",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "a47ecfbd-fabb-4751-8a41-2cc1c0e1c013",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "36020869-3f65-469f-9d48-d124190a82d9",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "f281b8f5-eafe-cbd3-ebc1-6ae3ec60f469",
+              "c21dd06b-ee05-ce43-dde9-2aeb0764f171",
+              "2a4346f9-d27d-184c-c3f2-a7c675a1faef",
+              "31b4f8a8-b333-27f3-a9df-8b64581b1395"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 5.21,
+          "lengthWithOutReserv": 4.96,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "904a7a7e-bb9d-49bd-bfd4-fb2e96da5547",
+          "finish_id": "b70a5102-946b-4f01-880e-34549787cb33",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "904a7a7e-bb9d-49bd-bfd4-fb2e96da5547",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "fd953e81-0eb3-b6d9-dc25-302eb750fee9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "f281b8f5-eafe-cbd3-ebc1-6ae3ec60f469",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5796937f-1ed8-9fe8-e94e-c80e78fe02d4",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "c21dd06b-ee05-ce43-dde9-2aeb0764f171",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "4f721992-ff94-69bf-2c07-3f3aa33930fa",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 4.35
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "2a4346f9-d27d-184c-c3f2-a7c675a1faef",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "4196b163-e746-70c1-3bd2-98f3a641a26a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "31b4f8a8-b333-27f3-a9df-8b64581b1395",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "d75f1486-f099-7a03-bbb3-97e42c2cd183",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "b70a5102-946b-4f01-880e-34549787cb33",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "b9a58c0a-3b9d-25aa-398b-989f8e38719b",
+          "page_name": "Страница 2",
+          "page_index": 2,
+          "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "cableline_data": {
+            "id": "b9a58c0a-3b9d-25aa-398b-989f8e38719b",
+            "start": {
+              "cell": "b70a5102-946b-4f01-880e-34549787cb33",
+              "port": null,
+              "resource": null
+            },
+            "finish": {
+              "cell": "d4f4e5bb-75a5-4907-95c1-a65e54772d4f",
+              "port": null,
+              "resource": null
+            },
+            "cable": {
+              "id": "CA002",
+              "name": "Слаботочный Кабель",
+              "section": 3.3,
+              "section_name": "4x0.22",
+              "module_count": 0,
+              "core_count": 0,
+              "type": 2,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA002",
+                  "id": "5daff933-7739-4ebc-897e-cbb0c455056d",
+                  "name": "Слаботочный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA002I",
+                  "id": "8055851c-77e7-46d7-a286-da8c8225929e",
+                  "name": "CA002 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "midPoints": [
+              "f5e55eae-7c5e-b73a-5466-2bb5cadb3139",
+              "2a4346f9-d27d-184c-c3f2-a7c675a1faef",
+              "7eda4448-139d-49ba-59a4-7915cc47367f",
+              "bf4191d3-d146-51b8-8f55-48618a6ec353"
+            ]
+          },
+          "cableID": "CA002",
+          "cableType": "Слаботочный Кабель",
+          "cableSection": 3.3,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 1.97,
+          "lengthWithOutReserv": 1.88,
+          "start": "Извещатель звуковой",
+          "finish": "Извещатель звуковой",
+          "finishLabel": "",
+          "start_title": "Извещатель звуковой",
+          "start_sysname": "hornDetector",
+          "finish_title": "Извещатель звуковой",
+          "finish_sysname": "hornDetector",
+          "start_id": "b70a5102-946b-4f01-880e-34549787cb33",
+          "finish_id": "d4f4e5bb-75a5-4907-95c1-a65e54772d4f",
+          "start_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "finish_page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+          "start_port": "",
+          "finish_port": "",
+          "start_marking": [
+            ""
+          ],
+          "finish_marking": [
+            ""
+          ],
+          "full_path": [
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "b70a5102-946b-4f01-880e-34549787cb33",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "dcc856cc-57e4-c2b0-48f0-57925aa7ac6c",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.09
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "f5e55eae-7c5e-b73a-5466-2bb5cadb3139",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5847a0a5-9454-80b2-9f94-7c08caafd2db",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "2a4346f9-d27d-184c-c3f2-a7c675a1faef",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "de4eed92-9d88-2c7d-dcf2-e7eac1ca0a56",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.27
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "7eda4448-139d-49ba-59a4-7915cc47367f",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "3f5948a4-9828-e10d-bb45-494d45d469e1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.32
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "bf4191d3-d146-51b8-8f55-48618a6ec353",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "5a8d333e-7a21-c9d5-609e-e97f214b1e6f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.1
+            },
+            {
+              "page_id": "0da0bf10-c490-4a29-9cd2-4201e22523aa",
+              "elem_id": "d4f4e5bb-75a5-4907-95c1-a65e54772d4f",
+              "elem_sysname": "hornDetector",
+              "elem_type": "security.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        }
+      ]
+    }
+  ]
+}

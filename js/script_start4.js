@@ -12,6 +12,10 @@ var minX = x;           //граница отрисовки
 var minY = y;           //граница отрисовки
 var maxX = paperWidth;  //граница отрисовки
 var maxY = paperHeight; //граница отрисовки
+var elem_types = {
+   'fireDevice' : 'firealarm.Element'
+  ,'controlPanel' : 'security.Element'
+  }
 
 var markupArray = [];
 markupArray['fireAlarm'] =  $('#fireAlarm').html().replace(/(\r\n|\n|\r|\t)/gm,"");
@@ -129,8 +133,8 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
 };
    
 //Отрисовка элементов
-function draw(){
-  var cableLog =[]
+function drawP(){
+  var cableLog =[];
   var index;
   for(var j in floors){
     cableLog = floors[j].cableLog;
@@ -157,9 +161,10 @@ function draw(){
           drawElement2(cableLog, cableLog[i].finish_id, cableLog[i].start_id, x , y, i);
       } 
     }
-      
+    
   }
 }
+
 function drawDevice(cableLog, source_id, target_id, x, y, index){
       var cableLog = cableLog;
       var x = x;
@@ -210,71 +215,6 @@ function drawDevice(cableLog, source_id, target_id, x, y, index){
       drawElement2(cableLog, source_id, target_id, x, y, index);
 }
 
-//Отрисовка элементов
-function drawElement2(cableLog, source_id, target_id, x, y, index){
-  var cableLog = cableLog;
-  var xStart = x;
-  var yStart = y;
-  var index = index;
-  var source_id = source_id;
-  var target_id = target_id;
-
-  //проход по каталогу cableLog
-  for(var i in cableLog){
-    var x = xStart;
-    var y = yStart;
-      //исключаем  индекс элемента 
-    if( i != index){
-      var start_id = null;
-      var finish_id = null;
-      start_id = cableLog[i].start_id;
-      finish_id = cableLog[i].finish_id;
-//       
-      if(finish_id == target_id || start_id == target_id ){
-
-        var text_location = (name == 'fireDevice') ? 'left' : 'top';
-
-        if(finish_id == target_id){
-          var new_target_id = cableLog[i].start_id;
-          var new_elem_sysname = cableLog[i].start_sysname;
-          var new_marking = cableLog[i].start_marking[0];
-
-          var elem_sysname = cableLog[i].finish_sysname;
-          var marking = cableLog[i].finish_marking[0];
-
-        } else if(start_id == target_id){
-          var new_target_id = cableLog[i].finish_id;
-          var new_elem_sysname = cableLog[i].finish_sysname;
-          var new_marking = cableLog[i].finish_marking[0];
-
-          var elem_sysname = cableLog[i].start_sysname;
-          var marking = cableLog[i].start_marking[0];
-        } 
-
-        if ( typeof graph.getCell(new_target_id) == 'undefined'){
-
-          var point = getNewCoord(x,y);
-          y = point.y; //вычисление свободной y-ячейки
-          x = point.x;
-//            var coor = "x:"+x+" y:"+y;  
-//          добавление элемента
-          var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_marking ? new_marking : new_elem_sysname,'top', null, 'green')
-          IZ.set('id', new_target_id);
-          graph.addCell([IZ]);
-//          добавление элемента
-
-          source_id = target_id
-//          добавление линки между элементами
-          graph.addCell([getLink(source_id, new_target_id)]); 
-//           добавление линки между элементами
-        }  
-
-        drawElement2(cableLog, source_id,new_target_id, x,y,i);
-
-      }    
-    }
-  }              
-}
 
 function getFirstFireDeviceIndex(cableLog){
   var cableLog = cableLog;
@@ -282,13 +222,14 @@ function getFirstFireDeviceIndex(cableLog){
     if(cableLog[i].finish_sysname == 'fireDevice'){
       var marking = cableLog[i].start_marking[0];
       var number = marking ? marking.split('.')[0] : 0 ;
-      if(1 == number){
+      if(1 == number || ''){
         return i;
       }
     }
   } 
   return false;
 }
+
 function getNextFireDeviceIndex(cableLog, number){
   var cableLog = cableLog;
   var number = number;
@@ -303,6 +244,7 @@ function getNextFireDeviceIndex(cableLog, number){
   }
   return false;
 }
+
 function getMaxY(floor){
   var max = y ;
   if(populationArr.length){
@@ -377,6 +319,345 @@ function getLink(source_id, target_id){
   return link;
 }
 
+
+
+
+
+
+function drawO(scheme){
+  try{
+  var scheme = scheme;
+  var cableLog =[];
+  var index;
+  var device = {};
+  for(var j in floors){
+    cableLog = floors[j].cableLog;
+    
+    y = getMaxY(j);
+
+    device = getFirstDevice(cableLog, scheme);
+    if(device.index){
+      drawDevice2(cableLog, device, x, y);
+    }
+
+    device = getNextDevice(cableLog, 1, scheme);
+    while(device){
+      y = getMaxY();
+      xStep = Math.abs(xStep);
+      drawDevice2(cableLog, device, x, y);
+      device = getNextDevice(cableLog, +device.number, scheme);
+    }
+    
+
+      
+      var devices = getDevices(cableLog, scheme);
+//
+    for(var i in devices){
+       drawDevice2(cableLog, devices[i], x, y);
+//       y = getMaxY();
+//      xStep = Math.abs(xStep);
+//      device = getNextDevice(cableLog, false, scheme);
+//      drawDevice2(cableLog, device, x, y);
+//      
+      
+//      xStep = Math.abs(xStep);
+//      if(cableLog[i].finish_sysname != scheme ){
+          
+//          
+//            drawElement2(cableLog, cableLog[i].finish_id, cableLog[i].start_id, x , getMaxY(), i,0,false);
+////         
+//            drawElement2(cableLog, cableLog[i].start_id, cableLog[i].finish_id, x , getMaxY(), i,0,false);
+
+//          if( typeof graph.getCell(cableLog[i].start_id) == 'undefined'){
+//            y = getMaxY();
+//            drawElement2(cableLog, cableLog[i].start_id, cableLog[i].finish_id, x , y, i,0,false);
+//            drawElement2(cableLog, cableLog[i].finish_id,cableLog[i].start_id, x , y, i,0,false);
+//          }
+//      } 
+//      
+//      
+//      
+//      
+//      
+    }
+
+  }
+  }
+  catch(err){
+    alert(err);
+  }
+}
+
+function getFirstDevice(cableLog, deviceName){      
+  var cableLog = cableLog;
+  var deviceName = deviceName;
+  var device = {};
+  
+  var obj = {};
+  obj.name = deviceName;
+  obj.source = {};
+  obj.target = {};
+  
+  
+  for(var i in cableLog){
+
+      obj.source.id = cableLog[i].finish_id;
+      obj.source.name = cableLog[i].finish_sysname;
+      obj.source.marking = cableLog[i].finish_marking[0];
+      obj.index = i;
+      obj.target.id = cableLog[i].start_id;
+      obj.target.name = cableLog[i].start_sysname;
+      obj.target.marking = cableLog[i].start_marking[0];
+      
+    if(cableLog[i].finish_sysname == deviceName && 
+      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_types[deviceName]){
+      
+        device = obj;
+        device.number = obj.target.marking !='' ? obj.target.marking.split('.')[0] : '' ;
+        if(1 == device.number || '' == device.number){
+          return device;
+        }
+    }
+    
+    if(cableLog[i].start_sysname == deviceName && 
+      cableLog[i].full_path[0].elem_type == elem_types[deviceName]){
+      
+        device.target = obj.source;
+        device.source = obj.target;
+        device.index = obj.index;
+        device.number = obj.target.marking !='' ? obj.target.marking.split('.')[0] : '' ;
+
+        if(1 == device.number || '' == device.number){
+          return device;
+        }
+    }    
+  } 
+  return false;
+}
+
+
+function getNextDevice(cableLog, number, deviceName){
+  var cableLog = cableLog;
+  var deviceName = deviceName;
+  var device = {};
+
+  var obj = {};
+  obj.name = deviceName;
+  obj.source = {};
+  obj.target = {};
+  
+  var cableLog = cableLog;
+  var number = number;
+  
+  
+  for(var i in cableLog){
+
+      obj.source.id = cableLog[i].finish_id;
+      obj.source.name = cableLog[i].finish_sysname;
+      obj.source.marking = cableLog[i].start_marking[0];
+      obj.index = i;
+      obj.target.id = cableLog[i].start_id;
+      obj.target.name = cableLog[i].start_sysname;
+      obj.target.marking = cableLog[i].start_marking[0];
+      
+    if(cableLog[i].finish_sysname == deviceName && 
+      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_types[deviceName]){
+      
+//        if(device.number == false){return device};
+        
+        device = obj;
+        device.number = obj.target.marking !='' ? obj.target.marking.split('.')[0] : '' ;
+        if( device.number == (number+1)){
+          return device;
+        }
+    }
+    
+    if(cableLog[i].start_sysname == deviceName && 
+      cableLog[i].full_path[0].elem_type == elem_types[deviceName]){
+      
+        device.target = obj.source;
+        device.source = obj.target;
+        device.index = obj.index;
+        device.number = obj.target.marking !='' ? obj.target.marking.split('.')[0] : '' ;
+
+//        if(device.number == false){return device}; 
+        
+        if( device.number == (number+1)){
+          return device;
+        }
+    }    
+  } 
+  return false;
+}
+
+function getDevices(cableLog, deviceName){
+  var devices = [];
+  var cableLog = cableLog;
+  var deviceName = deviceName;
+  var device = {};
+
+  var obj = {};
+  obj.name = deviceName;
+  obj.source = {};
+  obj.target = {};
+  
+  var cableLog = cableLog;
+  var number = number;
+  
+  
+  for(var i in cableLog){
+
+      obj.source.id = cableLog[i].finish_id;
+      obj.source.name = cableLog[i].finish_sysname;
+      obj.source.marking = cableLog[i].start_marking[0];
+      obj.index = i;
+      obj.target.id = cableLog[i].start_id;
+      obj.target.name = cableLog[i].start_sysname;
+      obj.target.marking = cableLog[i].start_marking[0];
+      
+    if(cableLog[i].finish_sysname == deviceName && 
+      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_types[deviceName]){
+      
+//        if(device.number == false){return device};
+        
+        device = obj;
+        device.number = obj.target.marking !='' ? obj.target.marking.split('.')[0] : '' ;
+        if( obj.target.marking ==''){
+          devices.push(device);
+        }
+    }
+    
+    if(cableLog[i].start_sysname == deviceName && 
+      cableLog[i].full_path[0].elem_type == elem_types[deviceName]){
+      
+        device.target = obj.source;
+        device.source = obj.target;
+        device.index = obj.index;
+        device.number = obj.target.marking !='' ? obj.target.marking.split('.')[0] : '' ;
+
+//        if(device.number == false){return device}; 
+        
+        if( obj.target.marking ==''){
+          devices.push(device);
+        }
+    }    
+  } 
+  return devices;
+}
+
+
+//Отрисовка элементов
+function drawElement2(cableLog, source_id, target_id, x, y, index, number, is_device){
+  var cableLog = cableLog;
+  var x = x;
+  var y = y;
+  var index = index;
+  var source_id = source_id;
+  var target_id = target_id;
+  var number = number || '';
+  var is_device = is_device || true;
+  var start_id;
+  var finish_id;
+  //проход по каталогу cableLog
+  for(var i in cableLog){
+      //исключаем  индекс элемента 
+    if( i != index){
+      finish_number = cableLog[i].finish_marking[0];
+      start_number = cableLog[i].start_marking[0];
+      start_id = cableLog[i].start_id;
+      start_number = start_number !='' ? start_number.split('.')[0] : '' ;
+      finish_id = cableLog[i].finish_id;
+      finish_number = finish_number !='' ? finish_number.split('.')[0] : '' ;
+//       
+      if(finish_id == target_id || start_id == target_id  || !is_device){
+
+        var text_location = (name == 'fireDevice') ? 'left' : 'top';
+
+        if( finish_id == target_id ){
+          var new_target_id = cableLog[i].start_id;
+          var new_elem_sysname = cableLog[i].start_sysname;
+          var new_marking = cableLog[i].start_marking[0];
+
+          var elem_sysname = cableLog[i].finish_sysname;
+          var marking = cableLog[i].finish_marking[0];
+
+        } else if(start_id == target_id){
+          var new_target_id = cableLog[i].finish_id;
+          var new_elem_sysname = cableLog[i].finish_sysname;
+          var new_marking = cableLog[i].finish_marking[0];
+
+          var elem_sysname = cableLog[i].start_sysname;
+          var marking = cableLog[i].start_marking[0];
+        } 
+        
+        
+        if(number == marking.split('.')[0] || !is_device){
+          if ( typeof graph.getCell(new_target_id) == 'undefined'){
+            
+            var point = getNewCoord(x,y);//вычисление свободной y-ячейки
+            x = point.x;
+            y = point.y;
+  //            var coor = "x:"+x+" y:"+y;  
+  //          добавление элемента
+            var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], i,'top', null, 'green')
+            IZ.set('id', new_target_id);
+            graph.addCell([IZ]);
+  //          добавление элемента
+
+            source_id = target_id
+  //          добавление линки между элементами
+            graph.addCell([getLink(source_id, new_target_id)]); 
+  //           добавление линки между элементами
+          }  
+        
+       
+          drawElement2(cableLog, source_id,new_target_id, x,y,i,number, is_device);
+       
+        }
+  
+      }    
+    }
+  }              
+}
+
+function drawDevice2(cableLog, device, x, y){
+      var cableLog = cableLog;
+      var x = x;
+      var y = y;
+      var index = index;
+      var device = device;
+      var point = {};
+      
+      //прорисовываем прибор
+      if ( typeof graph.getCell(device.source.id) == 'undefined'){
+        
+        point = getNewCoord(x,y, true);//вычисление свободной y-ячейки
+        //добавление элемента
+        var FD = NewEl(point.x, point.y ,widthEl, heightEl, markupArray[device.source.name], device.source.marking ? device.source.marking : device.source.name, 'left', null, 'green')
+        FD.set('id', device.source.id);
+        graph.addCell([FD]);
+        
+      }
+
+      //прорисовываем таргет прибора
+      if ( typeof graph.getCell(device.target.id) == 'undefined'){
+
+        point = getNewCoord(x,y);//вычисление свободной y-ячейки
+        //добавление элемента
+        var FD = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking ? device.target.marking : device.target.name, 'top', null, 'green')
+        FD.set('id', device.target.id);
+        graph.addCell([FD]);
+        graph.addCell([getLink(device.source.id, device.target.id)]); 
+      }
+      
+
+        drawElement2(cableLog, device.source.id, device.target.id, point.x, point.y, index, device.number);
+
+}
+
+
+
+
 $(document).ready(function(e)
 {
   $.ajax({
@@ -386,7 +667,7 @@ $(document).ready(function(e)
     success: function(response){
       var data = response;
       floors = data.floors;
-      draw();
+      drawO('fireDevice');
     }
 	});
 });
