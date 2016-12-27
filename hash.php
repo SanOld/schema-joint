@@ -54,5 +54,5 @@ function filelist($dir){
 ?>
 
 <script> 
-  var HASH = "<?php echo $hash || 'v1';?>";
+  var HASH = "<?php echo $hash;?>";
 </script>

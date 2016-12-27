@@ -111,7 +111,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
             fill: 'transparent'
           }
         },
-        markup: '<rect  width="10" height="10" stroke="bue"/>'
+        markup: '<rect  width="10" height="10" stroke="blue"/>'
     };
     
     var cell = new joint.shapes.defs.NewEl({
@@ -156,7 +156,6 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
             height: height
          }
   }
-  
   
   var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
   var text_color = text_color || "#000";
@@ -206,25 +205,25 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
              fill: text_color,
              'font-size': '10px'
            },           
-           '.center':{
-            fill: '#ffffff',
-            stroke: '#000000',
-            width: width,
-            height: height
-            },
            '.left':{
              fill: '#ffffff',
              stroke: '#000000',
              height: height,
              width: 30,
            },
-           '.rigth':{
+           '.right':{
              x: width-30,
              fill: '#ffffff',
              stroke: '#000000',
              height: height,
              width: 30,
-           }
+           },
+           '.center':{
+            fill: '#ffffff',
+            stroke: '#000000',
+            width: width,
+            height: height
+            },
           },
 
      });
@@ -287,11 +286,6 @@ function getMaxY(t){
   } 
   max = max + Math.abs(yStep);
   
-    if(t){
-    window.console.log(populationArr);
-    window.console.log(max);
-  }
-  
   return max;
 }
 function getNewCoord(x,y,xFix){
@@ -330,9 +324,10 @@ function getNewCoord(x,y,xFix){
 //          вычисление свободной y-ячейки  
   return {x:x,y:y};
 }
-function getLink(source_id, target_id){
+function getLink(source_id, target_id, vertices){
   var source_id = source_id;
   var target_id = target_id;
+  var vertices = vertices || '';
   
   var link = new joint.dia.Link({
      source: { id: source_id, port: 'abc'  },
@@ -354,34 +349,9 @@ function getLink(source_id, target_id){
             }
   });
   link.set('connector', { name: 'normal' }); 
-  
-  return link;
-}
-function getLinkFirst(source_id, target_id){
-  var source_id = source_id;
-  var target_id = target_id;
-  
-  var link = new joint.dia.Link({
-     source: { id: source_id, port: 'abc'  },
-     target: { id: target_id, port: 'abc' },
-     attrs:{
-       manhattan:true //ортогональное расположение
-     }
-  });
-  link.set('router', {
-            name: 'manhattan',
-//                name: 'oneSide',
-            args: {
-//              side: 'bottom',
-                startDirections: ['right'],
-                endDirections: ['left'],
-//                excludeTypes : ['defs.NewEl'],
-                step: 1,
-      //                    padding: 5
-            }
-  });
-//  link.set('connector', { name: 'normal' }); 
-  
+  if(vertices != ''){
+    link.set('vertices',[vertices]);
+  }
   return link;
 }
 function sortByFloor(a, b) {
@@ -670,7 +640,6 @@ function drawSorceTaeget( source_target, floorNumber){
   var cableLog;
 
   source_target.sort(sortByFloor);//сортировка по этажам
-  
   for(var i in source_target ){
 
     if(+floorNumber > 0) {
@@ -682,78 +651,89 @@ function drawSorceTaeget( source_target, floorNumber){
 }
 //отрисовка девайса и первого зависимого элемента согласно объекту device
 function drawDevice2(cableLog, device, x, y, deviceNumber){
-      var cableLog = cableLog;
-      var x = x;
-      var y = y;
-      var index = index;
-      var device = device;
-      var point = {};
-      var floorRect;
-      var rect_y; //y координата начала прямоугольника этажа
-      var rect_height;//высота прямоугольника этажа
+  var cableLog = cableLog;
+  var x = x;
+  var y = y;
+  var index = index;
+  var device = device;
+  var point = {};
+  var floorRect;
+  var rect_y; //y координата начала прямоугольника этажа
+  var rect_height;//высота прямоугольника этажа
+  var elements; //массив всех элементо для проверки наличия floor rect
+  var isFirstFloorRect = true;
+  var link;
 
-      //============Элемент этажа
-      floorRect = graph.getCell('Этаж '+device.floor_number);
-         
-      if ( typeof floorRect == 'undefined'){
+  //============Элемент этажа
+  floorRect = graph.getCell('Этаж '+device.floor_number);
 
-        if(+device.floor_number == floors.length-1){
-          rect_y = minY - 30;
-          rect_height = 1;
-        } else {
-          rect_y = getMaxY() - yStep/2;
-          rect_height = 1;
-        }
-        
-          
-//        var NL = NewLine( 0, rect_y, paperWidth, rect_y, markupArray['floorLine'], 'Этаж '+(+device.floor_number+1), 'top', 'green', 'green', 8)
-        var NR = NewFloorRect( 5, rect_y, paperWidth-10, rect_height, markupArray['floorRect'], 'Этаж '+(+device.floor_number+1), 'top', null, 'green',0)
-        NR.set('id', 'Этаж '+device.floor_number);
-        graph.addCell([NR]); 
-        xStep = Math.abs(xStep);//ifu в положительное значение
-      } 
-      //============Элемент этажа
-      
-      
-      //прорисовываем прибор 
-      point = getNewCoord(x,y,true);
-      if ( typeof graph.getCell(device.source.id) == 'undefined'){
-        //вычисление свободной y-ячейки
-        //добавление элемента
-        var FD = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.marking ? device.source.marking : device.source.name, 'left', null, 'green')
-        FD.set('id', device.source.id);
-        graph.addCell([FD]);
-        
-      }
-      
-      if(+deviceNumber > 0) {
-        y = getMaxY();
-      } ;
-      
-      xStep = Math.abs(xStep);//ifu в положительное значение
-      
-      //прорисовываем таргет прибора
-      if ( typeof graph.getCell(device.target.id) == 'undefined'){
+  if ( typeof floorRect == 'undefined'){
 
-        point = getNewCoord(x,y);//вычисление свободной y-ячейки
-        x = point.x;
-        y = point.y;
-        //добавление элемента
-        var FD = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking ? device.target.marking : device.target.name, 'top', null, 'green')
-        FD.set('id', device.target.id);
-        graph.addCell([FD]);
-        graph.addCell([getLinkFirst(device.source.id, device.target.id)]);
-        
-      }
-      
-//      if(device.number != '')
-        drawElement2(cableLog, device.source.id, device.target.id, x, y, device.index, device.number, device.target.location);
-        
-        if ( typeof floorRect != 'undefined'){
-          window.console.log(floorRect.attributes.position.x);
-          floorRect.resize(paperWidth-10,getMaxY() - yStep/2 - floorRect.attributes.position.y,['top-right']);
-        }
-        
+  
+    elements = graph.getElements()
+    //проверка - есть ли уже на холсте прямоугольник этажа
+    for(var t in elements){
+      if(elements[t].attributes.type == "defs.NewFloorRect")
+        isFirstFloorRect = false;
+    }
+    
+    if(isFirstFloorRect){
+      rect_y = minY - 30;
+      rect_height = 1;
+    } else {
+      rect_y = getMaxY() - yStep/2;
+      rect_height = 1;
+    }
+
+    var NR = NewFloorRect( 5, rect_y, paperWidth-10, rect_height, markupArray['floorRect'], 'Этаж '+(+device.floor_number+1), 'top', null, 'green',0)
+    NR.set('id', 'Этаж '+device.floor_number);
+    graph.addCell([NR]); 
+    xStep = Math.abs(xStep);//ifu в положительное значение
+  } 
+  //============Элемент этажа
+
+  //прорисовываем прибор 
+  point = getNewCoord(x,y,true);
+  if ( typeof graph.getCell(device.source.id) == 'undefined'){
+    //вычисление свободной y-ячейки
+    //добавление элемента
+    var main = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.marking ? device.source.marking : device.source.name, 'left', null, 'green')
+    main.set('id', device.source.id);
+    graph.addCell([main]);
+
+  }
+
+  if(+deviceNumber > 0) {
+    y = getMaxY();
+  } ;
+
+  xStep = Math.abs(xStep);//ifu в положительное значение
+
+  //прорисовываем таргет прибора
+  if ( typeof graph.getCell(device.target.id) == 'undefined'){
+
+    point = getNewCoord(x,y);//вычисление свободной y-ячейки
+    x = point.x;
+    y = point.y;
+    //добавление элемента
+    var element = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking ? device.target.marking : device.target.name, 'top', null, 'green')
+    element.set('id', device.target.id);
+    graph.addCell([element]);
+    
+    var vertices = {x:point.x-xStep/5-1,y:point.y+element.getPort('abc').attrs.rect.height/2}; //доп точка на линке
+    link = getLink(device.source.id, device.target.id,vertices);
+    
+    graph.addCell([link]);
+    
+  }
+
+//прорисовка элементов
+  drawElement2(cableLog, device.source.id, device.target.id, x, y, device.index, device.number, device.target.location);
+
+//изменение размера прямоугольника этажа
+  if ( typeof floorRect != 'undefined'){
+    floorRect.resize(paperWidth-10,getMaxY() - yStep/2 - floorRect.attributes.position.y,['top-right']);
+  }
 
 }
 //Отрисовка элемента по target_id

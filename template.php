@@ -83,7 +83,7 @@
   <g class="scalable">
     <rect class="center"/>
     <rect class="left"/>
-    <rect class="rigth"/>
+    <rect id="r-rigth"/>
   </g>
    <g ><text></text></g> 
    <g ><text class="textr"></text></g> 
