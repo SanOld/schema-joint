@@ -369,8 +369,9 @@ function draw(elem_type){
   var device_risers = {} // ид девайсов прехода как имя свойства
   var source_target = []; //массив объектов source - target
   
-  var cables = {};
-  var cabinets = {};
+
+  var cabinets_core_count = {};
+  var main_cabinet;
   
   for(var j in floors){
     cableLog = floors[j].cableLog;
@@ -386,19 +387,83 @@ function draw(elem_type){
 //    
     
     
-
-    main_source_target = getMaxModulCabinet(cableLog, elem_type, j);
+    cabinets_core_count = getCabinetsCoreCount(cableLog, elem_type);
+      
+    main_cabinet_id = getMaxCoreCabinetId(cabinets_core_count);
+    devices[main_cabinet_id] = 1
     
-    window.console.log(main_source_target);
-//    window.console.log(maxLine);
-    drawSorceTarget( [main_source_target], j);
+    source_target = getSourceTarget(cableLog,elem_type, devices, j);
+    
+    drawSorceTarget( source_target, j);
+
   }
 }
 
-
-function getMainSourceTarget(cableLog, elem_type, floorNumber){
+//получаем количество core в шкафах
+function getCabinetsCoreCount(cableLog, elem_type){
+  var cableLog = cableLog;
+  var result = {};
   
+  for(var i in cableLog){
+    
+      
+    if(cableLog[i].finish_sysname == elem_types[elem_type] &&
+      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
+      
+      result[cableLog[i].finish_id] += cableLog[i].cableline_data.cable.core_count;
+    }
+      
+    if(cableLog[i].start_sysname == elem_types[elem_type] &&
+      cableLog[i].full_path[0].elem_type == elem_type){
+      
+      result[cableLog[i].finish_id] += cableLog[i].cableline_data.cable.core_count;
+    }
+    
+  }
+  return result;
 }
+//получаем ид шкафа с макс значением суммсщку
+function getMaxCoreCabinetId(arr){
+  var arr = arr;
+  var max = 0;
+  for(var i in arr){
+    max = max > arr[i] ? max : arr[i];
+  }
+  return i;
+}
+//получаем объекты source - target по ид девайсов
+function getSourceTarget(cableLog, elem_type, devices, floorNumber){
+  var result = [];
+  var cableLog = cableLog;
+  var elem_type = elem_type;
+  var floorNumber = floorNumber;
+  var device = false;
+  
+  var another_devices = false;
+  var anotherFloor_devices = false;
+  
+      for(var device_id in devices){
+        device = getNextLine(floorNumber, 0, device_id);//последовательное получение линий элементов (согласно маркировке)
+        while(device){
+            result.push(device);
+          device = getNextLine(floorNumber, +device.number, device_id);//последовательное получение линий элементов (согласно маркировке)
+        }
+        another_devices = getAnotherLine(floorNumber, device_id);//получение линий элементов с пустой маркировкой
+        result = result.concat(another_devices);
+      }
+      
+      //замена riser на device
+//      for(var el in result){
+//        if(device_riser[elem_type].indexOf(result[el].target.name) != -1 ){
+//            anotherFloor_devices = getAnotherFloorLine( result[el], floorNumber);//получение линий элементов с пустой маркировкой
+//            delete result[el];
+//            result = result.concat(anotherFloor_devices);
+//        }
+//      }
+  return result;
+}
+
+
 
 //обход элементов source-target для отрисовки согласно массиву 
 function drawSorceTarget( source_target, floorNumber){
@@ -603,7 +668,6 @@ function getDevices(cableLog, elem_type){
   var cableLog = cableLog;
   var elem_type = elem_type;
 
-
   for(var i in cableLog){
 
     if(cableLog[i].finish_sysname == elem_types[elem_type] &&
@@ -622,6 +686,7 @@ function getDevices(cableLog, elem_type){
   } 
   return devices;
 }
+
 //получаем девайсы перехода
 function getDeviceRisers(cableLog, elem_type){
   var devices = {};
@@ -647,37 +712,7 @@ function getDeviceRisers(cableLog, elem_type){
   } 
   return devices;
 }
-//получаем объекты source - target по ид девайсов
-function getSourceTarget(cableLog, elem_type, devices, floorNumber){
-  var result = [];
-  var cableLog = cableLog;
-  var elem_type = elem_type;
-  var floorNumber = floorNumber;
-  var device = false;
-  
-  var another_devices = false;
-  var anotherFloor_devices = false;
-  
-      for(var device_id in devices){
-        device = getNextLine(floorNumber, 0, device_id);//последовательное получение линий элементов (согласно маркировке)
-        while(device){
-            result.push(device);
-          device = getNextLine(floorNumber, +device.number, device_id);//последовательное получение линий элементов (согласно маркировке)
-        }
-        another_devices = getAnotherLine(floorNumber, device_id);//получение линий элементов с пустой маркировкой
-        result = result.concat(another_devices);
-      }
-      
-      //замена riser на device
-//      for(var el in result){
-//        if(device_riser[elem_type].indexOf(result[el].target.name) != -1 ){
-//            anotherFloor_devices = getAnotherFloorLine( result[el], floorNumber);//получение линий элементов с пустой маркировкой
-//            delete result[el];
-//            result = result.concat(anotherFloor_devices);
-//        }
-//      }
-  return result;
-}
+
 
 //последовательное получение линий элементов (согласно маркировке)
 function getNextLine(floorNumber, number, device_id ){
