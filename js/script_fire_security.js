@@ -825,11 +825,11 @@ $(document).ready(function(e)
   $.ajax({
     type: 'POST',
     dataType:'json',
-    url: '../data/data_pozh2.json',
+    url: '../data/data_4ohr.json',
     success: function(response){
       var data = response;
       floors = data.floors;
-      draw('firealarm.Element');
+      draw('security.Element');
 //      draw('security.Element');
     }
 	});
