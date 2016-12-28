@@ -386,19 +386,8 @@ function draw(elem_type){
 //    
     
     
-    var mainCabinetId;
-    var main_source_target;
-    
-    cables = getCables(cableLog, elem_type);
-    window.console.log(cables);    
-    
-    var maxLine = getMaxLine(cables);
-    window.console.log(maxLine);
-    var mainCabinetId = getMainCableId(cableLog, maxLine);
-    window.console.log(mainCabinetId);
-    
-    alert(mainCabinetId);
-    main_source_target = getMainSourceTarget(j, mainCabinetId);
+
+    main_source_target = getMainSourceTarget(cableLog, elem_type, j);
     
     window.console.log(main_source_target);
 //    window.console.log(maxLine);
@@ -406,124 +395,11 @@ function draw(elem_type){
   }
 }
 
-//получаем кабели
-function getCables(cableLog, elem_type){
-  var cables = {};
-  var cableLog = cableLog;
-  var elem_type = elem_type;
+
+function getMainSourceTarget(cableLog, elem_type, floorNumber){
   
-  for(var i in cableLog){
-    var id = cableLog[i].cableline_data.cable.id;
-    if( ! (id in cables) ){
-      cables[id] = {};
-      cables[id].cabinets = [];
-    }
-
-    cables[id].id = cableLog[i].cableline_data.cable.id;
-    cables[id].name = cableLog[i].cableline_data.cable.name;
-
-    if(cableLog[i].finish_sysname == elem_types[elem_type] &&
-      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
-        cables[id].cabinets[cableLog[i].finish_id] += 1 ;
-    }
-    
-    if(cableLog[i].start_sysname == elem_types[elem_type] &&
-      cableLog[i].full_path[0].elem_type == elem_type){
-        cables[id].cabinets[cableLog[i].start_id] += 1 ;
-    }
-    
-  } 
-  return cables;
-}
-//Определяем самую длинную линию
-function getMaxLine(cables){
-  var cables = cables;
-  var max = 0;
-  var line;
-  var length = 0;
-  for(var i in cables){
-    for(var y in cables[i].cabinets){
-      length++;
-    }
-    if(max < length){
-       max = length;
-       line = cables[i].cabinets;
-    }
-  }
-  return line;
 }
 
-function getMainCableId(cableLog, maxLine){
-  var cableLog = cableLog;
-  var maxLine = maxLine;
-  
-  for(var i in maxLine){
-    maxLine[i] = 0;
-    for(var y in cableLog){
-      if(i == cableLog[y].start_id){
-        maxLine[i] += 1;
-      }
-      if(i == cableLog[y].finish_id){
-        maxLine[i] += 1;
-      }
-    }
-    if (maxLine[i] == 1){
-      return i;
-    }
-  }
-}
-//последовательное получение линий элементов (согласно маркировке)
-function getMainSourceTarget(floorNumber,  device_id ){
-  
-  var floorNumber = floorNumber;
-  var device_id = device_id;
-  var cableLog;
-  var device;
-  var cableLog = cableLog;
-  var number = number;
-  
-  cableLog = floors[floorNumber].cableLog;
-  
-  for(var i in cableLog){
-    device = {};
-    device.source = {};
-    device.target = {};
-
-    device.floor_number = floorNumber;
-    device.index = i;
-    
-    if(cableLog[i].finish_id == device_id){
-      device.source.id = cableLog[i].finish_id;
-      device.source.name = cableLog[i].finish_sysname;
-      device.source.marking = cableLog[i].finish_marking[0];
-      device.source.title = cableLog[i].finish_title;
-
-      device.target.id = cableLog[i].start_id;
-      device.target.name = cableLog[i].start_sysname;
-      device.target.marking = cableLog[i].start_marking[0];
-      device.target.title = cableLog[i].start_title;
-      device.target.location = 'start';
-        return device;
-    }
-    
-    if(cableLog[i].start_id == device_id){
-      device.source.id = cableLog[i].start_id;
-      device.source.name = cableLog[i].start_sysname;
-      device.source.marking = cableLog[i].start_marking[0];
-      device.source.title = cableLog[i].start_title;
-      
-      device.target.id = cableLog[i].finish_id;
-      device.target.name = cableLog[i].finish_sysname;
-      device.target.marking = cableLog[i].finish_marking[0];
-      device.target.title = cableLog[i].finish_title;
-      device.target.location = 'finish';
-      
-      device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
-        return device;
-    }    
-  } 
-  return false;
-}
 //обход элементов source-target для отрисовки согласно массиву 
 function drawSorceTarget( source_target, floorNumber){
   
