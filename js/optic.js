@@ -387,7 +387,7 @@ function draw(elem_type){
     
     
 
-    main_source_target = getMainSourceTarget(cableLog, elem_type, j);
+    main_source_target = getMaxModulCabinet(cableLog, elem_type, j);
     
     window.console.log(main_source_target);
 //    window.console.log(maxLine);
