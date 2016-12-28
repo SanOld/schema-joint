@@ -23,8 +23,8 @@
 <script src="js/lib/backbone.js"></script>
 <script src="js/lib/joint.js"></script>
 
-<script src="js/include.js?<?php echo $hash;?>"></script>
-<script src="js/init.js?<?php echo $hash;?>"></script>
+<script src="js/include.js"></script>
+<script src="js/init.js"></script>
 
 
 
