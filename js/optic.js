@@ -12,11 +12,12 @@ var xStep = 150;         //шаг отрисовки по y
 
 var widthEl = 75;       //ширина шкафа
 var heightEl = 100;      //высота шкафа
-var widthCable = 50;       //ширина элемента
-var heightCable = 100;      //высота элемента
-var widthModule = 20;       //ширина элемента
-var heightModule = 40;      //высота элемента
+var widthCable = 30;       //ширина элемента кабель
+var heightCable = 100;      //высота элемента кабель
+var widthModule = 10;       //ширина элемента модуль
+var heightModule = 30;      //высота элемента модуль (вычисляется не меньше заданной)
 
+var coreDistance = 5 //расстояние между линками
 
 var floors = [];        //массив элементов по этажам
 var populationArr =[]   // матрица отслеживания расположения элементов
@@ -55,10 +56,13 @@ joint.shapes.defs.NewEl = joint.dia.Element.extend({
       type:'',
       position:{ x: 10 , y: 10 },
       atrrs:{}
-  }
+  },
+  addPointPort: function(){}
  });
      
-var NewEl = function(x, y, width, height, markup, text, text_location, text_color, rect_color, zIndex) {
+var NewEl = function(x, y, width, height, markup, text, text_location, data) {
+  
+  var height = data ? getModuleHeight(data) * data.cable.module_count : height;
   
   var rect = {};
   if(!markup){
@@ -77,6 +81,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
   var text = text || '';
   var text_location = text_location || 'top';
   var zIndex = zIndex;
+  var commonModulHeight; //общее высота
   
   //положение текста по умолчанию соответствует значению text_location = 'top'
   var text_x, text_y, text_transform;
@@ -109,7 +114,32 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
       break;
   }
 
-     // Single port definition
+  var cell = new joint.shapes.defs.NewEl({
+      markup: markup,
+      type:'defs.NewEl',
+      z:zIndex,
+       position:{ x: x , y: y },
+       attrs:{
+         'text':{
+           text: text,
+           transform: text_transform,
+           x: text_x,
+           y: text_y,
+           'text-anchor': 'middle',
+           fill: text_color,
+           'font-size': '10px'
+         },
+         rect: rect, //ghb отсуствии markup формируется в начале
+        },
+//          ports: {
+//            groups: {},
+//            items: [ port ]
+//        }
+   });
+
+  cell.resize(width,height,['top-right']);
+  
+    // Single port definition
     var port = {
         id: 'abc',
         group: 'a',
@@ -118,45 +148,69 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
                   x: 0
                 },
         attrs: { 
-            rect:{
-            width: widthEl,
-            height: heightEl,
-            stroke: 'transparent',
+            circle:{
+            cx: 0,
+            cy: 0,
+            r: coreDistance/2,
+            stroke: '#000000',
             fill: 'transparent'
           }
         },
-        markup: '<rect  width="10" height="10" stroke="blue"/>'
+        markup: '<circle cx="100" cy="100" r="100"/>'
     };
     
-    var cell = new joint.shapes.defs.NewEl({
-        markup: markup,
-        type:'defs.NewEl',
-        z:zIndex,
-         position:{ x: x , y: y },
-         attrs:{
-           'text':{
-             text: text,
-             transform: text_transform,
-             x: text_x,
-             y: text_y,
-             'text-anchor': 'middle',
-             fill: text_color,
-             'font-size': '10px'
-           },
-           rect: rect, //ghb отсуствии markup формируется в начале
-          },
-          ports: {
-            groups: {},
-            items: [ port ]
-        }
-     });
+    
+  if(data){
+    var t = data.cable.module_count;
+    var i = data.cable.core_count/data.cable.module_count;
+    var moduleHeight = getModuleHeight(data);
+    commonModulHeight = data.cable.module_count *  moduleHeight;
+    do{
+      var i = data.cable.core_count/data.cable.module_count;
+      var firstStep = (moduleHeight - i*coreDistance)/2;
+      do{
+        port.args.x = width/2;
+        port.args.y = firstStep + coreDistance * i + moduleHeight*(t-1);
+        firstStep = 0;
+        port.id = data.id + "_" + t + "_" + i;
+        cell.addPort( port );
+      }while(--i)
 
-  cell.resize(width,height,['top-right']);
+    }while(--t)
+  }
+  
+  cell.addPointPort = function(new_data){
+    var data = new_data || false;
+    if(data){
+      var t = data.cable.module_count ;;
+      var i = data.cable.core_count/data.cable.module_count;
+      var moduleHeight = getModuleHeight(data);
+
+      do{
+        var i = data.cable.core_count/data.cable.module_count;
+         var firstStep = (moduleHeight - i*coreDistance)/2;
+        do{
+          port.args.x = width/2;
+          port.args.y = firstStep + coreDistance * i + moduleHeight*(t-1)+ commonModulHeight ;
+          firstStep = 0;
+          port.id = data.id + "_" + t + "_" + i;
+          cell.addPort( port );
+        }while(--i)
+
+      }while(--t)
+     }
+     commonModulHeight += data.cable.module_count *  moduleHeight;
+  };
+  
+  
 //    graph.addCell(cell);
     return cell;
 };
 
 var NewCable = function(x, y, width, height, markup, text, text_location, text_angle, data) {
+  
+var core_count = data.cable.core_count;
+var height = getModuleHeight(data) * data.cable.module_count;
 
   var rect = {};
   if(!markup){
@@ -167,14 +221,6 @@ var NewCable = function(x, y, width, height, markup, text, text_location, text_a
             height: height
          }
   }
-//  if(data){
-//    markup = '<g class="rotatable"><g class="scalable">';
-//   var i = data.cable.module_count
-//   while(i--){
-//     markup += '<rect class="rect-modul"/><text class="text-modul"/>'
-//   }
-//   markup += '</g><text/></g>';
-//  }
   
   var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
   var text_color = text_color || "#000";
@@ -245,7 +291,7 @@ var NewCable = function(x, y, width, height, markup, text, text_location, text_a
              text: text,
              transform: text_transform,
              x: text_x,
-             y: text_y,
+             y: text_y+5,
              'text-anchor': 'middle',
              fill: text_color,
              'font-size': '10px'
@@ -263,24 +309,26 @@ var NewCable = function(x, y, width, height, markup, text, text_location, text_a
   if(data){
 
    var i = data.cable.module_count
-   var port_step = widthModule/data.cable.core_count;
-   while(i--){
-     var new_module =  NewModule( x - widthModule, y + heightModule*i, false, false, false, 'module '+i, 'center', data);
-     var new_module2 =  NewModule( x + width, y + heightModule*i, false, false, false, 'module '+i, 'center', data);
-     new_module.set('id' , data.id + "_l" + i);
-     new_module2.set('id' , data.id + "_r" + i);
+   var height_module = getModuleHeight(data);
+   do{
+     var new_module =  NewModule( x - widthModule, y + height_module*(i-1), false, height_module, false, 'М '+i, 'center', data, i);
+     var new_module2 =  NewModule( x + width, y + height_module*(i-1), false, height_module, false, 'М '+i, 'center', data, i);
+     new_module.set('id' , data.id + "_" + i + "_l");
+     new_module2.set('id' , data.id + "_" + i + "_r");
      graph.addCells([new_module, new_module2]);
-   }
+   }while(--i)
   }
   
 //    graph.addCell(cell);
     return cell;
 };
 
-var NewModule = function(x, y, width, height, markup, text, text_location, data) {
+var NewModule = function(x, y, width, height, markup, text, text_location, data, number) {
 
 var width = width || widthModule;
-var height = height || heightModule;
+var height = height > heightModule ? height : heightModule;
+//var height = data.cable.core_count/data.cable.module_count ? data.cable.core_count/data.cable.module_count * coreDistance + coreDistance : height; 
+ 
   var rect = {};
   if(!markup){
     var rect = {
@@ -296,11 +344,9 @@ var height = height || heightModule;
   var rect_color = rect_color || "#000";
   var text = text || '';
   var text_location = text_location || 'center';
-  var text_size = text_size || 8;
+  var text_size = text_size || 6;
   var zIndex = zIndex;
-
-  
-  
+  var number = number || 1;
 
   //положение текста по умолчанию соответствует значению text_location = 'top'
   var text_x, text_y, text_transform;
@@ -332,10 +378,8 @@ var height = height || heightModule;
       text_transform = "rotate(270 "+width/2+","+height/2+")" ;
       break;
   }
-
-
-    
-    var cell = new joint.shapes.defs.NewEl({
+   
+  var cell = new joint.shapes.defs.NewEl({
         markup: markup,
         type:'defs.NewEl',
         z:zIndex,
@@ -345,7 +389,7 @@ var height = height || heightModule;
              text: text,
              transform: text_transform,
              x: text_x,
-             y: text_y,
+             y: text_y + text_size/2,
              'text-anchor': 'middle',
              fill: text_color,
              'font-size': text_size
@@ -360,7 +404,6 @@ var height = height || heightModule;
 
   cell.resize(width,height,['top-right']);
   
-  
   // Single port definition
     var port = {
         id: 'abc',
@@ -371,8 +414,8 @@ var height = height || heightModule;
                 },
         attrs: { 
             rect:{
-            width: 5,
-            height: heightModule,
+            width: width,
+            height: 1,
             stroke: 'transparent',
             fill: 'transparent'
           }
@@ -380,17 +423,16 @@ var height = height || heightModule;
         markup: '<rect  width="10" height="10" stroke="blue"/>'
     };
     
-    
   if(data){
 
-   var i = data.cable.core_count/data.cable.module_count;
-   var port_step = widthModule/data.cable.core_count;
-   while(i--){
-//     var new_port = new port;
-     port.args.x = port_step * i;
-     port.id = i;
+   var i = data.cable.core_count/data.cable.module_count ;
+   var firstStep = (height - i*coreDistance)/2;
+   do{
+     port.args.y = firstStep + coreDistance * i;
+     firstStep = 0;
+     port.id = data.id + "_" + number + "_" + i;
      cell.addPort( port );
-   }
+   }while(--i)
   }
   
   
@@ -580,32 +622,81 @@ function getNewCoord(x,y,xFix){
 //          вычисление свободной y-ячейки  
   return {x:x,y:y};
 }
-function getLink(source_id, target_id, vertices){
-  var source_id = source_id;
-  var target_id = target_id;
+function drawLinks(source_cell, cabelSide){
+    var ports = source_cell.getPorts();
+    window.console.log(source_cell);
+    var f = ports.length;
+    while(f--){
+      var port_data = String(ports[f].id).split("_");
+      graph.addCell([
+        getLink(
+          {id:source_cell.id, port:ports[f].id}, 
+          {id:port_data[0]+"_"+port_data[1]+"_" + cabelSide, port:ports[f].id},
+          null,
+          cabelSide == 'l' ? ports.length - f : null
+        )
+      ]); 
+    }  
+}
+function getLink(source, target, vertices, number){
+
+  var s_id;
+  var s_port;
+  var t_id;
+  var t_port;
   var vertices = vertices || '';
+  var number = +number || false;
+  
+  if ( typeof source == 'object'){
+    s_id = source.id;
+    s_port = source.port;
+  } else {
+    s_id = source;
+    s_port = 'abc';
+  }
+  if ( typeof target == 'object'){
+    t_id = target.id;
+    t_port = target.port;
+  } else {
+    t_id = target;
+    t_port = 'abc';
+  }
+  
+  
+  window.console.log(graph.getCell(t_id));
+  window.console.log(t_id);
+  window.console.log(graph.getElements());
+  
   
   var link = new joint.dia.Link({
-     source: { id: source_id, port: 'abc'  },
-     target: { id: target_id, port: 'abc' },
+     source: { id: s_id, port: s_port  },
+     target: { id: t_id, port: t_port },
      attrs:{
        manhattan:true //ортогональное расположение
      }
   });
+  
+  link.set('id', s_id+"_"+s_port+"_"+t_id+"_"+t_port);
+  
   link.set('router', {
             name: 'manhattan',
-//                name: 'oneSide',
             args: {
               side: 'bottom',
                 startDirections: ['right','left'],
                 endDirections: ['left','right'],
                 excludeTypes : ['defs.NewEl'],
                 step: 2,
-      //                    padding: 5
             }
   });
   link.set('connector', { name: 'normal' }); 
   if(vertices != ''){
+    link.set('vertices',[vertices]);
+  }
+  if(number){
+    vertices = {
+                x:graph.getCell(t_id).prop('position/x') + graph.getCell(t_id).getPort(t_port).args.x - number*2 - 5,
+                y:graph.getCell(t_id).prop('position/y') + graph.getCell(t_id).getPort(t_port).args.y
+              }
     link.set('vertices',[vertices]);
   }
   return link;
@@ -613,6 +704,15 @@ function getLink(source_id, target_id, vertices){
 function sortByCoreCount(a, b) {
   if (a.cableline_data.cable.core_count > b.cableline_data.cable.core_count) return -1;
   if (a.cableline_data.cable.core_count < b.cableline_data.cable.core_count) return 1;
+}
+function getModuleHeight(data){
+  var data = data;
+  if (data){
+   var  calculatedHeight = data.cable.core_count/data.cable.module_count * coreDistance + coreDistance;
+    
+    return calculatedHeight >  heightModule ? calculatedHeight : heightModule;
+  }
+  return 0;
 }
 
 
@@ -641,7 +741,6 @@ function draw(elem_type){
 
   }
 }
-
 //получаем количество core в шкафах
 function getCabinetsCoreCount(cableLog, elem_type){
   var cableLog = cableLog;
@@ -850,17 +949,25 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
   var elements; //массив всех элементо для проверки наличия floor rect
   var isFirstFloorRect = true;
   var link;
+  var flag = false;
+
 
 
   //прорисовываем шкаф 
   point = getNewCoord(x,y,true);
-  if ( typeof graph.getCell(device.source.id) == 'undefined'){
+  var source_cell = graph.getCell(device.source.id);
+  if ( typeof source_cell == 'undefined'){
     //вычисление свободной y-ячейки
     //добавление элемента
-    var main = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.title +"\n"+device.source.id, 'top', null, 'green')
-    main.set('id', device.source.id);
-    graph.addCell([main]);
+    var source_cell = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.title, 'top', device.cableline_data)
+    source_cell.set('id', device.source.id);
+    graph.addCell([source_cell]);  
 
+  } else {
+    var old_height = source_cell.prop('size/height');
+    source_cell.prop('size/height', old_height + getModuleHeight(device.cableline_data) * device.cableline_data.cable.module_count);
+    flag = 1;
+//    source_cell.resize(width,height,['top-right']);
   }
 
   if(+deviceNumber > 0) {
@@ -868,7 +975,6 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
   } ;
 
   xStep = Math.abs(xStep);//ifu в положительное значение
-
 //прорисовываем шкаф
 
 
@@ -877,39 +983,49 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
     point = getNewCoord(x,y);//вычисление свободной y-ячейки
     x = point.x;
     y = point.y;
-      //добавление элемента
-//                          (x, y, width, height, markup, text, text_location, data)
-    var element = NewCable( point.x, point.y, widthCable, heightCable, false, device.cableline_data.cable.name, 'center', 270, device.cableline_data)
+    //добавление элемента
+    var element = NewCable( point.x, point.y, widthCable, heightCable, false, device.cableline_data.cable.id, 'center', 270, device.cableline_data)
     element.set('id', device.cableline_data.id);
     graph.addCell([element]);
-  
   }
-
 //прорисовываем кабель
 
 
-
-  //прорисовываем таргет шкафа
-  if ( typeof graph.getCell(device.target.id) == 'undefined'){
+//прорисовываем таргет шкафа
+var target_cell = graph.getCell(device.target.id);
+  if ( typeof target_cell == 'undefined'){
 
     point = getNewCoord(x,y);//вычисление свободной y-ячейки
     x = point.x;
     y = point.y;
     //добавление элемента
-    var element = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.title+"\n"+device.target.id, 'top', null, 'green')
-    element.set('id', device.target.id);
-    graph.addCell([element]);
+    var target_cell = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.title, 'top', device.cableline_data)
+    target_cell.set('id', device.target.id);
+    graph.addCell([target_cell]);
     
-    var vertices = {x:point.x-xStep/5-1,y:point.y+element.getPort('abc').attrs.rect.height/2}; //доп точка на линке
-    link = getLink(device.source.id, device.target.id,vertices);
+//    var vertices = {x:point.x-xStep/5-1,y:point.y+element.getPort('abc').attrs.rect.height/2}; //доп точка на линке
+//    link = getLink(device.source.id, device.target.id,vertices);
+//    
+//    graph.addCell([link]);
     
-    graph.addCell([link]);
-    
+  } else {
+    var old_height = target_cell.prop('size/height');
+    target_cell.prop('size/height', old_height + device.cableline_data.cable.core_count * coreDistance);
   }
+  
+//прорисовываем таргет шкафа
 
-//прорисовка элементов
-  drawElement2(cableLog, device.source.id, device.target.id, x, y, device.index, device.number, device.target.location);
+//прорисовываем линки
 
+if(flag){
+  source_cell.addPointPort(device.cableline_data);
+}
+drawLinks(source_cell, "l");
+drawLinks(target_cell, "r");
+
+    
+    
+ drawElement2(cableLog, device.source.id, device.target.id, x, y, device.index, device.number, device.target.location);
 
 
 }
@@ -935,8 +1051,7 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
   var new_location;
 
   var elem_sysname;
-  var marking;
-          
+  var marking;         
   
   //проход по каталогу cableLog
   for(var i in cableLog){
@@ -949,6 +1064,7 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
 //       
       if(( finish_id == target_id /*&& target_location == 'start'*/) || (start_id == target_id /*&& target_location == 'finish'*/)){
 
+          
         if( finish_id == target_id /*&& target_location == 'start'*/){
           new_target_id = cableLog[i].start_id;
           new_elem_sysname = cableLog[i].start_sysname;
@@ -977,20 +1093,20 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
             var point = getNewCoord(x,y);//вычисление свободной y-ячейки
             x = point.x;
             y = point.y;
-  //            var coor = "x:"+x+" y:"+y;  
-  //          добавление элемента
-            var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_title +'\n'+new_target_id,'top', null, 'green')
+
+  //        добавление элемента
+            var IZ = NewEl(x, y, widthEl, heightEl, markupArray[new_elem_sysname], new_title +'\n'+new_target_id, 'top', cableLog[i].cableline_data)
             IZ.set('id', new_target_id);
             graph.addCell([IZ]);
-  //          добавление элемента
+  //        добавление элемента
 
             source_id = target_id
-  //          добавление линки между элементами
-            graph.addCell([getLink(source_id, new_target_id)]); 
-  //           добавление линки между элементами
+  //        добавление линки между элементами
+//            graph.addCell([getLink(source_id, new_target_id)]); 
+  //        добавление линки между элементами
           }  
 
-          drawElement2(cableLog, source_id,new_target_id, x,y,i,number, new_location);
+          drawElement2(cableLog, source_id,new_target_id, x, y, i, number, new_location);
           x = x - xStep;
         }
   
@@ -998,8 +1114,6 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
     }
   }              
 }
-
-
 
 
 

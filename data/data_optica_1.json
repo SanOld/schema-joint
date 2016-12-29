@@ -1,0 +1,899 @@
+{
+  "floors": [
+    {
+      "floorData": {
+        "name": "Страница 1",
+        "project": "42b45b9f-4b62-43cc-beb7-a14d67e5b834",
+        "index": 1,
+        "id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+        "floor": 0.1,
+        "ground": 2.8,
+        "ceiling": 2.8,
+        "routes": 2.6,
+        "netOutlet": 0.7,
+        "elOutlet": 0.7,
+        "outletPer": 1.2,
+        "elSwitch": 0.7,
+        "other": 0.7,
+        "measureUnits": 1,
+        "slab_height": 0.5,
+        "outlet_reserve": 1,
+        "rack_reserve": 1,
+        "cable_reserve": 5,
+        "wallWidth": 0.12,
+        "channelOccupancy": 0.3,
+        "marking": 1,
+        "active": true
+      },
+      "scaling": 43,
+      "floorIdx": 1,
+      "floorHeight": 0,
+      "cableLog": [
+        {
+          "id": "daab5c61-bf99-61f4-1966-0df6b4b7ff31",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "cableline_data": {
+            "id": "daab5c61-bf99-61f4-1966-0df6b4b7ff31",
+            "start": {
+              "cell": "2bb30c9b-9ce7-43b3-9033-2daf445355a0",
+              "port": 1,
+              "resource": "694d9491-a654-46d4-b52f-3fee67eaf6e6"
+            },
+            "finish": {
+              "cell": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+              "port": 1,
+              "resource": "3f3db4ab-b1a9-4aa1-b32c-cf1bc7f4083b"
+            },
+            "cable": {
+              "id": "CA005",
+              "name": "Оптоволоконный Кабель",
+              "section": 9,
+              "section_name": "",
+              "module_count": 1,
+              "core_count": 1,
+              "type": 4,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA005",
+                  "id": "158fd296-c5bb-437f-8354-6812402f7bd9",
+                  "name": "Оптоволоконный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA005I",
+                  "id": "42ed4340-c10f-4684-a6a3-6b1bb5872f33",
+                  "name": "CA005 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "finish_conn_detail": [],
+            "start_conn_detail": [],
+            "midPoints": [
+              "a2c2fa5c-7198-635b-e8bb-a44535297087",
+              "b7bec637-6d74-d12e-605c-e196735fd722"
+            ]
+          },
+          "cableID": "CA005",
+          "cableType": "Оптоволоконный Кабель",
+          "cableSection": 9,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 7.09,
+          "lengthWithOutReserv": 4.85,
+          "start": "Оптический шкаф / Оптический кросс  Port 1",
+          "finish": "Оптический шкаф / Оптический кросс  Port 1",
+          "finishLabel": "",
+          "start_title": "Оптический шкаф",
+          "start_sysname": "OpticRack",
+          "finish_title": "Оптический шкаф",
+          "finish_sysname": "OpticRack",
+          "start_id": "2bb30c9b-9ce7-43b3-9033-2daf445355a0",
+          "finish_id": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+          "start_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "finish_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "start_port": 1,
+          "finish_port": 1,
+          "start_marking": [
+            1
+          ],
+          "finish_marking": [
+            2
+          ],
+          "full_path": [
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "2bb30c9b-9ce7-43b3-9033-2daf445355a0",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "091f34f1-2f31-6ec8-67cf-3ad6338bbf18",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "a2c2fa5c-7198-635b-e8bb-a44535297087",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "9ee186bc-fa44-471a-5662-a42a9cc87dd1",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 4.81
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "b7bec637-6d74-d12e-605c-e196735fd722",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "dc982d25-0881-e7d6-dc07-737d909b126d",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "0b6ec03e-a32d-a229-01fe-7b4004211366",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "cableline_data": {
+            "id": "0b6ec03e-a32d-a229-01fe-7b4004211366",
+            "start": {
+              "cell": "a6dcdb67-6e53-43bc-a950-8df1e621c96b",
+              "port": 1,
+              "resource": "22be271b-9328-43f0-bdaa-3984981aa0b4"
+            },
+            "finish": {
+              "cell": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+              "port": 2,
+              "resource": "3f3db4ab-b1a9-4aa1-b32c-cf1bc7f4083b"
+            },
+            "cable": {
+              "id": "CA005",
+              "name": "Оптоволоконный Кабель",
+              "section": 9,
+              "section_name": "",
+              "module_count": 1,
+              "core_count": 1,
+              "type": 4,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA005",
+                  "id": "79be99a9-59d8-425d-b4eb-a32629a6288d",
+                  "name": "Оптоволоконный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA005I",
+                  "id": "e827b5d1-145b-4557-b104-60bf69aa1145",
+                  "name": "CA005 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "finish_conn_detail": [],
+            "start_conn_detail": [],
+            "midPoints": [
+              "9f4c19db-39d6-05d7-a82b-d06cd7ae9772",
+              "d1711fa7-0eaa-df65-4a51-dc58fc707a1f",
+              "64e801c3-c8bb-eea9-bf7a-0bf2f61db070"
+            ]
+          },
+          "cableID": "CA005",
+          "cableType": "Оптоволоконный Кабель",
+          "cableSection": 9,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 10.06,
+          "lengthWithOutReserv": 7.68,
+          "start": "Оптический шкаф / Оптический кросс  Port 1",
+          "finish": "Оптический шкаф / Оптический кросс  Port 2",
+          "finishLabel": "",
+          "start_title": "Оптический шкаф",
+          "start_sysname": "OpticRack",
+          "finish_title": "Оптический шкаф",
+          "finish_sysname": "OpticRack",
+          "start_id": "a6dcdb67-6e53-43bc-a950-8df1e621c96b",
+          "finish_id": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+          "start_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "finish_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "start_port": 1,
+          "finish_port": 2,
+          "start_marking": [
+            2
+          ],
+          "finish_marking": [
+            2
+          ],
+          "full_path": [
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "a6dcdb67-6e53-43bc-a950-8df1e621c96b",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "4c821f3a-0ce3-4de7-8903-678e965f7e75",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "9f4c19db-39d6-05d7-a82b-d06cd7ae9772",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "f7701a38-8f50-e078-ff57-a8810990f3fd",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 6.2
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "d1711fa7-0eaa-df65-4a51-dc58fc707a1f",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "3a47bd1b-38e2-9413-bba3-a1b2c964374f",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 1.44
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "64e801c3-c8bb-eea9-bf7a-0bf2f61db070",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "c7d751e5-f5f6-54c9-5e8c-46b9b7950aa0",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "59c81fc8-23bd-9d4c-be9f-753959c33431",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "cableline_data": {
+            "id": "59c81fc8-23bd-9d4c-be9f-753959c33431",
+            "start": {
+              "cell": "c83e7a7d-0288-4d0a-937d-7c35bc38e31c",
+              "port": 1,
+              "resource": "58214cd3-b0b0-4028-86a1-6da177e75aee"
+            },
+            "finish": {
+              "cell": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+              "port": 3,
+              "resource": "3f3db4ab-b1a9-4aa1-b32c-cf1bc7f4083b"
+            },
+            "cable": {
+              "id": "CA005",
+              "name": "Оптоволоконный Кабель",
+              "section": 9,
+              "section_name": "",
+              "module_count": 1,
+              "core_count": 1,
+              "type": 4,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA005",
+                  "id": "b6b162cd-49f5-44f1-bf49-dfbaa735a0ee",
+                  "name": "Оптоволоконный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA005I",
+                  "id": "20ba3f65-fbf8-4d8b-baae-1ed78a7b507f",
+                  "name": "CA005 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "finish_conn_detail": [],
+            "start_conn_detail": [],
+            "midPoints": [
+              "f6dc7b52-1c4a-6bbc-45c6-26e1ecb0caf5",
+              "f0acc47b-3a4e-339c-3cc5-79d5f9353892",
+              "33454b11-0306-e859-01f1-3c434b27f4e4"
+            ]
+          },
+          "cableID": "CA005",
+          "cableType": "Оптоволоконный Кабель",
+          "cableSection": 9,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 10.96,
+          "lengthWithOutReserv": 8.53,
+          "start": "Оптический шкаф / Оптический кросс  Port 1",
+          "finish": "Оптический шкаф / Оптический кросс  Port 3",
+          "finishLabel": "",
+          "start_title": "Оптический шкаф",
+          "start_sysname": "OpticRack",
+          "finish_title": "Оптический шкаф",
+          "finish_sysname": "OpticRack",
+          "start_id": "c83e7a7d-0288-4d0a-937d-7c35bc38e31c",
+          "finish_id": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+          "start_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "finish_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "start_port": 1,
+          "finish_port": 3,
+          "start_marking": [
+            3
+          ],
+          "finish_marking": [
+            2
+          ],
+          "full_path": [
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "c83e7a7d-0288-4d0a-937d-7c35bc38e31c",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "7a0e51a7-80fb-ea65-c2d4-afd9055b76a5",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "f6dc7b52-1c4a-6bbc-45c6-26e1ecb0caf5",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "ba0ae0a1-b2b2-0115-d384-a51394d9556a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 6.2
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "f0acc47b-3a4e-339c-3cc5-79d5f9353892",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "31b964ac-2c23-f468-e239-7205a93d32b9",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 2.29
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "33454b11-0306-e859-01f1-3c434b27f4e4",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "6acbe817-7ee9-83a7-90ab-57c8d4d25c54",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "a97928bb-9003-4a94-8471-1cd881b93dc0",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "1012e2ff-334a-960b-adef-be942be5cc73",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "cableline_data": {
+            "id": "1012e2ff-334a-960b-adef-be942be5cc73",
+            "start": {
+              "cell": "48d2c8f9-124d-4135-a6af-8702c2dd6d97",
+              "port": 1,
+              "resource": "89651538-729b-4484-8ecb-bae03d39a06b"
+            },
+            "finish": {
+              "cell": "a6dcdb67-6e53-43bc-a950-8df1e621c96b",
+              "port": 2,
+              "resource": "22be271b-9328-43f0-bdaa-3984981aa0b4"
+            },
+            "cable": {
+              "id": "CA005",
+              "name": "Оптоволоконный Кабель",
+              "section": 9,
+              "section_name": "",
+              "module_count": 1,
+              "core_count": 1,
+              "type": 4,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA005",
+                  "id": "e68d28c9-87f3-4c46-968e-f143383e015a",
+                  "name": "Оптоволоконный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA005I",
+                  "id": "39275b1e-ace9-4f44-8319-427fec42d344",
+                  "name": "CA005 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "finish_conn_detail": [],
+            "start_conn_detail": [],
+            "midPoints": [
+              "eeb168fb-81db-fdd1-4fd3-db419cc68276",
+              "ac3fcf68-57f2-2402-154f-37e8af06beba",
+              "eb21c0e5-41c5-1964-0d9d-f22ef632d745"
+            ]
+          },
+          "cableID": "CA005",
+          "cableType": "Оптоволоконный Кабель",
+          "cableSection": 9,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 9.92,
+          "lengthWithOutReserv": 7.54,
+          "start": "Оптический шкаф / Оптический кросс  Port 1",
+          "finish": "Оптический шкаф / Оптический кросс  Port 2",
+          "finishLabel": "",
+          "start_title": "Оптический шкаф",
+          "start_sysname": "OpticRack",
+          "finish_title": "Оптический шкаф",
+          "finish_sysname": "OpticRack",
+          "start_id": "48d2c8f9-124d-4135-a6af-8702c2dd6d97",
+          "finish_id": "a6dcdb67-6e53-43bc-a950-8df1e621c96b",
+          "start_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "finish_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "start_port": 1,
+          "finish_port": 2,
+          "start_marking": [
+            2
+          ],
+          "finish_marking": [
+            2
+          ],
+          "full_path": [
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "48d2c8f9-124d-4135-a6af-8702c2dd6d97",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "ad40fb10-ae16-8b63-a6b0-0da39abb0d9b",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "eeb168fb-81db-fdd1-4fd3-db419cc68276",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "371f7134-2cb8-30b1-0011-32748ab59af5",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 7.34
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "ac3fcf68-57f2-2402-154f-37e8af06beba",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "ac0f79c2-c1a4-03ca-f1ba-6c7a6b3b972b",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.16
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "eb21c0e5-41c5-1964-0d9d-f22ef632d745",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "63820a44-1dfc-bed2-08ba-fda05a01f9ab",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "a6dcdb67-6e53-43bc-a950-8df1e621c96b",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "17fe6f62-6ea4-cd64-9f11-94c25b4e5610",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "cableline_data": {
+            "id": "17fe6f62-6ea4-cd64-9f11-94c25b4e5610",
+            "start": {
+              "cell": "af979a5f-36a9-4cc9-be84-2610c35872e2",
+              "port": 1,
+              "resource": "724b2d31-3c96-4e78-b0ff-8fe89450a139"
+            },
+            "finish": {
+              "cell": "48d2c8f9-124d-4135-a6af-8702c2dd6d97",
+              "port": 2,
+              "resource": "89651538-729b-4484-8ecb-bae03d39a06b"
+            },
+            "cable": {
+              "id": "CA005",
+              "name": "Оптоволоконный Кабель",
+              "section": 9,
+              "section_name": "",
+              "module_count": 1,
+              "core_count": 1,
+              "type": 4,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA005",
+                  "id": "13be87f3-4ee3-4d43-8a59-67435363a84d",
+                  "name": "Оптоволоконный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA005I",
+                  "id": "60eb6330-f55d-489c-88ca-915842ec9d65",
+                  "name": "CA005 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "finish_conn_detail": [],
+            "start_conn_detail": [],
+            "midPoints": [
+              "9b443d14-4fbb-50d0-4b6d-76e237f3900e",
+              "92f81720-bc55-0620-2c42-2f05cb17289a"
+            ]
+          },
+          "cableID": "CA005",
+          "cableType": "Оптоволоконный Кабель",
+          "cableSection": 9,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 6.37,
+          "lengthWithOutReserv": 4.16,
+          "start": "Оптический шкаф / Оптический кросс  Port 1",
+          "finish": "Оптический шкаф / Оптический кросс  Port 2",
+          "finishLabel": "",
+          "start_title": "Оптический шкаф",
+          "start_sysname": "OpticRack",
+          "finish_title": "Оптический шкаф",
+          "finish_sysname": "OpticRack",
+          "start_id": "af979a5f-36a9-4cc9-be84-2610c35872e2",
+          "finish_id": "48d2c8f9-124d-4135-a6af-8702c2dd6d97",
+          "start_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "finish_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "start_port": 1,
+          "finish_port": 2,
+          "start_marking": [
+            2
+          ],
+          "finish_marking": [
+            2
+          ],
+          "full_path": [
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "af979a5f-36a9-4cc9-be84-2610c35872e2",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "34c25e36-951f-96da-b51e-4cdb0dd9c256",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "9b443d14-4fbb-50d0-4b6d-76e237f3900e",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "f7e5e352-197b-522a-f903-f190a267a39a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 4.12
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "92f81720-bc55-0620-2c42-2f05cb17289a",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "4bafa872-13cd-119c-4c1d-ec8269f2103c",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "48d2c8f9-124d-4135-a6af-8702c2dd6d97",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        },
+        {
+          "id": "62c15b4a-d0e3-bee5-3faa-122e3f5885c5",
+          "page_name": "Страница 1",
+          "page_index": 1,
+          "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "cableline_data": {
+            "id": "62c15b4a-d0e3-bee5-3faa-122e3f5885c5",
+            "start": {
+              "cell": "af979a5f-36a9-4cc9-be84-2610c35872e2",
+              "port": 2,
+              "resource": "724b2d31-3c96-4e78-b0ff-8fe89450a139"
+            },
+            "finish": {
+              "cell": "2937803f-a2f8-48bc-b497-e045154885ce",
+              "port": 1,
+              "resource": "ac57467e-a071-4a14-9fdb-058869c3d2fd"
+            },
+            "cable": {
+              "id": "CA005",
+              "name": "Оптоволоконный Кабель",
+              "section": 9,
+              "section_name": "",
+              "module_count": 1,
+              "core_count": 1,
+              "type": 4,
+              "resources": [
+                {
+                  "MU": "m",
+                  "code": "CA005",
+                  "id": "01a14143-6e26-4b27-8037-afc0dd60fd38",
+                  "name": "Оптоволоконный Кабель",
+                  "price": 0,
+                  "type": 1
+                },
+                {
+                  "MU": "m",
+                  "code": "CA005I",
+                  "id": "1692af7c-1e01-483f-bb5a-a019b886836a",
+                  "name": "CA005 Installation",
+                  "price": 0,
+                  "type": 2
+                }
+              ],
+              "price": 0
+            },
+            "f_finish_cable_id": "",
+            "f_finish_cable_side": "",
+            "f_cables_to_finish": [],
+            "finish_conn_detail": [],
+            "start_conn_detail": [],
+            "midPoints": [
+              "cda84944-82dd-b06d-3005-731e1775ef02",
+              "0080b37e-2cef-f022-628c-e550ccac6368",
+              "1f580aa4-437d-97bb-c40d-87838c373f26"
+            ]
+          },
+          "cableID": "CA005",
+          "cableType": "Оптоволоконный Кабель",
+          "cableSection": 9,
+          "cablePrice": 0,
+          "measureUnits": "м",
+          "length": 8.27,
+          "lengthWithOutReserv": 5.97,
+          "start": "Оптический шкаф / Оптический кросс  Port 2",
+          "finish": "Оптический шкаф / Оптический кросс  Port 1",
+          "finishLabel": "",
+          "start_title": "Оптический шкаф",
+          "start_sysname": "OpticRack",
+          "finish_title": "Оптический шкаф",
+          "finish_sysname": "OpticRack",
+          "start_id": "af979a5f-36a9-4cc9-be84-2610c35872e2",
+          "finish_id": "2937803f-a2f8-48bc-b497-e045154885ce",
+          "start_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "finish_page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+          "start_port": 2,
+          "finish_port": 1,
+          "start_marking": [
+            2
+          ],
+          "finish_marking": [
+            7
+          ],
+          "full_path": [
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "af979a5f-36a9-4cc9-be84-2610c35872e2",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "d84d5eb1-2aef-a4eb-9a84-622ae5b88bc7",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "cda84944-82dd-b06d-3005-731e1775ef02",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "8da2a3ba-faca-5766-78f7-211c23927c08",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 5.88
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "0080b37e-2cef-f022-628c-e550ccac6368",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "337cc054-672a-218f-cf9b-0c807567819a",
+              "elem_sysname": "electric.Link",
+              "elem_type": "route",
+              "elem_len": 0.05
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "1f580aa4-437d-97bb-c40d-87838c373f26",
+              "elem_sysname": "trace_connector",
+              "elem_type": "electric.VirtualPoint",
+              "elem_len": 0
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "1efc8981-91e3-938e-5776-37dee1bc8116",
+              "elem_sysname": "electric.Link",
+              "elem_type": "leveler",
+              "elem_len": 0.02
+            },
+            {
+              "page_id": "5f5d113d-a15b-46ee-9402-3701a8ca7bf3",
+              "elem_id": "2937803f-a2f8-48bc-b497-e045154885ce",
+              "elem_sysname": "OpticRack",
+              "elem_type": "optical.Element",
+              "elem_len": 0
+            }
+          ],
+          "other_path": []
+        }
+      ]
+    }
+  ]
+}
