@@ -12,6 +12,10 @@
 
 <link href="css/joint.css?<?php echo $hash;?>" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="fonts/font_roboto/roboto.css"/>
+<link href="css/dhtmlx.css?<?php echo $hash;?>" rel="stylesheet">
+
+
 <link href="css/helper.css?<?php echo $hash;?>" rel="stylesheet">
 <link href="css/style.css?<?php echo $hash;?>" rel="stylesheet">
 

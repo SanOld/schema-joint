@@ -1,4 +1,4 @@
-var paperWidth = 1300;  //ширина холста
+var paperWidth = 1500;  //ширина холста
 var paperHeight = 3000; //высота холста
 var minX = x;           //граница отрисовки
 var minY = y;           //граница отрисовки
@@ -25,6 +25,7 @@ var elem_types = {
    'firealarm.Element' : 'fireDevice'
   ,'security.Element' : 'controlPanel'
   ,'optical.Element' : 'OpticRack'
+  ,'network.Element' : 'Rack'
 }
 var device_riser = {
    'security.Element':['riser_up', 'riser_down']
@@ -390,7 +391,7 @@ var height = height > heightModule ? height : heightModule;
    
   var cell = new joint.shapes.defs.NewEl({
         markup: markup,
-        type:'defs.NewEl',
+        type:'module',
         z:zIndex,
          position:{ x: x , y: y },
          attrs:{
@@ -678,8 +679,8 @@ if(xStep < 0){
       link.label(0, {
           position: .8,
           attrs: {
-              rect: { fill: 'white' },
-              text: { fill: colorsScheme[f%colorsScheme.length], text: colorsScheme[f%colorsScheme.length], 'font-size': '8px' }
+              rect: { fill: 'white'},
+              text: { fill: colorsScheme[f%colorsScheme.length] , text: colorsScheme[f%colorsScheme.length], 'font-size': '8px', y:-0.1}
           }
       });
       link.attr({
@@ -1404,3 +1405,7 @@ $(document).ready(function(e)
     }
 	});
 });
+
+
+
+
