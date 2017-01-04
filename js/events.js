@@ -2,9 +2,7 @@
 paper.on('cell:pointerclick ', function(cellView, evt, x, y) { 
   switch (cellView.model.attributes['type']) {
     case 'module':
-        colorFormCreate(cellView.model.attr('rect/stroke'), function(selectedColor){
-          cellView.model.attr('rect', {stroke: selectedColor});
-        });
+        
         break; 
     case 'link':  
       colorFormCreate(cellView.model.attr('.connection/stroke'), function(selectedColor){
@@ -26,4 +24,8 @@ paper.on('cell:pointerclick ', function(cellView, evt, x, y) {
 
   }
 
+
 })
+
+
+
