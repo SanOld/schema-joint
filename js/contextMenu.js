@@ -66,7 +66,6 @@ switch (currentContextCellView.model.attributes['type']) {
           currentContextCellView.model.attr('rect', {stroke: selectedColor});
         });
       break;
-    
   }
  
   

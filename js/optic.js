@@ -1154,13 +1154,6 @@ function getNewCabelCoord(point){
 
 
 
-
-
-
-
-
-
-
 //последовательное получение линий элементов (согласно маркировке)
 function getNextLine(floorNumber, number, device_id ){
   
