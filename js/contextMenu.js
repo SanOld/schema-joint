@@ -47,7 +47,7 @@ switch (currentContextCellView.model.attributes['type']) {
         });
       }
       if(id == 'apply'){
-        alert("сделать");
+        repaint(currentContextCellView.model);
       }
       break;
     case 'link':
@@ -70,3 +70,34 @@ switch (currentContextCellView.model.attributes['type']) {
  
   
 });
+
+//перекрашиваем модули и линки по образцу
+function repaint(example){
+  var exampleModule = example;
+  var elements = graph.getElements();
+  var modules = [];
+  var color = exampleModule.attr('rect/stroke');
+  var linksColor = [];
+  var links = graph.getConnectedLinks(exampleModule);
+        for(var k in links){
+          linksColor.push(links[k].attr('.connection/stroke')) ;
+        }
+        
+  for(var i in elements){
+    if(elements[i].prop('type') == 'module' && elements[i].prop('moduleType') == exampleModule.prop('moduleType')){
+      //изменение цвета модуля
+      elements[i].attr('rect/stroke',  color);
+      //изменение цвета линки по образцу
+      var links = graph.getConnectedLinks(elements[i]);
+        for(var k in links){
+          links[k].attr('.connection/stroke', linksColor[k]);
+          links[k].label(0, {
+                attrs: {
+                    text: { fill: linksColor[k], text: linksColor[k] }
+                }
+            });          
+        }
+    }
+  }
+  
+}

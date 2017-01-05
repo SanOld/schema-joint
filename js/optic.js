@@ -1,12 +1,13 @@
-var paperWidth = 1500;  //ширина холста
+var paperWidth = 1300;  //ширина холста
 var paperHeight = 3000; //высота холста
+var y = 100;            //начальное положение первого элемента по x
+var x = 100;            //начальное положение первого элемента по н
 var minX = x;           //граница отрисовки
 var minY = y;           //граница отрисовки
 var maxX = paperWidth;  //граница отрисовки
 var maxY = paperHeight; //граница отрисовки
 
-var y = 100;            //начальное положение первого элемента по x
-var x = 100;            //начальное положение первого элемента по н
+
 var yStep = 150;         //шаг отрисовки по x
 var xStep = 300;         //шаг отрисовки по y
 
@@ -59,7 +60,8 @@ joint.shapes.defs.NewEl = joint.dia.Element.extend({
       atrrs:{}
   },
   addPointPort: function(){},
-  isChild: false
+  isChild: false,
+  moduleType: ''
  });
      
 var NewEl = function(x, y, width, height, markup, text, text_location, data) {
@@ -392,6 +394,7 @@ var height = height > heightModule ? height : heightModule;
   var cell = new joint.shapes.defs.NewEl({
         markup: markup,
         type:'module',
+        moduleType: '',
         z:zIndex,
          position:{ x: x , y: y },
          attrs:{
@@ -436,8 +439,9 @@ var height = height > heightModule ? height : heightModule;
     };
     
   if(data){
-
+  
    var i = data.cable.core_count/data.cable.module_count ;
+   cell.prop('moduleType', i) ;
    var firstStep = (height - i*coreDistance)/2;
    do{
      port.args.y = firstStep + coreDistance * i;
@@ -599,40 +603,90 @@ function getMaxY(t){
   
   return max;
 }
+function getNextX(x, changeStep){
+  var x = x;
+  var changeStep = changeStep;
+  
+  if(changeStep){
+  x = x + xStep;
+    if (x >= maxX){
+      xStep = -1 * xStep;
+      x = x + xStep;
+    };
+    if (x <= minX){
+      xStep = -1 * xStep;
+      x = x + xStep;
+    };
+  } else {
+    x = x + xStep;
+  }
+  
+  return x;
+}
+function getNextY(y){
+  var y = y;
+  return y + yStep;
+}
 function getNewCoord(x,y,xFix){
   var x = x;
   var y = y;
-  var xFix = xFix;
+  var xFix = xFix;//yt изменяем координату x для первого девайса
 
   if(!xFix){
-
-    x = x + xStep;
-    if (x + xStep > maxX){
-      xStep = -1 * xStep;
-      x = x + xStep;
-    };
-    if (x + xStep < minX){
-      xStep = -1 * xStep;
-      x = x + xStep;
-    };
-
-    if(x in populationArr){
-        while (populationArr[x][y]) { 
-          y = y + yStep;
-        }
-    } else {
+    
+    x = getNextX(x, true);  
+    
+    if( ! (x in populationArr) ){
         populationArr[x]=[];
-         while (populationArr[x][y]) { 
-          y = y + yStep;
-        }
+    } 
+    
+    while (populationArr[x][y]) { 
+          y = getNextY(y);
     }
 
   } else {
     populationArr[x]=[];
   }  
-  populationArr[x][y] = 1;//значение в ячейке - занята
-//          вычисление свободной y-ячейки  
+  
+ 
   return {x:x,y:y};
+}
+
+function moveDown(fromY){
+  var fromY = fromY;
+  var newPopulationArr = [];
+  
+  //меняем матрицу
+  for (var x in populationArr){
+    newPopulationArr[x] = [] ;
+    for(var y in populationArr[x]){
+      newPopulationArr[x][y] = populationArr[x][y];
+      if(+y > fromY && +populationArr[x][y] == 1){
+        
+        newPopulationArr[x][y] = 0;
+        newPopulationArr[x][+y + yStep] = 1;
+      }
+    }
+  }
+  populationArr = newPopulationArr;
+  
+  //передвигаем элементы и точки на линках модулей
+  var elements = graph.getElements();
+  for (var el in elements) {
+    if(elements[el].prop('position/y') > fromY ){
+      elements[el].translate(0, yStep);
+      
+      if(elements[el].prop('type') == 'module'){
+        var links = graph.getConnectedLinks(elements[el]);
+        for(var k in links){
+          links[k].prop('vertices/0/y', links[k].prop('vertices/0/y') + yStep) ;
+        }
+      };
+      
+    }
+  }
+
+//  populationArr = JSON.parse(JSON.stringify(newPopulationArr));
 }
 function drawLinks(source_cell, data, cabelSide){
   var data = data ;
@@ -937,12 +991,13 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
 
   //прорисовываем шкаф 
   point = getNewCoord(x,y,true);
+  populationArr[point.x][point.y] = 1;//значение в ячейке - занята
   var source_cell = graph.getCell(device.source.id);
   if ( typeof source_cell == 'undefined'){
     //вычисление свободной y-ячейки
     //добавление элемента
 
-    var source_cell = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.title +'\n'+device.source.id , 'top', device.cableline_data)
+    var source_cell = NewEl(x, y, widthEl, heightEl, markupArray[device.source.name], device.source.marking , 'top', device.cableline_data)
 
     source_cell.set('id', device.source.id);
     graph.addCell([source_cell]); 
@@ -980,10 +1035,11 @@ var target_cell = graph.getCell(device.target.id);
             
             
     point = getNewCoord(x,y);//вычисление свободной y-ячейки
+    populationArr[point.x][point.y] = 1;//значение в ячейке - занята
     x = point.x;
     y = point.y;
     //добавление элемента
-    var target_cell = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.title+'\n'+device.target.id, 'top', device.cableline_data)
+    var target_cell = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking, 'top', device.cableline_data)
 
     target_cell.set('id', device.target.id);
     graph.addCell([target_cell]);
@@ -1087,13 +1143,19 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
         
 //        if(number == String(marking).split('.')[0] ){
           var new_target_cell = graph.getCell(new_target_id);
-          if ( typeof target_cell == 'undefined'){
+          if ( typeof new_target_cell == 'undefined'){
             
-                       
-            
-            var point = getNewCoord(x,y);//вычисление свободной y-ячейки
-            x = point.x;
-            y = point.y;
+            var oldXStep = xStep ;     
+            var point = getNewCoord(x,y);//вычисление свободной y-ячейки           
+            if( y + yStep < point.y ) {
+//              window.console.log(populationArr);
+              moveDown(y);
+//              window.console.log(populationArr);
+//              alert(222)
+            }
+            xStep = oldXStep;
+            var point = getNewCoord(x,y);//вычисление свободной y-ячейки  
+                        
 
             //добавляем порты и меняем высоту родителя
             if(source_cell.isChild){
@@ -1105,7 +1167,17 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
             
             
             //добавление элемента
-            var new_target_cell = NewEl(x, y, widthEl, heightEl, markupArray[new_elem_sysname], new_title +'\n'+new_target_id, 'top', cableLog[i].cableline_data)
+            var new_target_cell = NewEl(
+                                          point.x
+                                        , point.y
+                                        , widthEl
+                                        , heightEl
+                                        , markupArray[new_elem_sysname]
+                                        , new_marking //+ " (" + point.x + "," + point.y + ")"
+                                        , 'top'
+                                        , cableLog[i].cableline_data
+                                      );
+            populationArr[point.x][point.y] = 1;//значение в ячейке - занята                        
             new_target_cell.set('id', new_target_id);
             graph.addCell([new_target_cell]);
             source_cell.isChild = true;
@@ -1116,9 +1188,9 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
             //прорисовываем кабель
             if ( typeof graph.getCell(cableLog[i].cableline_data.id) == 'undefined'){
               //вычисление координат
-              point = getNewCabelCoord(point);
+              point2 = getNewCabelCoord({'x':point.x, 'y': point.y});
               //добавление элемента
-              var element = NewCable( point.x, point.y, widthCable, heightCable, false, cableLog[i].cableline_data.cable.id, 'center', 270, cableLog[i].cableline_data)
+              var element = NewCable( point2.x, point2.y, widthCable, heightCable, false, cableLog[i].cableline_data.cable.id, 'center', 270, cableLog[i].cableline_data)
               element.set('id', cableLog[i].cableline_data.id);
               graph.addCell([element]);
             }
@@ -1130,8 +1202,11 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
           drawLinks(source_cell, cableLog[i].cableline_data, "l");
           drawLinks(new_target_cell, cableLog[i].cableline_data, "r");
           
-          drawElement2(cableLog, source_id,new_target_id, x, y, i, number, new_location);
-          x = x - xStep;
+          drawElement2(cableLog, source_id,new_target_id, point.x, point.y, i, number, new_location);
+//          x = point.x;
+//          y = point.y;
+//          x = x - xStep;
+//          y = y - yStep;
           
         } 
         
@@ -1143,11 +1218,26 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
 }
 
 function getNewCabelCoord(point){
+  
   var point = point;
+  var device_x = point.x; 
+  
    if(xStep < 0){
       point.x = point.x + (Math.abs(xStep)-widthEl)/2 - widthCable/2 + widthEl;
     } else {
       point.x = point.x - (Math.abs(xStep)-widthEl)/2 - widthCable/2;
+    }
+    
+    var i = 0;
+    while((point.x + widthCable) > paperWidth && i != 1000){
+      point.x = point.x - Math.abs((point.x - device_x)/2);
+      i++;
+    }
+    
+    var i = 0;
+    while((point.x ) < minX && i != 1000){
+      point.x = point.x + Math.abs((point.x - device_x)/2);
+      i++;
     }
     return point;
 }
@@ -1276,113 +1366,6 @@ function getAnotherLine(floorNumber, device_id){
   return result;
 }
 
-//получение линий элементов после riser из другого этажа
-function getAnotherFloorLine( outside_device, floorNumber){ 
-  var cableLog;
-  var outside_device = outside_device;
-  var floorNumber = floorNumber;
-  var device ;
-  var result = [];
-  
-  for(var j in floors){
-    if(j != floorNumber){
-      cableLog = floors[j].cableLog;
-      for(var i in cableLog){
-        device = new Object();
-        device.source = {};
-        device.target = {};
-
-        device.index = i;
-        device.floor_number = j;
-        
-        if(cableLog[i].finish_id == outside_device.target.id){
-
-          device.source.id = outside_device.source.id;//подмена id 
-          device.source.name = outside_device.source.name;//подмена name 
-          device.source.marking = cableLog[i].finish_marking[0];
-          
-          device.target.id = cableLog[i].start_id;
-          device.target.name = cableLog[i].start_sysname;
-          device.target.marking = cableLog[i].start_marking[0];
-          device.target.location = 'start';
-
-            device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
-              result.push(device);
-        }
-
-        if(cableLog[i].start_id == outside_device.target.id ){
-          device.source.id = outside_device.source.id;//подмена id 
-          device.source.name = outside_device.source.name;//подмена name 
-          device.source.marking = cableLog[i].start_marking[0];
-
-          device.target.id = cableLog[i].finish_id;
-          device.target.name = cableLog[i].finish_sysname;
-          device.target.marking = cableLog[i].finish_marking[0];
-          device.target.location = 'finish';
-
-          device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
-
-            result.push(device);
-         
-        }    
-      } 
-    }
-  }
-  return result;
-}
-
-
-//получаем девайсы
-function getDevices(cableLog, elem_type){
-  var devices = {};
-  var cableLog = cableLog;
-  var elem_type = elem_type;
-
-  for(var i in cableLog){
-
-    if(cableLog[i].finish_sysname == elem_types[elem_type] &&
-      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
-      
-      if(!(cableLog[i].finish_id in devices))
-        devices[(cableLog[i].finish_id)] = 1;
-    }
-    if(cableLog[i].start_sysname == elem_types[elem_type] &&
-      cableLog[i].full_path[0].elem_type == elem_type){
-      
-      if(!(cableLog[i].start_id in devices))
-        devices[(cableLog[i].start_id)] = 1;
-    }
-    
-  } 
-  return devices;
-}
-
-//получаем девайсы перехода
-function getDeviceRisers(cableLog, elem_type){
-  var devices = {};
-  var cableLog = cableLog;
-  var elem_type = elem_type;
-
-
-  for(var i in cableLog){
-
-    if(cableLog[i].finish_sysname == elem_types[elem_type] &&
-      cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
-      
-      if(!(cableLog[i].finish_id in devices))
-        devices[(cableLog[i].finish_id)] = 1;
-    }
-    if(cableLog[i].start_sysname == elem_types[elem_type] &&
-      cableLog[i].full_path[0].elem_type == elem_type){
-      
-      if(!(cableLog[i].start_id in devices))
-        devices[(cableLog[i].start_id)] = 1;
-    }
-    
-  } 
-  return devices;
-}
-
 
 
 $(document).ready(function(e)
@@ -1390,7 +1373,7 @@ $(document).ready(function(e)
   $.ajax({
     type: 'POST',
     dataType:'json',
-    url: '../data/data_optica.json',
+    url: '../data/data_optica_3.json',
     success: function(response){
       var data = response;
       floors = data.floors;
