@@ -33,12 +33,14 @@ var device_riser = {
   ,'firealarm.Element':['riser_up', 'riser_down']
 }
 
+
+//массив для markup
 var markupArray = [];
-markupArray['fireAlarm'] =  $('#fireAlarm').html().replace(/(\r\n|\n|\r|\t)/gm,"");
-markupArray['pullStation'] =  $('#pullStation').html().replace(/(\r\n|\n|\r|\t)/gm,"");
-markupArray['fireEndDevice'] =  $('#fireEndDevice').html().replace(/(\r\n|\n|\r|\t)/gm,"");
-markupArray['fireSiren'] =  $('#fireSiren').html().replace(/(\r\n|\n|\r|\t)/gm,"");
-markupArray['floorRect'] =  $('#floorRect').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+//markupArray['fireAlarm'] =  $('#fireAlarm').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+//markupArray['pullStation'] =  $('#pullStation').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+//markupArray['fireEndDevice'] =  $('#fireEndDevice').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+//markupArray['fireSiren'] =  $('#fireSiren').html().replace(/(\r\n|\n|\r|\t)/gm,"");
+//markupArray['floorRect'] =  $('#floorRect').html().replace(/(\r\n|\n|\r|\t)/gm,"");
 
 var graph = new joint.dia.Graph;
 var paper = new joint.dia.Paper({
@@ -63,7 +65,7 @@ joint.shapes.defs.NewEl = joint.dia.Element.extend({
   isChild: false,
   moduleType: ''
  });
-     
+//     
 var NewEl = function(x, y, width, height, markup, text, text_location, data) {
   
   var height = data ? getModuleHeight(data) * data.cable.module_count : height;
@@ -218,7 +220,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, data) {
 
     return cell;
 };
-
+//
 var NewCable = function(x, y, width, height, markup, text, text_location, text_angle, data) {
   
 var core_count = data.cable.core_count;
@@ -334,7 +336,7 @@ var height = getModuleHeight(data) * data.cable.module_count;
 //    graph.addCell(cell);
     return cell;
 };
-
+//
 var NewModule = function(x, y, width, height, markup, text, text_location, data, number) {
 
 var width = width || widthModule;
@@ -456,7 +458,7 @@ var height = height > heightModule ? height : heightModule;
 //    graph.addCell(cell);
     return cell;
 };
-
+//
 var NewFloorRect = function(x, y, width, height, markup, text, text_location, text_color, rect_color, zIndex) {
   var x = x;
   var y = y;
@@ -547,7 +549,7 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
 //    graph.addCell(cell);
     return cell;
 };
-     
+//     
 var NewLine = function(x1, y1, x2, y2, markup, text, text_location, text_color, line_color, line_width) {
 
   var x1 = x1;
@@ -589,7 +591,7 @@ var NewLine = function(x1, y1, x2, y2, markup, text, text_location, text_color, 
 //    graph.addCell(cell);
     return cell;
 };
-
+//
 function getMaxY(t){
 
   var max = y ;
@@ -651,7 +653,6 @@ function getNewCoord(x,y,xFix){
  
   return {x:x,y:y};
 }
-
 function moveDown(fromY){
   var fromY = fromY;
   var newPopulationArr = [];
@@ -829,14 +830,17 @@ function draw(elem_type){
   for(var j in floors){
     cableLog = floors[j].cableLog;
     
-    cabinets_core_count = getCabinetsCoreCount(cableLog, elem_type);
-      
-    main_cabinet_id = getMaxCoreCabinetId(cabinets_core_count);
+    //коллекция шкафов
+    cabinets_core_count = getCabinetsCoreCount( cableLog, elem_type );
+    //определяем ид шкафа с max core
+    main_cabinet_id = getMaxCoreCabinetId( cabinets_core_count );
+    
     devices[main_cabinet_id] = 1;
+    //получаем данные девайсов для отрисовки
+    source_target = getSourceTarget( devices, j );
     
-    source_target = getSourceTarget(cableLog,elem_type, devices, j);
-    
-    drawSorceTarget( source_target);
+    //последовательная 
+    drawSorceTarget( source_target );
 
   }
 }
@@ -847,7 +851,6 @@ function getCabinetsCoreCount(cableLog, elem_type){
   
   for(var i in cableLog){
     
-      
     if(cableLog[i].finish_sysname == elem_types[elem_type] &&
       cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
       
@@ -873,23 +876,13 @@ function getMaxCoreCabinetId(arr){
   return i;
 }
 //получаем объекты source - target по ид девайсов
-function getSourceTarget(cableLog, elem_type, devices, floorNumber){
+function getSourceTarget( devices, floorNumber){
   var result = [];
-  var cableLog = cableLog;
-  var elem_type = elem_type;
   var floorNumber = floorNumber;
-  var device = false;
-  
   var all_devices = false;
-  var anotherFloor_devices = false;
   
       for(var device_id in devices){
-//        device = getNextLine(floorNumber, 0, device_id);//последовательное получение линий элементов (согласно маркировке)
-//        while(device){
-//            result.push(device);
-//          device = getNextLine(floorNumber, +device.number, device_id);//последовательное получение линий элементов (согласно маркировке)
-//        }
-//        another_devices = getAnotherLine(floorNumber, device_id);//получение линий элементов с пустой маркировкой
+
         all_devices = getAllLine(floorNumber, device_id);//получение линий элементов с пустой маркировкой
         
         result = result.concat(all_devices);
@@ -897,7 +890,6 @@ function getSourceTarget(cableLog, elem_type, devices, floorNumber){
       
   return result;
 }
-
 //получение линий элементов с пустой маркировкой
 function getAllLine(floorNumber, device_id){      
   
@@ -955,8 +947,6 @@ function getAllLine(floorNumber, device_id){
   } 
   return result;
 }
-
-
 //обход элементов source-target для отрисовки согласно массиву 
 function drawSorceTarget( source_target){
   
@@ -1216,7 +1206,7 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
     }
   }              
 }
-
+//вычисление координат кабеля
 function getNewCabelCoord(point){
   
   var point = point;
@@ -1241,9 +1231,6 @@ function getNewCabelCoord(point){
     }
     return point;
 }
-
-
-
 //последовательное получение линий элементов (согласно маркировке)
 function getNextLine(floorNumber, number, device_id ){
   
@@ -1365,8 +1352,6 @@ function getAnotherLine(floorNumber, device_id){
   } 
   return result;
 }
-
-
 
 $(document).ready(function(e)
 {
