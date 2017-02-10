@@ -38,7 +38,7 @@ var paper = new joint.dia.Paper({
 });
 
 
-joint.shapes.defs = {}; 
+joint.shapes.defs = {};
 joint.shapes.defs.NewEl = joint.dia.Element.extend({
   markup: '',
   size: { width: 150, height: 60 },
@@ -48,9 +48,9 @@ joint.shapes.defs.NewEl = joint.dia.Element.extend({
       atrrs:{}
   }
  });
-     
+
 var NewEl = function(x, y, width, height, markup, text, text_location, text_color, rect_color, zIndex) {
-  
+
   var rect = {};
   if(!markup){
     var rect = {
@@ -60,39 +60,39 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
             height: height
          }
   }
-  
-  
+
+
   var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
   var text_color = text_color || "#000";
   var rect_color = rect_color || "#000";
   var text = text || '';
   var text_location = text_location || 'top';
   var zIndex = zIndex;
-  
+
   //положение текста по умолчанию соответствует значению text_location = 'top'
   var text_x, text_y, text_transform;
-  
+
   switch (text_location) {
     case 'left':
       text_x = width/2;
       text_y = -10;
-      text_transform = "rotate(270 "+width/2+","+height/2+")"      
+      text_transform = "rotate(270 "+width/2+","+height/2+")"
       break;
     case 'right':
       text_x = width/2;
       text_y = height+20;
-      text_transform = "rotate(270 "+width/2+","+height/2+")"      
+      text_transform = "rotate(270 "+width/2+","+height/2+")"
       break;
     case 'bottom':
       text_x = width/2;
       text_y = height+20;//20 заменить на выстоту шрифта
-      text_transform = "rotate(0 "+width/2+","+height/2+")"  
+      text_transform = "rotate(0 "+width/2+","+height/2+")"
       break;
     case 'top':
       text_x = width/2;
       text_y = -10;
       text_transform = "rotate(0 "+width/2+","+height/2+")" ;
-      break;  
+      break;
   }
 
      // Single port definition
@@ -103,7 +103,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
                   y: 0,
                   x: 0
                 },
-        attrs: { 
+        attrs: {
             rect:{
             width: widthEl,
             height: heightEl,
@@ -113,7 +113,7 @@ var NewEl = function(x, y, width, height, markup, text, text_location, text_colo
         },
         markup: '<rect  width="10" height="10" stroke="blue"/>'
     };
-    
+
     var cell = new joint.shapes.defs.NewEl({
         markup: markup,
         type:'defs.NewEl',
@@ -156,27 +156,27 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
             height: height
          }
   }
-  
+
   var markup = markup || '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>';
   var text_color = text_color || "#000";
   var rect_color = rect_color || "#000";
   var text = text || '';
   var text_location = text_location || 'top';
   var zIndex = zIndex;
-  
+
   //положение текста по умолчанию соответствует значению text_location = 'top'
   var text_x, text_y, text_transform;
   var text_r_x, text_r_y, text_r_transform;
 
   text_r_x = width-15;
   text_r_y = (yStep/2);
-  text_r_transform = "rotate(270 "+(width-15)+","+(yStep/2)+")" 
+  text_r_transform = "rotate(270 "+(width-15)+","+(yStep/2)+")"
 //  text_r_transform="";
-  
+
   text_x = 15;
   text_y = (yStep/2);
-  text_transform = "rotate(270 "+(19)+","+(yStep/2)+")" 
-    
+  text_transform = "rotate(270 "+(19)+","+(yStep/2)+")"
+
   var cell = new joint.shapes.defs.NewEl({
         markup: markup,
         type:'defs.NewFloorRect',
@@ -184,7 +184,7 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
         z:zIndex,
          position:{ x: x , y: y },
          attrs:{
-           
+
            text:{
              'z-index':1000,
              text: text,
@@ -204,7 +204,7 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
              'text-anchor': 'middle',
              fill: text_color,
              'font-size': '10px'
-           },           
+           },
            '.left':{
              fill: '#ffffff',
              stroke: '#000000',
@@ -232,7 +232,7 @@ var NewFloorRect = function(x, y, width, height, markup, text, text_location, te
 //    graph.addCell(cell);
     return cell;
 };
-     
+
 var NewLine = function(x1, y1, x2, y2, markup, text, text_location, text_color, line_color, line_width) {
 
   var x1 = x1;
@@ -245,7 +245,7 @@ var NewLine = function(x1, y1, x2, y2, markup, text, text_location, text_color, 
   var text_color = text_color || "#000";
   var line_color = line_color || "#000";
   var line_width = line_width || 2;
-   
+
     var cell = new joint.shapes.defs.NewEl({
         markup: markup,
         size: { },
@@ -283,9 +283,9 @@ function getMaxY(t){
         max = max > arr[i].length ? max : arr[i].length-1;
       });
 
-  } 
+  }
   max = max + Math.abs(yStep);
-  
+
   return max;
 }
 function getNewCoord(x,y,xFix){
@@ -307,28 +307,28 @@ function getNewCoord(x,y,xFix){
     };
 
     if(x in populationArr){
-        while (populationArr[x][y]) { 
+        while (populationArr[x][y]) {
           y = y + yStep;
         }
     } else {
         populationArr[x]=[];
-         while (populationArr[x][y]) { 
+         while (populationArr[x][y]) {
           y = y + yStep;
         }
     }
 
   } else {
     populationArr[x]=[];
-  }  
+  }
   populationArr[x][y] = 1;//значение в ячейке - занята
-//          вычисление свободной y-ячейки  
+//          вычисление свободной y-ячейки
   return {x:x,y:y};
 }
 function getLink(source_id, target_id, vertices){
   var source_id = source_id;
   var target_id = target_id;
   var vertices = vertices || '';
-  
+
   var link = new joint.dia.Link({
      source: { id: source_id, port: 'abc'  },
      target: { id: target_id, port: 'abc' },
@@ -348,7 +348,7 @@ function getLink(source_id, target_id, vertices){
       //                    padding: 5
             }
   });
-  link.set('connector', { name: 'normal' }); 
+  link.set('connector', { name: 'normal' });
   if(vertices != ''){
     link.set('vertices',[vertices]);
   }
@@ -367,7 +367,7 @@ function draw(elem_type){
   var devices = {} // ид девайсов как имя свойства
   var device_risers = {} // ид девайсов прехода как имя свойства
   var source_target = []; //массив объектов source - target
-  
+
   for(var j in floors){
     cableLog = floors[j].cableLog;
     // ид девайсов
@@ -375,10 +375,10 @@ function draw(elem_type){
     device_risers = getDeviceRisers(cableLog, elem_type);
     //массив объектов source - target
     source_target = getSourceTarget(cableLog,elem_type, devices, j);
-    
+
     //отрисовка девайсов и зависимых элементов
     drawSorceTaeget( source_target, j);
- 
+
   }
 }
 //получаем девайсы
@@ -392,18 +392,18 @@ function getDevices(cableLog, elem_type){
 
     if(cableLog[i].finish_sysname == elem_types[elem_type] &&
       cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
-      
+
       if(!(cableLog[i].finish_id in devices))
         devices[(cableLog[i].finish_id)] = 1;
     }
     if(cableLog[i].start_sysname == elem_types[elem_type] &&
       cableLog[i].full_path[0].elem_type == elem_type){
-      
+
       if(!(cableLog[i].start_id in devices))
         devices[(cableLog[i].start_id)] = 1;
     }
-    
-  } 
+
+  }
   return devices;
 }
 //получаем девайсы перехода
@@ -417,18 +417,18 @@ function getDeviceRisers(cableLog, elem_type){
 
     if(cableLog[i].finish_sysname == elem_types[elem_type] &&
       cableLog[i].full_path[cableLog[i].full_path.length-1].elem_type == elem_type){
-      
+
       if(!(cableLog[i].finish_id in devices))
         devices[(cableLog[i].finish_id)] = 1;
     }
     if(cableLog[i].start_sysname == elem_types[elem_type] &&
       cableLog[i].full_path[0].elem_type == elem_type){
-      
+
       if(!(cableLog[i].start_id in devices))
         devices[(cableLog[i].start_id)] = 1;
     }
-    
-  } 
+
+  }
   return devices;
 }
 //получаем объекты source - target по ид девайсов
@@ -438,10 +438,10 @@ function getSourceTarget(cableLog, elem_type, devices, floorNumber){
   var elem_type = elem_type;
   var floorNumber = floorNumber;
   var device = false;
-  
+
   var another_devices = false;
   var anotherFloor_devices = false;
-  
+
       for(var device_id in devices){
         device = getNextLine(floorNumber, 0, device_id);//последовательное получение линий элементов (согласно маркировке)
         while(device){
@@ -451,7 +451,7 @@ function getSourceTarget(cableLog, elem_type, devices, floorNumber){
         another_devices = getAnotherLine(floorNumber, device_id);//получение линий элементов с пустой маркировкой
         result = result.concat(another_devices);
       }
-      
+
       //замена riser на device
       for(var el in result){
         if(device_riser[elem_type].indexOf(result[el].target.name) != -1 ){
@@ -465,16 +465,16 @@ function getSourceTarget(cableLog, elem_type, devices, floorNumber){
 
 //последовательное получение линий элементов (согласно маркировке)
 function getNextLine(floorNumber, number, device_id ){
-  
+
   var floorNumber = floorNumber;
   var device_id = device_id;
   var cableLog;
   var device;
   var cableLog = cableLog;
   var number = number;
-  
+
   cableLog = floors[floorNumber].cableLog;
-  
+
   for(var i in cableLog){
     device = {};
     device.source = {};
@@ -482,7 +482,7 @@ function getNextLine(floorNumber, number, device_id ){
 
     device.floor_number = floorNumber;
     device.index = i;
-    
+
     if(cableLog[i].finish_id == device_id){
       device.source.id = cableLog[i].finish_id;
       device.source.name = cableLog[i].finish_sysname;
@@ -501,7 +501,7 @@ function getNextLine(floorNumber, number, device_id ){
         window.console.log(device.target);
       }
     }
-    
+
     if(cableLog[i].start_id == device_id){
       device.source.id = cableLog[i].start_id;
       device.source.name = cableLog[i].start_sysname;
@@ -511,27 +511,27 @@ function getNextLine(floorNumber, number, device_id ){
       device.target.name = cableLog[i].finish_sysname;
       device.target.marking = cableLog[i].finish_marking[0];
       device.target.location = 'finish';
-      
+
       device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
 
       if( device.number == (number+1)){
           return device;
         }
-    }    
-  } 
+    }
+  }
   return false;
 }
 //получение линий элементов с пустой маркировкой
-function getAnotherLine(floorNumber, device_id){      
-  
+function getAnotherLine(floorNumber, device_id){
+
   var floorNumber = floorNumber;
   var device_id = device_id;
   var cableLog ;
   var device ;
   var result = [];
-  
+
   cableLog = floors[floorNumber].cableLog;
-  
+
   for(var i in cableLog){
     device = new Object();
     device.source = {};
@@ -539,9 +539,9 @@ function getAnotherLine(floorNumber, device_id){
 
     device.floor_number = floorNumber;
     device.index = i;
-    
+
     if(cableLog[i].finish_id == device_id){
-      
+
       device.source.id = cableLog[i].finish_id;
       device.source.name = cableLog[i].finish_sysname;
       device.source.marking = cableLog[i].finish_marking[0];
@@ -550,13 +550,13 @@ function getAnotherLine(floorNumber, device_id){
       device.target.name = cableLog[i].start_sysname;
       device.target.marking = cableLog[i].start_marking[0];
       device.target.location = 'start';
-      
+
         device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
         if(device.number == ""){
           result.push(device);
         }
     }
-    
+
     if(cableLog[i].start_id == device_id ){
       device.source.id = cableLog[i].start_id;
       device.source.name = cableLog[i].start_sysname;
@@ -566,24 +566,24 @@ function getAnotherLine(floorNumber, device_id){
       device.target.name = cableLog[i].finish_sysname;
       device.target.marking = cableLog[i].finish_marking[0];
       device.target.location = 'finish';
-      
+
       device.number = device.target.marking !='' ? device.target.marking.split('.')[0] : '' ;
 
       if(device.number == ""){
         result.push(device);
       }
-    }    
-  } 
+    }
+  }
   return result;
 }
 //получение линий элементов после riser из другого этажа
-function getAnotherFloorLine( outside_device, floorNumber){ 
+function getAnotherFloorLine( outside_device, floorNumber){
   var cableLog;
   var outside_device = outside_device;
   var floorNumber = floorNumber;
   var device ;
   var result = [];
-  
+
   for(var j in floors){
     if(j != floorNumber){
       cableLog = floors[j].cableLog;
@@ -594,13 +594,13 @@ function getAnotherFloorLine( outside_device, floorNumber){
 
         device.index = i;
         device.floor_number = j;
-        
+
         if(cableLog[i].finish_id == outside_device.target.id){
 
-          device.source.id = outside_device.source.id;//подмена id 
-          device.source.name = outside_device.source.name;//подмена name 
+          device.source.id = outside_device.source.id;//подмена id
+          device.source.name = outside_device.source.name;//подмена name
           device.source.marking = cableLog[i].finish_marking[0];
-          
+
           device.target.id = cableLog[i].start_id;
           device.target.name = cableLog[i].start_sysname;
           device.target.marking = cableLog[i].start_marking[0];
@@ -611,8 +611,8 @@ function getAnotherFloorLine( outside_device, floorNumber){
         }
 
         if(cableLog[i].start_id == outside_device.target.id ){
-          device.source.id = outside_device.source.id;//подмена id 
-          device.source.name = outside_device.source.name;//подмена name 
+          device.source.id = outside_device.source.id;//подмена id
+          device.source.name = outside_device.source.name;//подмена name
           device.source.marking = cableLog[i].start_marking[0];
 
           device.target.id = cableLog[i].finish_id;
@@ -623,16 +623,16 @@ function getAnotherFloorLine( outside_device, floorNumber){
           device.number = device.target.marking !='' ? String(device.target.marking).split('.')[0] : '' ;
 
             result.push(device);
-         
-        }    
-      } 
+
+        }
+      }
     }
   }
   return result;
 }
-//обход элементов source-target для отрисовки согласно массиву 
+//обход элементов source-target для отрисовки согласно массиву
 function drawSorceTaeget( source_target, floorNumber){
-  
+
   var source_target = source_target;
   var floorNumber = floorNumber;
   var startX = x;
@@ -644,8 +644,8 @@ function drawSorceTaeget( source_target, floorNumber){
 
     if(+floorNumber > 0) {
       startY = getMaxY();
-    } 
-    cableLog = floors[source_target[i].floor_number].cableLog;  
+    }
+    cableLog = floors[source_target[i].floor_number].cableLog;
     drawDevice2(cableLog, source_target[i], startX, startY, i);
   }
 }
@@ -669,14 +669,14 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
 
   if ( typeof floorRect == 'undefined'){
 
-  
+
     elements = graph.getElements()
     //проверка - есть ли уже на холсте прямоугольник этажа
     for(var t in elements){
       if(elements[t].attributes.type == "defs.NewFloorRect")
         isFirstFloorRect = false;
     }
-    
+
     if(isFirstFloorRect){
       rect_y = minY - 30;
       rect_height = 1;
@@ -687,12 +687,12 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
 
     var NR = NewFloorRect( 5, rect_y, paperWidth-10, rect_height, markupArray['floorRect'], 'Этаж '+(+device.floor_number+1), 'top', null, 'green',0)
     NR.set('id', 'Этаж '+device.floor_number);
-    graph.addCell([NR]); 
+    graph.addCell([NR]);
     xStep = Math.abs(xStep);//ifu в положительное значение
-  } 
+  }
   //============Элемент этажа
 
-  //прорисовываем прибор 
+  //прорисовываем прибор
   point = getNewCoord(x,y,true);
   if ( typeof graph.getCell(device.source.id) == 'undefined'){
     //вычисление свободной y-ячейки
@@ -719,12 +719,12 @@ function drawDevice2(cableLog, device, x, y, deviceNumber){
     var element = NewEl( point.x, point.y, widthEl, heightEl, markupArray[device.target.name], device.target.marking ? device.target.marking : device.target.name, 'top', null, 'green')
     element.set('id', device.target.id);
     graph.addCell([element]);
-    
+
     var vertices = {x:point.x-xStep/5-1,y:point.y+element.getPort('abc').attrs.rect.height/2}; //доп точка на линке
     link = getLink(device.source.id, device.target.id,vertices);
-    
+
     graph.addCell([link]);
-    
+
   }
 
 //прорисовка элементов
@@ -750,7 +750,7 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
   //локальные
   var start_id;
   var finish_id;
- 
+
   var new_target_id;
   var new_elem_sysname;;
   var new_marking;
@@ -758,17 +758,17 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
 
   var elem_sysname;
   var marking;
-          
-  
+
+
   //проход по каталогу cableLog
   for(var i in cableLog){
-      //исключаем  индекс элемента 
+      //исключаем  индекс элемента
     if( i != index){
 
       start_id = cableLog[i].start_id;
       finish_id = cableLog[i].finish_id;
 
-//       
+//
       if(( finish_id == target_id /*&& target_location == 'start'*/) || (start_id == target_id /*&& target_location == 'finish'*/)){
 
         if( finish_id == target_id /*&& target_location == 'start'*/){
@@ -788,16 +788,16 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
 
           elem_sysname = cableLog[i].start_sysname;
           marking = cableLog[i].start_marking[0];
-        } 
-        
-        
+        }
+
+
         if(number == marking.split('.')[0] ){
           if ( typeof graph.getCell(new_target_id) == 'undefined'){
-            
+
             var point = getNewCoord(x,y);//вычисление свободной y-ячейки
             x = point.x;
             y = point.y;
-  //            var coor = "x:"+x+" y:"+y;  
+  //            var coor = "x:"+x+" y:"+y;
   //          добавление элемента
             var IZ = NewEl(x,y,widthEl,heightEl,markupArray[new_elem_sysname], new_marking ? new_marking : new_elem_sysname,'top', null, 'green')
             IZ.set('id', new_target_id);
@@ -806,17 +806,17 @@ function drawElement2(cableLog, source_id, target_id, x, y, index, number, targe
 
             source_id = target_id
   //          добавление линки между элементами
-            graph.addCell([getLink(source_id, new_target_id)]); 
+            graph.addCell([getLink(source_id, new_target_id)]);
   //           добавление линки между элементами
-          }  
+          }
 
           drawElement2(cableLog, source_id,new_target_id, x,y,i,number, new_location);
           x = x - xStep;
         }
-  
-      }    
+
+      }
     }
-  }              
+  }
 }
 
 
